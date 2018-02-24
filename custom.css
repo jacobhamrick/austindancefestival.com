@@ -438,19 +438,7 @@ iframe#map {
 /*//////////// OTHER DEVICES //////////// */
 
 @media screen and (max-width: 768px) {
-	::-webkit-scrollbar {
-	    -webkit-appearance: none;
-	}
-
-	::-webkit-scrollbar {
-	    width: .8em;
-			border-left: 2px solid black;
-	}
-
-	::-webkit-scrollbar-thumb {
-	  background-color: black;
-	  outline: 2px solid black;
-	}
+	
 	#menu {
 		font-family: 'Raleway', sans-serif;
 		width: 100px;
