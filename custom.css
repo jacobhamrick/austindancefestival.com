@@ -438,7 +438,7 @@ iframe#map {
 /*//////////// OTHER DEVICES //////////// */
 
 @media screen and (max-width: 768px) {
-	
+
 	#menu {
 		font-family: 'Raleway', sans-serif;
 		width: 100px;
@@ -471,6 +471,8 @@ iframe#map {
 		padding: 0px;
 		background-color: #FFFFFF;
 		background-color: rgba(255, 255, 255, .7);
+		border: none;
+
 	}
 	.main-nav>.navLink {
 		font-family: 'Raleway', sans-serif;
