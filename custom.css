@@ -6,10 +6,8 @@ body {
 	position: relative;
 }
 ::-webkit-scrollbar {
+	display: block;
     -webkit-appearance: none;
-}
-
-::-webkit-scrollbar {
     width: .8em;
 		border-left: 2px solid black;
 }
@@ -18,8 +16,7 @@ body {
   background-color: black;
   outline: 2px solid black;
 }
-/* //////////// Basic Styles //////////// */
-
+/* //////////// BODY TEXT STYLES TEXTILES //////////// */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	color: #000000;
 	font-family: 'Raleway', sans-serif;
@@ -52,142 +49,7 @@ a:hover {
 
 /* Theme colors for reference: blue = #00d0ff / pink = #ff0099 / green = #00dd73 / yellow =  #ffcc00 */
 
-/* //////////// Main Nav //////////// */
-
-.main-nav {
-	width: 200px;
-	height: 100%;
-	background-color: white;
-	position: fixed;
-	border-right: 2px solid black;
-}
-
-.navLogo {
-	text-align: center;
-	width: 170px;
-	margin: 10px 0 0 15px;
-}
-
-.main-nav>a.active {
-	color: #ff0099;
-}
-
-.navLink {
-	width: 177px;
-}
-
-.navLink {
-	font-family: 'Raleway', sans-serif;
-	font-size: 30px;
-	color: black;
-	margin: 0 0 8px 18px;
-	padding: 0;
-	text-transform: uppercase;
-	float: left;
-	line-height: 1.1;
-}
-
-.headerText {
-	color: #000000;
-	float: left;
-}
-
-/* //////////// Social Media Icons //////////// */
-
-.smicons {
-	float: left;
-	padding: 0 20px;
-	/* equals same as navLink left spacing*/
-}
-
-#sm-icons {
-	font-size: 18px;
-	color: black;
-	vertical-align: middle;
-	padding-right: 5px;
-}
-
-.main-nav a:hover, #sm-icons:hover {
-	text-decoration: none;
-	color: #ffcc00;
-}
-
-/* //////////// END of Main Nav //////////// */
-
-/* //////////// PHOTO SWIPER //////////// */
-
-.swiper-container {
-	width: 100%;
-	height: 100%;
-}
-
-.swiper-slide {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-div.swiper-button-next {
-	background-image: url("/images/next_white.svg");
-}
-
-div.swiper-button-prev {
-	background-image: url("/images/prev_white.svg");
-}
-
-.slideText {
-	font-family: Helvetica, sans-serif;
-	font-weight: 200;
-	font-size: 14px;
-	color: #ffffff;
-	opacity: 2;
-	margin: 0;
-	line-height: 22px;
-	padding: 1px 5px 0 5px;
-}
-
-.slideTextBox {
-	right: 0;
-	margin-right: 20px;
-	bottom: 50px;
-	position: absolute;
-	max-width: 600px;
-	min-height: 24px;
-	max-height: 48px;
-}
-
-.A {
-	background-color: #FFCC00;
-	/* fallback */
-	background-color: rgba(255, 204, 0, .5);
-}
-
-.B {
-	background-color: #00D0FF;
-	/* fallback */
-	background-color: rgba(0, 208, 255, .5);
-}
-
-.C {
-	background-color: #FF0099;
-	/* fallback */
-	background-color: rgba(255, 0, 153, .5)
-}
-
-span.swiper-pagination-bullet {
-	width: 8px;
-	height: 8px;
-	display: inline-block;
-	border-radius: 100%;
-	background: #696969;
-}
-
-/* //////////// SECTIONS OR SPACERS //////////// */
-
-#homeSection {
-	height: 100%;
-}
-
+/* //////////// SPACERS / UNIVERSAL SECTION STYLES //////////// */
 .spacer {
 	display: block;
 	min-height: 100%;
@@ -256,8 +118,12 @@ span.sectionHeader {
 	background-color: #00dd73;
 }
 
-#line-upSection, #faqSection, #sponsorSection {
+#faqSection, #sponsorSection {
 	background-color: white;
+}
+
+#line-upSection {
+	background-color: #ff0099;
 }
 
 #tagline {
@@ -275,60 +141,256 @@ span.sectionHeader {
 	font-style: italic;
 }
 
-.applyLink {
-	height: 28vh;
-	display: block;
-	width: 60vw;
-	font-size: 30px;
-	text-align: center;
-	/* flex-direction: column;*/
-	align-items: center;
-	/* justify-content: center;*/
-	line-height: 23vh;
-	background-color: #ffffff;
-	border: 20px solid #ff0099;
-	border-width: 20px;
-	margin-right: auto;
-	margin-left: auto;
-	margin-bottom: 20px;
-	text-transform: uppercase;
+/* //////////// NAVBAR //////////// */
+.main-nav {
+	width: 200px;
+	height: 100%;
+	background-color: white;
+	position: fixed;
+	border-right: 2px solid black;
 }
 
-.applyLink:hover, .applyLink p:hover {
-	border-color: #ffcc00;
+.navLogo {
+	text-align: center;
+	width: 170px;
+	margin: 10px 0 0 15px;
+}
+
+.main-nav>a.active {
+	color: #ff0099;
+}
+
+.navLink {
+	width: 177px;
+}
+
+.navLink {
+	font-family: 'Raleway', sans-serif;
+	font-size: 30px;
+	color: black;
+	margin: 0 0 8px 18px;
+	padding: 0;
+	text-transform: uppercase;
+	float: left;
+	line-height: 1.1;
+}
+
+.headerText {
+	color: #000000;
+	float: left;
+}
+
+.smicons {
+	float: left;
+	padding: 0 20px;
+	/* equals same as navLink left spacing*/
+}
+
+#sm-icons {
+	font-size: 18px;
+	color: black;
+	vertical-align: middle;
+	padding-right: 5px;
+}
+
+.main-nav a:hover, #sm-icons:hover {
+	text-decoration: none;
 	color: #ffcc00;
 }
 
-div.comingSoonBox {
+/* //////////// HOME SECTION W/ SWIPER //////////// */
+#homeSection {
+	height: 100%;
+}
+
+#homeLogo {
+	width: 800px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -400px;
+	margin-top: -160px;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div.swiper-button-next {
+	background-image: url("/images/next_white.svg");
+}
+
+div.swiper-button-prev {
+	background-image: url("/images/prev_white.svg");
+}
+
+.slideText {
+	font-family: Helvetica, sans-serif;
+	font-weight: 200;
+	font-size: 14px;
+	color: #ffffff;
+	opacity: 2;
+	margin: 0;
+	line-height: 22px;
+	padding: 1px 5px 0 5px;
+}
+
+.slideTextBox {
+	right: 0;
+	margin-right: 20px;
+	bottom: 50px;
+	position: absolute;
+	max-width: 600px;
+	min-height: 24px;
+	max-height: 48px;
+}
+
+.A {
+	background-color: #FFCC00;
+	/* fallback */
+	background-color: rgba(255, 204, 0, .5);
+}
+
+.B {
+	background-color: #00D0FF;
+	/* fallback */
+	background-color: rgba(0, 208, 255, .5);
+}
+
+.C {
+	background-color: #FF0099;
+	/* fallback */
+	background-color: rgba(255, 0, 153, .5)
+}
+
+span.swiper-pagination-bullet {
+	width: 8px;
+	height: 8px;
+	display: inline-block;
+	border-radius: 100%;
+	background: #696969;
+}
+
+/* //////////// INFO BOX / GOOD FOR COMING SOON, ETC //////////// */
+div.infoBox {
 	text-align: center;
 	height: 90vh;
 }
 
-.comingSoonBox>h2 {
+.infoBox>h2 {
 	padding-top: 300px;
 }
 
-.lineUpBody {
-	vertical-align: middle;
+/* //////////// LINE-UP SECTION //////////// */
+hr {
+	border-top: 2px solid black;
+}
+
+.lineUpBodyFirst, .lineUpBody, .lineUpBodyLast {
+	background-color: white;
+	padding: 15px 15px;
+	text-align: center;
+	line-height: 14px;
+}
+
+.lineUpBodyFirst {
+	border-right: 10px solid  #ff0099;
+}
+
+.lineUpBodyLast {
+	border-left: 10px solid  #ff0099;
+}
+
+.artistCoLink, .artistCo {
+	font-size: 16px;
+  font-family: Arial, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: black;
+}
+
+.artistCoLink:hover {
+	color:#00d0ff;
+}
+
+.lineUpProgram {
+	font: Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000000;
+}
+
+.lineUpTitle {
+	text-transform: uppercase;
+	font-size: 12px;
+	transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
+  white-space: nowrap;
+  position: absolute;
+	left: 6px;
+	height: 15px;
+	padding: 0;
+	letter-spacing: 10px;
+	bottom: 50%;
+}
+
+.lineUpCS {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	min-height: 300px;
+	width: 100%;
+}
+
+/* //////////// TICKET PAGE //////////// */
+.ticketButton {
+	height: 180px;
+	display: block;
+	width: 60vw;
+	font-size: 30px;
+	text-align: center;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	line-height: 140px;
+	background-color: #00d0ff;
+	border: 20px dotted #ffcc00;
+	border-width: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	text-transform: uppercase;
+}
+
+.ticketClick {
+	font-family: 'Raleway', sans-serif;
+	display: block;
+	background-color: white;
+	font-size: 2rem;
+	height: 140px;
 	text-align: center;
 }
 
-.sponsorImg {
-	margin: 20px;
-	max-height: 200px;
-	;
+.ticketButton:hover {
+	background-color: #ff0099;
 }
-
-.sponsorP {
-	position: absolute;
-	bottom: 0;
+.ticketInfo {
+	width: 600px;
+  background-color: #ffffff;
 	margin-left: auto;
 	margin-right: auto;
-	padding-bottom: 10px;
+	height: 170px;
+	border: 2px solid black;
+	padding: 20px;
 }
 
 /* //////////// APPLICATION PAGES //////////// */
-
 section.applyPage {
 	margin: 20px;
 }
@@ -358,6 +420,51 @@ img#applyLogo {
 	text-decoration: underline;
 }
 
+.applyLink {
+	height: 28vh;
+	display: block;
+	width: 60vw;
+	font-size: 30px;
+	text-align: center;
+	/* flex-direction: column;*/
+	align-items: center;
+	/* justify-content: center;*/
+	line-height: 23vh;
+	background-color: #ffffff;
+	border: 20px solid #ff0099;
+	border-width: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.applyLink:hover, .applyLink p:hover {
+	border-color: #ffcc00;
+	color: #ffcc00;
+}
+
+/* //////////// SPONSOR SECTION //////////// */
+.sponsorBox {
+	display: block;
+	position: relative;
+}
+
+.sponsorImg {
+	margin: 20px;
+	max-height: 200px;
+	;
+}
+
+.sponsorP {
+	position: absolute;
+	bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+}
+
+/* //////////// FOOTER //////////// */
 .footer {
 	height: 60px;
 	margin-left: 220px;
@@ -393,7 +500,6 @@ p.footStuff {
 	height: 100%;
 }
 
-
 iframe#map {
 	max-width: 450px;
 	height: 350px;
@@ -401,14 +507,7 @@ iframe#map {
 	margin: 0 auto;
 }
 
-#homeLogo {
-	width: 800px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-left: -400px;
-	margin-top: -160px;
-}
+
 
 #aboutSubDiv p {
 	font-family: 'Raleway', sans-serif;
@@ -436,159 +535,238 @@ iframe#map {
 }
 
 /*//////////// OTHER DEVICES //////////// */
+@media screen and (max-width: 991px) {
+/*//////////// MOBILE HOMELOGO //////////// */
+	#homeLogo {
+		width: 600px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left:-300px;
+		margin-top: -100px;
+	}
 
-@media screen and (max-width: 768px) {
+	/*//////////// MOBILE LINE-UP //////////// */
+	.lineUpBodyFirst, .lineUpBody, .lineUpBodyLast {
+		padding: 15px 40px;
+	}
 
-	#menu {
-		font-family: 'Raleway', sans-serif;
-		width: 100px;
-		padding: 0 5px;
-		display: block;
-		background: #ffffff;
-		font-size: 1.35em;
-		text-align: left;
-		margin: 0;
-		position: fixed;
-		z-index: 200;
-		height: 32px;
-		cursor: pointer;
-	}
-	#menuText {
-		padding-left: 5px;
-	}
-	#menuText:hover {
-		color: #00dd73;
-	}
-	.navLogo {
-		display: none;
-	}
-	.main-nav.js {
-		display: none;
-		z-index: 200;
-		height: 160px;
-		width: 100px;
-		margin: 32px 0 0 0;
-		padding: 0px;
-		background-color: #FFFFFF;
-		background-color: rgba(255, 255, 255, .7);
+	.lineUpBodyFirst, .lineUpBodyLast {
 		border: none;
+	}
+	.lineUpBody, .lineUpBodyLast {
+		margin-top: 10px;
+	}
 
+	/*//////////// MOBILE TICKETS //////////// */
+		.ticketInfo {
+			width: 100%;
+			height: 100%;
+			padding-bottom: 0;
+		}
+
+		.ticketClick {
+			display: block;
+			font-size: 20px;
+			height: 140px;
+		}
+
+	/*//////////// MOBILE SPONSOR SECTION //////////// */
+	.sponsorP {
+		position: relative;
 	}
-	.main-nav>.navLink {
-		font-family: 'Raleway', sans-serif;
-		font-size: 15px;
-		color: black;
-		margin: 0;
-		padding: 0;
-		text-transform: uppercase;
-		text-align: center;
-		line-height: 1.1;
-		width: 100%;
-	}
-	a.navLink.active {
-		background-color: #FFCC00;
-		background-color: rgb(255, 204, 0);
-	}
-	.navLink:hover {
-		background-color: #FF0099;
-		background-color: rgb(255, 0, 153);
-	}
-	section.spacer {
-		margin: 0;
-		z-index: 0;
-	}
-	.headerText {
-		text-align: center;
-	}
-	#homeSection {
-		padding-left: 0;
-	}
+ }
+
+ @media screen and (max-width: 768px) {
+/*//////////// MOBILE BODY TEXT STYLES //////////// */
+p, li {
+ font-size: 12px;
+ color: black;
+ font-family: Arial, sans-serif;
+}
+
+ul {
+ padding-left: 15px;
+}
+
+/*//////////// MOBILE BURGER NAV //////////// */
+ 	#menu {
+ 		font-family: 'Raleway', sans-serif;
+ 		width: 100px;
+ 		padding: 0 5px;
+ 		display: block;
+ 		background: #ffffff;
+ 		font-size: 1.35em;
+ 		text-align: left;
+ 		margin: 0;
+ 		position: fixed;
+ 		z-index: 200;
+ 		height: 32px;
+ 		cursor: pointer;
+ 	}
+
+ 	#menuText {
+ 		padding-left: 5px;
+ 	}
+
+ 	#menuText:hover {
+ 		color: #00dd73;
+ 	}
+
+ 	.navLogo {
+ 		display: none;
+ 	}
+
+ 	.main-nav.js {
+ 		display: none;
+ 		z-index: 200;
+ 		height: 160px;
+ 		width: 100px;
+ 		margin: 32px 0 0 0;
+ 		padding: 0px;
+ 		background-color: #FFFFFF;
+ 		background-color: rgba(255, 255, 255, .7);
+ 		border: none;
+ 	}
+
+ 	.main-nav > .navLink {
+ 		font-family: 'Raleway', sans-serif;
+ 		font-size: 15px;
+ 		color: black;
+ 		margin: 0;
+ 		padding: 0;
+ 		text-transform: uppercase;
+ 		text-align: center;
+ 		line-height: 1.1;
+ 		width: 100%;
+ 	}
+
+ 	a.navLink.active {
+ 		background-color: #FFCC00;
+ 		background-color: rgb(255, 204, 0);
+ 	}
+
+ 	.navLink:hover {
+ 		background-color: #FF0099;
+ 		background-color: rgb(255, 0, 153);
+ 	}
+
 	.main-nav a:hover {
 		text-decoration: none;
 		color: #00d0ff;
 	}
+
 	div.smicons.container {
-		text-align: center;
-		padding: 0;
-		height: 20px;
-	}
-	#sm-icons {
-		padding: 0;
-		top: 0;
-	}
-	a#sm-icons i {
-		font-size: 16px;
-		color: black;
-		display: inline;
-		height: 20px;
-	}
-	a#sm-icons i:hover {
-		color: #ff0099;
-	}
-	.sectionHeader {
-		font-size: 16px;
-		text-align: center;
-	}
-	p, li {
-		font-size: 12px;
-		color: black;
-		font-family: Arial, sans-serif;
-	}
-	ul {
-		padding-left: 15px;
-	}
-	#homeSubDiv p {
-		font-size: .8rem;
-		padding-top: 50px;
-	}
-	#homeLogo {
-		width: 200px;
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		margin-left: -100px;
-		margin-top: -60px;
-	}
-	.artistInterview {
-		width: 300px;
-		height: 169px;
-	}
-	iframe#map {
-		max-width: 100%;
-		height: 200px;
-	}
-	.artistInterview {
-		width: 355px;
-	}
+ 		text-align: center;
+ 		padding: 0;
+ 		height: 20px;
+ 	}
+
+ 	#sm-icons {
+ 		padding: 0;
+ 		top: 0;
+ 	}
+
+ 	a#sm-icons i {
+ 		font-size: 16px;
+ 		color: black;
+ 		display: inline;
+ 		height: 20px;
+ 	}
+
+ 	a#sm-icons i:hover {
+ 		color: #ff0099;
+ 	}
+
+	/*//////////// MOBILE SPACERS //////////// */
+ 	section.spacer {
+ 		margin: 0;
+ 		z-index: 0;
+ 	}
+
+ 	.headerText {
+ 		text-align: center;
+ 	}
+
+ 	#homeSection {
+ 		padding-left: 0;
+ 	}
+
+ 	.sectionHeader {
+ 		font-size: 16px;
+ 		text-align: center;
+ 	}
+
+ 	#homeSubDiv p {
+ 		font-size: .8rem;
+ 		padding-top: 50px;
+ 	}
+
+ 	#homeLogo {
+ 		width: 300px;
+ 		position: absolute;
+ 		left: 50%;
+ 		top: 50%;
+ 		margin-left: -150px;
+ 		margin-top: -50px;
+ 	}
+
+ 	.artistInterview {
+ 		width: 300px;
+ 		height: 169px;
+ 	}
+
+	/*//////////// MOBILE APPLY SECTION //////////// */
 	.applyLink {
 		height: 28vh;
 		display: flex;
-		width: 60vw;
+		max-width: 60vw;
 		font-size: 20px;
 		text-align: center;
 		line-height: 20px;
-		/* flex-direction: column;*/
-		align-items: center;
-		/* justify-content: center;*/
+		justify-content: center;
 		border: 20px solid #00dd73;
 	}
-	.footer {
-		margin-left: 0px;
+
+/*//////////// MOBILE IFRAMES //////////// */
+	div#player {
+		width: 50%;
 	}
+
+ 	iframe#map {
+ 		max-width: 100%;
+ 		height: 200px;
+ 	}
+
+ 	.artistInterview {
+ 		width: 355px;
+ 	}
+
+	/*//////////// MOBILE SPONSOR SECTION //////////// */
 	.sponsorImg {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		max-height: 120px;
+ 		display: block;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		max-height: 120px;
+ 	}
 
-	}
-}
+	/*//////////// MOBILE FOOTER //////////// */
+ 	.footer {
+ 		margin-left: 0px;
 
-@media screen and (min-width: 768px) {
-	#menu {
-		display: none;
+ 	}
+
+	.footStuff {
+		font-size: 10px;
 	}
-	#text {
-		top: 0;
-	}
-}
+
+ }
+
+ @media screen and (min-width: 768px) {
+ 	#menu {
+ 		display: none;
+ 	}
+ 	#text {
+ 		top: 0;
+ 	}
+ }
