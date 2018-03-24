@@ -1,12 +1,10 @@
 /* ------ SASS VARIABLES ------ */
 /* ------ theme colors ------ */
 /* ------ fonts ------ */
+/*optional setting */
 /* DESIGN ELEMENTS */
 /* standard black border */
 /* largest font, non-header */
-/* currently: navLinks, sectionHeaders, ticketsLink, applyLinks */
-/* currently: aboutSubDiv -> use for subheaders*/
-/* currently: lineUpProgram (SUBsubheader), social media icons */
 /* ------ MAIN STYLES ------ */
 body, html {
   height: 100%; }
@@ -14,11 +12,18 @@ body, html {
 body {
   position: relative; }
 
+.col-lg.first {
+  padding: 0 20px 0 0; }
+
+.col-lg.last {
+  padding: 0 0 0 20px; }
+
 /* custom scrollbar */
 ::-webkit-scrollbar {
   display: block;
   -webkit-appearance: none;
-  width: .8em;
+  width: .875rem;
+  /* harmoniously matches font-size */
   border-left: 2px solid black; }
 
 ::-webkit-scrollbar-thumb {
@@ -27,17 +32,21 @@ body {
 
 /* ------ BODY TEXT STYLES ------ */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #000000;
+  color: #000;
   font-family: "Roboto", Arial, sans-serif;
   margin-bottom: 0;
   text-transform: uppercase;
   font-weight: bold; }
 
+.text-spacer {
+  border-top: none;
+  /* used for keeping space between hr and h1-h6 consistent */ }
+
 p, li {
-  color: #000000;
+  color: #000;
   font-family: "Roboto", Arial, sans-serif;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
   clear: both; }
 
 a {
@@ -67,24 +76,22 @@ div.row {
   width: 100%;
   margin: 0; }
 
-.sectionHeader, .sectionSubH {
-  font-family: "Roboto", Arial, sans-serif;
-  border-bottom: 2px solid black;
-  font-weight: 700; }
-
 .container-fluid.sectionHeader {
-  font-size: 30px;
-  line-height: 30px;
-  height: 40px;
+  font-size: 1.875rem;
+  line-height: 1.87rem;
+  /* 30px/16px, adjusts text vertically */
+  height: 2.5rem;
+  /* 40px/16px */
   padding: 0;
-  margin: 0 0 10px 0; }
+  margin: 0 0 16px 0;
+  /*16px from hr margin */ }
 
 span.sectionHeader {
   float: left; }
 
 .sectionSubH {
-  font-size: 16px;
-  line-height: 25px;
+  font-size: 1rem;
+  line-height: 1.5625rem;
   text-align: center;
   padding-bottom: 10px;
   margin-bottom: 10px; }
@@ -98,7 +105,7 @@ span.sectionHeader {
   padding: 0; }
 
 #aboutSection, #mediaSection, #ticketsSection, #sponsorSection, #line-upSection, #applySection, #faqSection {
-  padding: 10px 20px;
+  padding: 16px 60px;
   border-bottom: 2px solid black; }
 
 #aboutSection, #mediaSection {
@@ -111,7 +118,7 @@ span.sectionHeader {
   background-color: #00dd73; }
 
 #faqSection, #sponsorSection {
-  background-color: white; }
+  background-color: #fff; }
 
 #line-upSection {
   background-color: #ff0099; }
@@ -119,7 +126,7 @@ span.sectionHeader {
 #tagline {
   text-align: center;
   margin-top: 10px;
-  color: black;
+  color: #000;
   font-weight: bold;
   padding: 10px;
   text-transform: uppercase; }
@@ -133,7 +140,7 @@ span.sectionHeader {
 .main-nav {
   width: 200px;
   height: 100%;
-  background-color: white;
+  background-color: #fff;
   position: fixed;
   border-right: 2px solid black; }
 
@@ -146,20 +153,20 @@ span.sectionHeader {
   color: #ff0099; }
 
 .navLink {
-  width: 177px; }
+  width: 200px;
+  box-sizing: border-box; }
 
 .navLink {
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 30px;
-  color: #000000;
-  margin: 0 0 8px 18px;
-  padding: 0;
+  font-size: 1.875rem;
+  color: #000;
+  padding: 0 0 8px 18px;
   text-transform: uppercase;
   float: left;
   line-height: 1.1; }
 
 .headerText {
-  color: #000000;
+  color: #000;
   float: left; }
 
 .smicons {
@@ -168,7 +175,7 @@ span.sectionHeader {
 
 .sm-icons {
   font-size: 18px;
-  color: #000000;
+  color: #000;
   vertical-align: middle;
   padding-right: 5px; }
 
@@ -203,38 +210,32 @@ div.swiper-button-next {
 div.swiper-button-prev {
   background-image: url("/images/prev_white.svg"); }
 
-.slideText {
+.slideTextBox {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 200;
-  font-size: 14px;
-  color: #ffffff;
-  opacity: 2;
-  margin: 0;
-  line-height: 22px;
-  padding: 1px 5px 0 5px; }
-
-.slideTextBox {
-  right: 0;
-  margin-right: 20px;
+  font-size: 0.875rem;
+  color: #fff;
+  right: 20px;
+  padding: 5px;
   bottom: 50px;
   position: absolute;
-  max-width: 600px;
-  min-height: 24px;
-  max-height: 48px; }
+  max-width: 100%;
+  min-height: 1.5rem;
+  max-height: 3rem; }
 
 .A {
   background-color: #ffcc00;
-  /* fallback */
+  /* Fallback */
   background-color: rgba(255, 204, 0, 0.5); }
 
 .B {
   background-color: #00d0ff;
-  /* fallback */
+  /* Fallback */
   background-color: rgba(0, 208, 255, 0.5); }
 
 .C {
   background-color: #ff0099;
-  /* fallback */
+  /* Fallback */
   background-color: rgba(255, 0, 153, 0.5); }
 
 span.swiper-pagination-bullet {
@@ -242,7 +243,7 @@ span.swiper-pagination-bullet {
   height: 8px;
   display: inline-block;
   border-radius: 100%;
-  background: #696969; }
+  background: #00dd73; }
 
 /* //////////// INFO BOX / GOOD FOR COMING SOON, ETC //////////// */
 div.infoBox {
@@ -256,40 +257,42 @@ div.infoBox {
 hr {
   border-top: 2px solid black; }
 
-.lineUpBodyFirst, .lineUpBody, .lineUpBodyLast {
-  background-color: white;
-  padding: 15px 15px;
+.lineUpBody.first, .lineUpBody, .lineUpBody.last {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 15px;
   text-align: center;
-  line-height: 14px; }
+  line-height: .875rem;
+  height: 100%; }
 
-.lineUpBodyFirst {
+.lineUpBody.first {
   border-right: 10px solid #ff0099; }
 
-.lineUpBodyLast {
+.lineUpBody.last {
   border-left: 10px solid #ff0099; }
 
 .artistCo {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: "Roboto", Arial, sans-serif;
   font-weight: bold;
   text-transform: uppercase; }
 
 .artistCo a {
-  color: #000000; }
+  color: #000; }
 
 .artistCo a:hover {
   color: #00d0ff; }
 
 .lineUpProgram {
   font: "Roboto", Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #000000; }
+  color: #000; }
 
 .lineUpTitle {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.875rem;
   transform: translateX(-50%) translateY(-50%) rotate(-90deg);
   white-space: nowrap;
   position: absolute;
@@ -310,8 +313,9 @@ hr {
 .ticketButton {
   height: 180px;
   display: block;
-  width: 60vw;
-  font-size: 30px;
+  max-width: 800px;
+  min-width: 300px;
+  font-size: 1.875rem;
   text-align: center;
   flex-direction: column;
   align-items: center;
@@ -319,7 +323,6 @@ hr {
   line-height: 140px;
   background-color: #00d0ff;
   border: 20px dotted #ffcc00;
-  border-width: 20px;
   margin-right: auto;
   margin-left: auto;
   text-transform: uppercase; }
@@ -327,7 +330,7 @@ hr {
 .ticketClick {
   font-family: "Roboto", Arial, sans-serif;
   display: block;
-  background-color: #ffffff;
+  background-color: #fff;
   font-size: 2rem;
   height: 140px;
   text-align: center; }
@@ -337,7 +340,8 @@ hr {
 
 .ticketInfo {
   width: 600px;
-  background-color: #ffffff;
+  box-sizing: border-box;
+  background-color: #fff;
   margin-left: auto;
   margin-right: auto;
   height: 185px;
@@ -349,11 +353,11 @@ section.applyPage {
   margin: 20px; }
 
 span.oi {
-  color: black; }
+  color: #000; }
 
 a.backSite {
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-style: italic;
   margin-bottom: 20px;
   display: block; }
@@ -372,19 +376,17 @@ img#applyLogo {
 .applyLink {
   height: 28vh;
   display: block;
+  box-sizing: border-box;
   width: 60vw;
-  font-size: 30px;
+  font-size: 1.875rem;
   text-align: center;
-  /* flex-direction: column;*/
   align-items: center;
-  /* justify-content: center;*/
   line-height: 23vh;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 20px solid #ff0099;
-  border-width: 20px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-transform: uppercase; }
 
 .applyLink:hover, .applyLink p:hover {
@@ -402,10 +404,10 @@ img#applyLogo {
 
 .sponsorP {
   position: absolute;
-  bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 10px; }
+  bottom: 10px;
+  text-align: justify;
+  padding-right: 60px;
+  /* must match section padding to accomodate positioning */ }
 
 /* //////////// FOOTER //////////// */
 .footer {
@@ -418,7 +420,7 @@ p.footStuff {
   padding-top: 18px; }
 
 .footStuff a {
-  color: #000000; }
+  color: #000; }
 
 .footStuff a:hover {
   color: #ff0099; }
@@ -444,16 +446,15 @@ iframe#map {
 
 #aboutSubDiv p {
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
-  color: #000000;
+  color: #000;
   text-transform: uppercase;
   font-weight: bold; }
 
 #aboutSubDiv {
   margin: 0;
-  padding: 10px 0;
-  border-bottom: 2px solid black; }
+  padding: 10px 0; }
 
 .artistInterview {
   width: 500px;
@@ -474,12 +475,18 @@ iframe#map {
     top: 50%;
     margin-left: -300px;
     margin-top: -100px; }
+  .col-lg.first {
+    padding-right: 0; }
+  .col-lg.last {
+    padding-left: 0; }
+  #aboutSection, #mediaSection, #ticketsSection, #sponsorSection, #line-upSection, #applySection, #faqSection {
+    padding: 16px 20px; }
   /*//////////// MOBILE LINE-UP //////////// */
-  .lineUpBodyFirst, .lineUpBody, .lineUpBodyLast {
+  .lineUpBody.first, .lineUpBody, .lineUpBody.last {
     padding: 15px 40px; }
-  .lineUpBodyFirst, .lineUpBodyLast {
+  .lineUpBody.first, .lineUpBody.last {
     border: none; }
-  .lineUpBody, .lineUpBodyLast {
+  .lineUpBody, .lineUpBody.last {
     margin-top: 10px; }
   /*//////////// MOBILE TICKETS //////////// */
   .ticketInfo {
@@ -488,16 +495,17 @@ iframe#map {
     padding-bottom: 0; }
   .ticketClick {
     display: block;
-    font-size: 20px;
+    font-size: 1.5rem;
     height: 140px; }
   /*//////////// MOBILE SPONSOR SECTION //////////// */
   .sponsorP {
-    position: relative; } }
+    position: relative;
+    padding: 10px 0; } }
 
 @media screen and (max-width: 768px) {
   /*//////////// MOBILE BODY TEXT STYLES //////////// */
   p, li {
-    font-size: 12px;
+    font-size: 0.875rem;
     color: black;
     font-family: "Roboto", Arial, sans-serif; }
   ul {
@@ -506,16 +514,18 @@ iframe#map {
   #menu {
     font-family: "Roboto", Arial, sans-serif;
     width: 100px;
+    /* must match width of nav.js */
     padding: 0 5px;
     display: block;
-    background: #ffffff;
-    font-size: 1.35em;
+    background: #fff;
+    font-size: 1.125rem;
     text-align: left;
     margin: 0;
     position: fixed;
     z-index: 200;
     height: 32px;
-    cursor: pointer; }
+    cursor: pointer;
+    border: 2px solid black; }
   #menuText {
     padding-left: 5px; }
   #menuText:hover {
@@ -525,23 +535,27 @@ iframe#map {
   .main-nav.js {
     display: none;
     z-index: 200;
-    height: 160px;
+    height: 196px;
     width: 100px;
     margin: 32px 0 0 0;
     padding: 0px;
     background-color: #ffffff;
     background-color: rgba(255, 255, 255, 0.7);
-    border: none; }
+    border: solid #000;
+    border-width: 0 2px 2px 2px;
+    /* eliminates double border width from menu */ }
   .main-nav > .navLink {
     font-family: "Roboto", Arial, sans-serif;
-    font-size: 15px;
+    font-size: 1.125rem;
     color: black;
+    font-weight: normal;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
     text-align: center;
     line-height: 1.1;
-    width: 100%; }
+    width: 100%;
+    border-bottom: 2px solid #000; }
   a.navLink.active {
     background-color: #ffcc00;
     background-color: #ffcc00; }
@@ -559,8 +573,8 @@ iframe#map {
     padding: 0;
     top: 0; }
   a.sm-icons i {
-    font-size: 16px;
-    color: black;
+    font-size: 1rem;
+    color: #000;
     display: inline;
     height: 20px; }
   a.sm-icons i:hover {
@@ -570,11 +584,11 @@ iframe#map {
     margin: 0;
     z-index: 0; }
   .headerText {
-    text-align: center; }
+    float: right; }
   #homeSection {
     padding-left: 0; }
   .sectionHeader {
-    font-size: 16px;
+    font-size: 1.125rem;
     text-align: center; }
   #homeSubDiv p {
     font-size: .8rem;
@@ -594,9 +608,9 @@ iframe#map {
     height: 28vh;
     display: flex;
     max-width: 60vw;
-    font-size: 20px;
+    font-size: 1.5rem;
     text-align: center;
-    line-height: 20px;
+    line-height: 1;
     justify-content: center;
     border: 20px solid #00dd73; }
   /*//////////// MOBILE IFRAMES //////////// */
@@ -617,7 +631,8 @@ iframe#map {
   .footer {
     margin-left: 0px; }
   .footStuff {
-    font-size: 10px; } }
+    font-size: .625rem;
+    /* 10px/16px */ } }
 
 @media screen and (min-width: 768px) {
   #menu {
