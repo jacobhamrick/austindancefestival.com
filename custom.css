@@ -93,6 +93,15 @@ a:hover {
   /* ------ 48px = height of mobile menu(50px) -2px to accomodate border ------ */
   height: calc(100vh - 48px); }
 
+#aboutSection,
+#line-upSection,
+#ticketsSection,
+#applySection,
+#mediaSection,
+#faqSection,
+#sponsorSection {
+  min-height: 100vh; }
+
 /* ------ spacer layout/styles ------ */
 .spacer {
   border-top: 2px solid black;
@@ -361,7 +370,7 @@ span.swiper-pagination-bullet {
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 90vh;
   /* ------ smaller height looks better for links/buttons ------ */ }
 
@@ -385,7 +394,8 @@ span.swiper-pagination-bullet {
 */
 .mediaFlex {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  justify-content: space-between; }
 
 .posterBox {
   margin: 20px 0;
@@ -534,7 +544,7 @@ img#applyLogo {
     margin-left: 200px; }
   /* ------ more space ------ */
   .spacer {
-    padding: 30px 40px; }
+    padding: 30px; }
   /*
 	##########################################################
 	#################### NAVIGATION ##########################
@@ -546,7 +556,7 @@ img#applyLogo {
   img.navLogo {
     display: block;
     width: 90%;
-    margin: 20px 5px 0 10px; }
+    margin: 10px 5px 0 10px; }
   .main-nav {
     position: fixed;
     width: 200px;
@@ -601,12 +611,35 @@ img#applyLogo {
     align-items: flex-start;
     flex-wrap: wrap; }
   .line-upItem {
-    width: 30%; }
+    width: 33%; }
   /*
 	##########################################################
 	################### TICKET SECTION #######################
 	##########################################################
 	*/
+  .ticketButton,
+  .ticketInfo {
+    width: 75%; }
+  /*
+	##########################################################
+	#################### APPLY SECTION #######################
+	##########################################################
+	*/
+  .applyFlex {
+    height: 80vh; }
+  .applyLink {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto; }
+  /*
+	##########################################################
+	#################### MEDIA SECTION #######################
+	##########################################################
+	*/
+  .mediaFlex {
+    flex-direction: row; }
+  .posterBox {
+    width: 45%; }
   /*
 	##########################################################
 	################### SPONSOR SECTION ######################
@@ -634,7 +667,8 @@ img#applyLogo {
     width: 100%;
     padding: 5px; }
   .footThing {
-    font-size: 0.875rem; } }
+    font-size: 0.875rem;
+    line-height: 1.5; } }
 
 /* //////////// INFO BOX / GOOD FOR COMING SOON, ETC //////////// */
 div.infoBox {
@@ -643,18 +677,6 @@ div.infoBox {
 
 .infoBox > h2 {
   padding-top: 300px; }
-
-#aboutSubDiv p {
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 1.5rem;
-  text-align: center;
-  color: #000;
-  text-transform: uppercase;
-  font-weight: bold; }
-
-#aboutSubDiv {
-  margin: 0;
-  padding: 10px 0; }
 
 .artistInterview {
   width: 500px;
