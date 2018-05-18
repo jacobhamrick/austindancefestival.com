@@ -1,3 +1,9 @@
+/* ---------------------------- MOBILE FIRST -------------------------------- */
+/*
+###############################################################################
+############################# SMALL SCREENS ###################################
+###############################################################################
+*/
 /*
 ##########################################################
 #################### BASE STYLES #########################
@@ -90,7 +96,6 @@ a:hover {
 /* ------ spacer layout/styles ------ */
 .spacer {
   border-top: 2px solid black;
-  min-height: 100vh;
   padding: 30px; }
 
 /* ------ mostly for line-up columns to help align with spacer padding and hr's
@@ -145,7 +150,7 @@ then hide ------ */
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 45px;
+  padding: 30px;
   width: 100%;
   height: 100%; }
 
@@ -439,8 +444,9 @@ iframe#map {
 ##########################################################
 */
 .sponsorBox {
-  display: grid;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   text-align: center; }
 
 .sponsorImg {
@@ -457,22 +463,19 @@ iframe#map {
 ##########################################################
 */
 .footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
+  padding: 0 10px 10px;
   width: 100%;
   position: relative;
-  clear: both;
   height: 90px;
   /* ------ double the menu height-ish ------ */
   border-top: 2px solid black; }
 
-.footStuff {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  text-align: center; }
-
 .footThing {
-  display: inline-block;
-  padding: 0 5px;
+  width: 100%;
   font-size: 10px;
   line-height: 42px;
   /* ------ half of footer height ------ */ }
@@ -513,11 +516,16 @@ img#applyLogo {
   text-decoration: underline; }
 
 /*
-##########################################################
-#################### LARGER SCREENS ######################
-##########################################################
+###############################################################################
+############################ LARGER SCREENS ###################################
+###############################################################################
 */
 @media (min-width: 769px) {
+  /*
+	##########################################################
+	#################### BASE STYLES #########################
+	##########################################################
+	*/
   /* ------ hide mobile navigation menu ------ */
   #menu {
     display: none; }
@@ -538,18 +546,15 @@ img#applyLogo {
   img.navLogo {
     display: block;
     width: 90%;
-    margin: 10px 5px 0 10px; }
+    margin: 20px 5px 0 10px; }
   .main-nav {
-    display: block;
     position: fixed;
     width: 200px;
     height: 100%;
     z-index: 2000;
     background-color: #fff;
-    position: fixed;
     border-right: 2px solid black; }
   .navLink {
-    font-family: "Roboto", Arial, sans-serif;
     font-size: 1.875rem;
     color: #000;
     width: 200px;
@@ -558,10 +563,7 @@ img#applyLogo {
     border: none;
     padding: 0 10px 10px 10px;
     text-transform: uppercase;
-    line-height: 1.1; }
-  .navLink.active {
-    color: #ff0099;
-    border: none; }
+    line-height: 1; }
   .smicons.container {
     display: inline-block;
     padding: 0 10px; }
@@ -572,50 +574,68 @@ img#applyLogo {
   .navLink:hover, .sm-icons:hover {
     text-decoration: none;
     color: #ffcc00; }
+  .navLink.active {
+    color: #ff0099;
+    border: none; }
   /*
 	##########################################################
 	##################### HOME SECTION #######################
 	##########################################################
 	*/
   #homeLogo {
-    width: 600px;
+    width: 700px;
     left: 50%;
     top: 50%;
-    margin-left: -300px;
-    margin-top: -150px; }
+    margin-left: -350px;
+    margin-top: -175px; }
   #homeSection {
     height: 100vh; }
+  /*
+	##########################################################
+	################### LINE-UP SECTION ######################
+	##########################################################
+	*/
+  .line-upFlex {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; }
+  .line-upItem {
+    width: 30%; }
+  /*
+	##########################################################
+	################### TICKET SECTION #######################
+	##########################################################
+	*/
   /*
 	##########################################################
 	################### SPONSOR SECTION ######################
 	##########################################################
 	*/
   .sponsorBox {
-    display: table; }
-    .sponsorBox a {
-      display: inline;
-      margin-right: 10px;
-      float: left;
-      min-height: 100px; }
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start; }
+  .sponsorImg {
+    margin: 30px;
+    max-width: 250px;
+    vertical-align: middle; }
+  .sponsorP {
+    margin: 20px 0 0;
+    display: inline-block;
+    align-self: flex-end; }
   /*
 	##########################################################
 	######################## FOOTER ##########################
 	##########################################################
 	*/
   .footer {
-    display: block;
-    height: 42px;
-    width: 100%; }
-  .footStuff {
-    margin-left: 200px; }
+    height: 55px;
+    width: 100%;
+    padding: 5px; }
   .footThing {
-    font-size: 0.875rem;
-    padding: 0 20px;
-    margin-right: 10px; } }
+    font-size: 0.875rem; } }
 
-/* ------ SPACERS / UNIVERSAL SECTION STYLES ------ */
-/* mostly for line-up columns, keeps them aligned with spacer margins */
-/* //////////// HOME SECTION W/ SWIPER //////////// */
 /* //////////// INFO BOX / GOOD FOR COMING SOON, ETC //////////// */
 div.infoBox {
   text-align: center;
