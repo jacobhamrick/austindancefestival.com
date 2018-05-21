@@ -90,16 +90,10 @@ a:hover {
 
 #homeSection {
   margin-left: 0;
-  /* ------ 48px = height of mobile menu(50px) -2px to accomodate border ------ */
-  height: calc(100vh - 48px); }
+  /* ------ 65px = height of mobile menu ------ */
+  height: calc(100vh - 65px); }
 
-#aboutSection,
-#line-upSection,
-#ticketsSection,
-#applySection,
-#mediaSection,
-#faqSection,
-#sponsorSection {
+.spacer {
   min-height: 100vh; }
 
 /* ------ spacer layout/styles ------ */
@@ -126,11 +120,11 @@ div.row {
   position: fixed;
   background: #fff;
   bottom: 0;
-  height: 50px;
+  height: 65px;
   z-index: 200;
   border-top: 2px solid black;
   text-align: center;
-  padding: 4px; }
+  padding: 10px; }
 
 #menuText {
   padding: 0 0 2px 5px;
@@ -159,7 +153,8 @@ then hide ------ */
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 30px;
+  padding: 30px 30px 65px 30px;
+  /* ------ bottom padding should match mobile menu ------*/
   width: 100%;
   height: 100%; }
 
@@ -216,12 +211,14 @@ div.smicons.container {
 ##########################################################
 */
 #homeLogo {
-  width: 300px;
+  width: 60%;
   position: relative;
   left: 50%;
-  top: 50%;
-  margin-left: -150px;
-  margin-top: -50px; }
+  top: 40%;
+  margin-left: -30%;
+  /* half of width */
+  margin-top: -15%;
+  /* half of margin-left */ }
 
 /* ------ SWIPER Styles ------ */
 .swiper-container {
@@ -246,15 +243,18 @@ div.swiper-button-prev {
   color: #fff;
   right: 20px;
   padding: 5px;
-  bottom: 50px;
+  bottom: 80px;
   position: absolute;
   max-width: 100%;
   min-height: 1.5rem;
   max-height: 3rem; }
 
+.swiper-pagination {
+  margin-bottom: 10px; }
+
 span.swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   display: inline-block;
   border-radius: 100%;
   background: #00dd73; }
@@ -456,12 +456,15 @@ iframe#map {
 .sponsorBox {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  text-align: center; }
+  flex-wrap: wrap; }
+
+.sponsorBox a {
+  max-width: 300px;
+  margin: 10px auto; }
 
 .sponsorImg {
-  margin: 20px;
-  max-width: 200px; }
+  max-height: 200px;
+  max-width: 300px; }
 
 .sponsorP {
   text-align: justify;
@@ -477,17 +480,18 @@ iframe#map {
   flex-direction: row;
   flex-wrap: nowrap;
   text-align: center;
-  padding: 0 10px 10px;
+  padding: 10px 10px 0;
   width: 100%;
   position: relative;
-  height: 90px;
+  height: 120px;
   /* ------ double the menu height-ish ------ */
   border-top: 2px solid black; }
 
 .footThing {
+  color: #000;
   width: 100%;
   font-size: 10px;
-  line-height: 42px;
+  line-height: 1.5;
   /* ------ half of footer height ------ */ }
 
 .footThing a {
@@ -593,11 +597,11 @@ img#applyLogo {
 	##########################################################
 	*/
   #homeLogo {
-    width: 700px;
+    width: 80%;
     left: 50%;
     top: 50%;
-    margin-left: -350px;
-    margin-top: -175px; }
+    margin-left: -40%;
+    margin-top: -20%; }
   #homeSection {
     height: 100vh; }
   /*
@@ -642,33 +646,42 @@ img#applyLogo {
     width: 45%; }
   /*
 	##########################################################
+	##################### FAQ SECTION ########################
+	##########################################################
+	*/
+  #faqSection .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    #faqSection .row .column {
+      width: 48%;
+      padding: 0; }
+  /*
+	##########################################################
 	################### SPONSOR SECTION ######################
 	##########################################################
 	*/
   .sponsorBox {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start; }
-  .sponsorImg {
-    margin: 30px;
-    max-width: 250px;
-    vertical-align: middle; }
+    justify-content: flex-start;
+    align-content: flex-start;
+    height: 100%; }
+    .sponsorBox a {
+      margin: 10px; }
   .sponsorP {
-    margin: 20px 0 0;
-    display: inline-block;
-    align-self: flex-end; }
+    margin-top: 20%; }
   /*
 	##########################################################
 	######################## FOOTER ##########################
 	##########################################################
 	*/
   .footer {
-    height: 55px;
+    height: 80px;
     width: 100%;
-    padding: 5px; }
+    padding: 30px 10px 10px; }
   .footThing {
     font-size: 0.875rem;
-    line-height: 1.5; } }
+    line-height: 1.25; } }
 
 /* //////////// INFO BOX / GOOD FOR COMING SOON, ETC //////////// */
 div.infoBox {
