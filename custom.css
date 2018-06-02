@@ -45,12 +45,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   text-transform: uppercase;
   font-weight: bold; }
 
-/* an invisible line used for keeping space between hr and h1-h6 consistent */
+/* ------  an invisible line used for keeping space between hr and h1-h6
+consistent ------ */
 .text-spacer {
-  border-top: none; }
+  border-top: none;
+  margin-top: 0; }
 
+/* ------ horizontal line ------ */
 hr {
-  border-top: 2px solid black; }
+  border-top: 2px solid black;
+  /* needs 0 margin because flexbox */
+  margin-left: 0;
+  margin-right: 0; }
 
 p, li {
   color: #000;
@@ -72,7 +78,7 @@ a:hover {
 .underline {
   text-decoration: underline; }
 
-/* ------ spacer colors ------ */
+/* ------ section colors ------ */
 #aboutSection, #mediaSection {
   background-color: #ffcc00; }
 
@@ -93,15 +99,21 @@ a:hover {
   /* ------ 65px = height of mobile menu ------ */
   height: calc(100vh - 65px); }
 
-.spacer {
-  min-height: 100vh; }
-
-/* ------ spacer layout/styles ------ */
-.spacer {
+/* ------ section body layout/styles ------ */
+.sectionBody {
   border-top: 2px solid black;
-  padding: 30px; }
+  padding: 30px;
+  min-height: 100%; }
 
-/* ------ mostly for line-up columns to help align with spacer padding and hr's
+.innerFlex,
+.sectionBody {
+  display: flex;
+  flex-direction: column; }
+
+.headerText {
+  text-align: left; }
+
+/* ------ mostly for line-up columns to help align with section body padding and hr's
 ------*/
 div.row {
   margin: 0; }
@@ -259,6 +271,7 @@ span.swiper-pagination-bullet {
   border-radius: 100%;
   background: #00dd73; }
 
+/* swiper photo caption colors */
 .A {
   background-color: #ffcc00;
   /* Fallback */
@@ -279,8 +292,7 @@ span.swiper-pagination-bullet {
 ################### LINE-UP SECTION ######################
 ##########################################################
 */
-.line-upFlex {
-  display: flex;
+#line-upSection .innerFlex {
   flex-direction: column;
   justify-content: space-between; }
 
@@ -323,8 +335,13 @@ span.swiper-pagination-bullet {
 ################### TICKET SECTION #######################
 ##########################################################
 */
+#ticketsSection .innerFlex {
+  justify-content: space-around;
+  min-height: 100vh; }
+  #ticketsSection .innerFlex p {
+    text-align: center; }
+
 .ticketButton {
-  height: 100%;
   width: 100%;
   display: table;
   font-size: 1.875rem;
@@ -366,22 +383,25 @@ span.swiper-pagination-bullet {
 #################### APPLY SECTION #######################
 ##########################################################
 */
-.applyFlex {
+#applySection .innerFlex {
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
   text-align: center;
-  justify-content: space-around;
-  height: 90vh;
+  justify-content: space-between;
+  min-height: 85vh;
   /* ------ smaller height looks better for links/buttons ------ */ }
 
 .applyLink {
   text-transform: uppercase;
   width: 100%;
-  padding: 40px 10px;
-  /* ------ helps vertically align links ------ */
+  height: 6em;
   background-color: #fff;
   border: 20px solid #ff0099;
-  font-size: 1.5rem; }
+  font-size: 2rem;
+  margin: 10px;
+  padding: 2rem;
+  line-height: 1; }
 
 .applyLink:hover {
   border-color: #ffcc00;
@@ -392,8 +412,7 @@ span.swiper-pagination-bullet {
 #################### MEDIA SECTION #######################
 ##########################################################
 */
-.mediaFlex {
-  display: flex;
+#mediaSection .innerFlex {
   flex-direction: column;
   justify-content: space-between; }
 
@@ -547,7 +566,7 @@ img#applyLogo {
   .main-section {
     margin-left: 200px; }
   /* ------ more space ------ */
-  .spacer {
+  .sectionBody {
     padding: 30px; }
   /*
 	##########################################################
@@ -609,7 +628,7 @@ img#applyLogo {
 	################### LINE-UP SECTION ######################
 	##########################################################
 	*/
-  .line-upFlex {
+  #line-upSection .innerFlex {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
@@ -629,10 +648,8 @@ img#applyLogo {
 	#################### APPLY SECTION #######################
 	##########################################################
 	*/
-  .applyFlex {
-    height: 80vh; }
   .applyLink {
-    width: 75%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto; }
   /*
@@ -640,7 +657,7 @@ img#applyLogo {
 	#################### MEDIA SECTION #######################
 	##########################################################
 	*/
-  .mediaFlex {
+  #mediaSection .innerFlex {
     flex-direction: row; }
   .posterBox {
     width: 45%; }
@@ -663,10 +680,11 @@ img#applyLogo {
 	*/
   .sponsorBox {
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-content: flex-start;
     height: 100%; }
     .sponsorBox a {
+      flex: 1;
       margin: 10px; }
   .sponsorP {
     margin-top: 20%; }
@@ -684,18 +702,27 @@ img#applyLogo {
     line-height: 1.25; } }
 
 /* //////////// INFO BOX / GOOD FOR COMING SOON, ETC //////////// */
-div.infoBox {
-  text-align: center;
-  height: 90vh; }
+/* div.infoBox {
+	text-align: center;
+	height: 90vh;
+}
 
-.infoBox > h2 {
-  padding-top: 300px; }
+.infoBox>h2 {
+	padding-top: 300px;
+}
+
+
+
+
 
 .artistInterview {
-  width: 500px;
-  height: 281px;
-  margin-right: 10px; }
+	width: 500px;
+	height: 281px;
+	margin-right: 10px;
+}
 
 .videocol {
-  text-align: center;
-  padding: 0; }
+	text-align: center;
+	padding: 0;
+}
+}*/
