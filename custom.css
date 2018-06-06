@@ -103,7 +103,7 @@ a:hover {
 .sectionBody {
   border-top: 2px solid black;
   padding: 30px;
-  min-height: 100%; }
+  min-height: 100vh; }
 
 .innerFlex,
 .sectionBody {
@@ -226,11 +226,9 @@ div.smicons.container {
   width: 60%;
   position: relative;
   left: 50%;
-  top: 40%;
+  top: 44%;
   margin-left: -30%;
-  /* half of width */
-  margin-top: -15%;
-  /* half of margin-left */ }
+  /* half of width */ }
 
 /* ------ SWIPER Styles ------ */
 .swiper-container {
@@ -335,22 +333,17 @@ span.swiper-pagination-bullet {
 ################### TICKET SECTION #######################
 ##########################################################
 */
-#ticketsSection .innerFlex {
-  justify-content: space-around;
-  min-height: 100vh; }
-  #ticketsSection .innerFlex p {
-    text-align: center; }
+#ticketsSection .innerFlex p {
+  text-align: center; }
 
 .ticketButton {
   width: 100%;
   display: table;
   font-size: 1.875rem;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1;
   background-color: #00d0ff;
   border: 20px dotted #ffcc00;
-  margin-right: auto;
-  margin-left: auto;
   text-transform: uppercase;
   padding: 0; }
 
@@ -366,11 +359,14 @@ span.swiper-pagination-bullet {
 .ticketButton:hover {
   background-color: #ff0099; }
 
+.ticketButton,
+.ticketInfo,
+.ticketContact {
+  margin: 0 auto 20px; }
+
 .ticketInfo {
   width: 100%;
   background-color: #fff;
-  margin-left: auto;
-  margin-right: auto;
   border: 2px solid black;
   padding: 10px 40px; }
 
@@ -388,9 +384,7 @@ span.swiper-pagination-bullet {
   flex-wrap: nowrap;
   flex-direction: column;
   text-align: center;
-  justify-content: space-between;
-  min-height: 85vh;
-  /* ------ smaller height looks better for links/buttons ------ */ }
+  justify-content: space-between; }
 
 .applyLink {
   text-transform: uppercase;
@@ -398,9 +392,9 @@ span.swiper-pagination-bullet {
   height: 6em;
   background-color: #fff;
   border: 20px solid #ff0099;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 10px;
-  padding: 2rem;
+  padding: 1.8rem;
   line-height: 1; }
 
 .applyLink:hover {
@@ -420,7 +414,7 @@ span.swiper-pagination-bullet {
   margin: 20px 0;
   border: 2px solid black;
   height: 362px;
-  background-color: #ccc; }
+  background-color: #fff; }
 
 .posterBox h2 {
   width: 100%; }
@@ -478,8 +472,8 @@ iframe#map {
   flex-wrap: wrap; }
 
 .sponsorBox a {
-  max-width: 300px;
-  margin: 10px auto; }
+  margin: 10px 0;
+  text-align: center; }
 
 .sponsorImg {
   max-height: 200px;
@@ -496,22 +490,20 @@ iframe#map {
 */
 .footer {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 10px 10px 0;
   width: 100%;
-  position: relative;
-  height: 120px;
-  /* ------ double the menu height-ish ------ */
+  margin-bottom: 70px;
+  /* height of menu plus some extra room*/
   border-top: 2px solid black; }
 
 .footThing {
-  color: #000;
+  text-align: center;
   width: 100%;
-  font-size: 10px;
-  line-height: 1.5;
-  /* ------ half of footer height ------ */ }
+  color: #000;
+  font-size: 0.875rem;
+  line-height: 1.5; }
 
 .footThing a {
   color: #000; }
@@ -553,7 +545,7 @@ img#applyLogo {
 ############################ LARGER SCREENS ###################################
 ###############################################################################
 */
-@media (min-width: 769px) {
+@media (min-width: 769px) and (min-height: 450px) {
   /*
 	##########################################################
 	#################### BASE STYLES #########################
@@ -618,9 +610,8 @@ img#applyLogo {
   #homeLogo {
     width: 80%;
     left: 50%;
-    top: 50%;
-    margin-left: -40%;
-    margin-top: -20%; }
+    top: 30%;
+    margin-left: -40%; }
   #homeSection {
     height: 100vh; }
   /*
@@ -640,9 +631,14 @@ img#applyLogo {
 	################### TICKET SECTION #######################
 	##########################################################
 	*/
+  #ticketsSection .innerFlex {
+    min-height: 80vh;
+    justify-content: space-around; }
   .ticketButton,
-  .ticketInfo {
-    width: 75%; }
+  .ticketInfo,
+  .ticketContact {
+    width: 50%;
+    margin-bottom: 0; }
   /*
 	##########################################################
 	#################### APPLY SECTION #######################
@@ -678,28 +674,32 @@ img#applyLogo {
 	################### SPONSOR SECTION ######################
 	##########################################################
 	*/
-  .sponsorBox {
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: flex-start;
-    height: 100%; }
-    .sponsorBox a {
-      flex: 1;
-      margin: 10px; }
-  .sponsorP {
-    margin-top: 20%; }
+  #sponsorSection {
+    max-height: 50rem; }
+    #sponsorSection .sponsorBox {
+      flex-direction: row;
+      text-align: center;
+      justify-content: space-around; }
+      #sponsorSection .sponsorBox img {
+        padding: 10px; }
   /*
 	##########################################################
 	######################## FOOTER ##########################
 	##########################################################
 	*/
   .footer {
-    height: 80px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 5em;
     width: 100%;
-    padding: 30px 10px 10px; }
+    padding: 30px;
+    margin-bottom: 5px; }
   .footThing {
+    padding: 5px;
+    text-align: center;
+    width: auto;
     font-size: 0.875rem;
-    line-height: 1.25; } }
+    line-height: 1; } }
 
 /* //////////// INFO BOX / GOOD FOR COMING SOON, ETC //////////// */
 /* div.infoBox {
