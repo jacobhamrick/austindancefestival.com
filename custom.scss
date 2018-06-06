@@ -138,11 +138,10 @@ a:hover {
 .sectionBody {
 	border-top: $borders;
 	padding: 30px;
-	min-height: 100vh;
+	min-height: 100%;
 }
 
-.innerFlex,
-.sectionBody {
+.innerFlex {
 	display: flex;
 	flex-direction: column;
 }
@@ -461,8 +460,7 @@ span.swiper-pagination-bullet {
 */
 #applySection {
 	.innerFlex {
-		display: flex;
-		flex-wrap: nowrap;
+
 		flex-direction: column;
 		text-align: center;
 		justify-content: space-between;
@@ -476,7 +474,7 @@ span.swiper-pagination-bullet {
 	background-color: #fff;
 	border: 20px solid $pink;
 	font-size: 1.8rem;
-	margin: 10px;
+	margin: 10px auto;
 	padding: 1.8rem;
 	line-height: 1;
 }
@@ -561,20 +559,16 @@ iframe#map {
 ################### SPONSOR SECTION ######################
 ##########################################################
 */
-
-.sponsorBox {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-}
-
-.sponsorBox {
-	a {
-		margin: 10px 0;
-		text-align: center;
+#sponsorSection {
+	.innerFlex {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		a {
+			text-align: center;
+		}
 	}
 }
-
 .sponsorImg {
 	max-height: 200px;
 	max-width: 300px;
@@ -656,7 +650,7 @@ img#applyLogo {
 ###############################################################################
 */
 
-@media (min-width: 769px) and (min-height: 450px){
+@media (min-width: 769px) and (min-height: 450px) {
 	/*
 	##########################################################
 	#################### BASE STYLES #########################
@@ -698,7 +692,7 @@ img#applyLogo {
 		position: fixed;
 		width: 200px;
 		height: 100%;
-		z-index: 2000;
+		z-index: 3000;
 		background-color: #fff;
 		border-right: $borders;
 	}
@@ -764,7 +758,7 @@ img#applyLogo {
 			align-items: flex-start;
 			flex-wrap: wrap;
 		}
-}
+	}
 
 	.line-upItem {
 		width: 33%;
@@ -777,7 +771,6 @@ img#applyLogo {
 	*/
 	#ticketsSection {
 		.innerFlex {
-			min-height: 80vh;
 			justify-content: space-around;
 		}
 	}
@@ -786,7 +779,7 @@ img#applyLogo {
 	.ticketInfo,
 	.ticketContact {
 		width: 50%;
-		margin-bottom: 0;
+		margin-bottom: 20px;
 	}
 
 	/*
@@ -794,8 +787,10 @@ img#applyLogo {
 	#################### APPLY SECTION #######################
 	##########################################################
 	*/
+
 	.applyLink {
 		width: 50%;
+		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -838,17 +833,26 @@ img#applyLogo {
 	##########################################################
 	*/
 	#sponsorSection {
-		max-height: 50rem;
-		.sponsorBox {
+		.sectionBody {
+		min-height: 80vh;
+		.innerFlex {
+			margin: 0 auto;
+			padding: 10% 0;
 			flex-direction: row;
-			text-align: center;
+			flex-wrap: nowrap;
 			justify-content: space-around;
-			img {
-				padding: 10px;
+			align-items:baseline;
+				.lastSponsor {
+					align-self: flex-start;
+				}
+				a {
+					margin: 10px;
+				}
 			}
-		}
+	}	}
+		.sponsorImg {
+			max-width: 100%;
 	}
-
 	/*
 	##########################################################
 	######################## FOOTER ##########################
