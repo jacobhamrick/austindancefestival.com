@@ -1,0 +1,899 @@
+/* ---------------------------- MOBILE FIRST -------------------------------- */
+
+/*
+###############################################################################
+############################# SMALL SCREENS ###################################
+###############################################################################
+*/
+
+/*
+##########################################################
+#################### BASE STYLES #########################
+##########################################################
+*/
+
+/* ------ theme colors ------ */
+$blue: #00d0ff;
+$pink: #ff0099;
+$green: #00dd73;
+$yellow: #ffcc00;
+
+/* ------ fonts ------ */
+$primary-font: 'Roboto', Arial, sans-serif;
+$secondary-font: 'Roboto', Arial, sans-serif; /*optional setting */
+
+/* ------ global font sizes ------ */
+$font-size-f1: 1.875rem;
+$font-size-f2: 1.5rem;
+$font-size-f3: 1.125rem;
+$font-size-f4: .875rem;
+
+/* ------ global border ------ */
+$borders: 2px solid black;
+
+/* padding and borders forced inside container */
+* { box-sizing: border-box; }
+
+
+
+/* This keeps sections stacked properly, swiper disappears otherwise */
+body, html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+}
+
+/* ------ custom scrollbar ------ */
+::-webkit-scrollbar {
+	display: block;
+  -webkit-appearance: none;
+  width: $font-size-f4; /* harmoniously matches font-size */
+	border-left: $borders;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: $borders;
+}
+
+/* ------ body text styles ------ */
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	color: #000;
+	font-family: $primary-font;
+	margin-bottom: 0;
+	text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* ------  an invisible line used for keeping space between hr and h1-h6
+consistent ------ */
+.text-spacer {
+	border-top: none;
+	margin-top: 0;
+}
+
+/* ------ horizontal line ------ */
+hr {
+	border-top: $borders;
+	/* needs 0 margin because flexbox */
+	margin-left: 0;
+	margin-right: 0;
+}
+
+p, li {
+	color: #000;
+	font-family: $secondary-font;
+	margin-bottom: 0;
+	font-size: $font-size-f4;
+	clear: both;
+}
+
+a {
+	font-family: $primary-font;
+	color: $pink;
+	cursor: pointer;
+  font-weight: bold;
+}
+
+a:hover {
+	color: $yellow;
+	text-decoration: none;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+/* ------ section colors ------ */
+
+#scheduleSection, #mediaSection {
+	background-color: $yellow;
+}
+
+#applySection {
+	background-color: $blue;
+}
+
+#ticketsSection {
+	background-color: $green;
+}
+
+#faqSection, #sponsorSection {
+	background-color: #fff;
+}
+
+#line-upSection {
+	background-color: $pink;
+}
+#homeSection {
+	margin-left: 0;
+	/* ------ 65px = height of mobile menu ------ */
+	height: calc(100vh - 65px);
+}
+
+/* ------ section body layout/styles ------ */
+.sectionBody {
+	border-top: $borders;
+	padding: 30px;
+	min-height: 100%;
+}
+
+.innerFlex {
+	display: flex;
+	flex-direction: column;
+}
+
+.headerText {
+	text-align: left;
+}
+
+/* ------ mostly for line-up columns to help align with section body padding and hr's
+------*/
+div.row {
+	margin: 0;
+}
+
+/*
+##########################################################
+#################### NAVIGATION ##########################
+##########################################################
+*/
+#menu {
+	font-family: $primary-font;
+	font-size: $font-size-f2;
+	font-weight: bold;
+	width: 100%;
+	display: block;
+	position: fixed;
+	background: #fff;
+	bottom: 0;
+	height: 65px;
+	z-index: 200;
+	border-top: $borders;
+	text-align: center;
+	padding: 10px;
+}
+
+#menuText {
+	padding: 0 0 2px 5px;
+	color: #000;
+	vertical-align: middle;
+}
+
+#menuText:hover {
+	color: $blue;
+}
+
+/* ------ prevents glitchy nav, keeps invisible during load instead of load, see
+then hide ------ */
+.main-nav,
+.main-nav.smallScreen {
+	display: none;
+}
+
+.main-nav.smallScreen {
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-wrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	padding: 30px 30px 65px 30px; /* ------ bottom padding should match mobile menu ------*/
+	width: 100%;
+	height: 100%;
+}
+
+.navLink {
+	font-family: $primary-font;
+	font-size: $font-size-f2;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 20px;
+	border: 3px solid #fff;
+}
+
+.navLogo {
+	display: none; /* ------ only visible on larger screens ------ */
+}
+
+div.smicons.container {
+	text-align: center;
+	vertical-align: middle;
+}
+.smicons {
+	display: inline-block;
+	bottom: 40px;
+	padding: 0;
+	height: 60px;
+}
+
+.sm-icons {
+	font-size: $font-size-f1;
+	color: #fff;
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.navLink:hover,
+.sm-icons:hover,
+.navLink.active:hover {
+	color: $yellow;
+}
+
+.navLink.active {
+	color: $yellow;
+	border-color: $yellow;
+}
+
+/* ------ menuIcon initial styles (black) ------ */
+.fa-circle {
+	color: #000;
+	padding-top: 5px; /* ------ eyballed to match size of menu text ------ */
+}
+
+.menuLight {
+	color: $yellow;
+}
+
+/*
+##########################################################
+##################### HOME SECTION #######################
+##########################################################
+*/
+#homeLogo {
+	width: 60%;
+	position: relative;
+	left: 50%;
+	top: 44%;
+	margin-left: -30%; /* half of width */
+}
+
+/* ------ SWIPER Styles ------ */
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div.swiper-button-next {
+	background-image: url("/images/next_white.svg");
+}
+
+div.swiper-button-prev {
+	background-image: url("/images/prev_white.svg");
+}
+
+.slideTextBox {
+	font-family: $secondary-font;
+	font-weight: 200;
+	font-size: $font-size-f4;
+	color: #fff;
+	right: 20px;
+	padding: 5px;
+	bottom: 80px;
+	position: absolute;
+	max-width: 100%;
+	min-height: 1.5rem;
+	max-height: 3rem;
+}
+
+.swiper-pagination {
+	margin-bottom: 10px;
+}
+
+span.swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	border-radius: 100%;
+	background: $green;
+}
+
+/* swiper photo caption colors */
+.A {
+  background-color: #ffcc00;
+  /* Fallback */
+  background-color: rgba(255, 204, 0, 0.5);
+}
+
+.B {
+  background-color: #00d0ff;
+  /* Fallback */
+  background-color: rgba(0, 208, 255, 0.5);
+}
+
+.C {
+  background-color: #ff0099;
+  /* Fallback */
+  background-color: rgba(255, 0, 153, 0.5);
+}
+
+/*
+##########################################################
+################### LINE-UP SECTION ######################
+##########################################################
+*/
+#line-upSection {
+	.innerFlex {
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}
+
+.line-upItem {
+	margin: 10px 0;
+	background-color: #fff;
+	border: $borders;
+	padding: 20px;
+	text-align: center;
+
+}
+.artistCo {
+	font-size: 1rem;
+  font-family: $secondary-font;
+	font-weight: bold;
+	text-transform: uppercase;
+
+}
+.artistCo a {
+  color: #000;
+}
+.artistCo a:hover {
+	color: $blue;
+}
+
+.lineUpProgram {
+	font: $secondary-font;
+	font-size: $font-size-f3;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000;
+}
+
+/*coming soon div*/
+.lineUpCS {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	min-height: 300px;
+	width: 100%;
+}
+
+/*
+##########################################################
+################### TICKET SECTION #######################
+##########################################################
+*/
+#ticketsSection {
+	.innerFlex {
+		p {
+			text-align: center;
+			}
+		}
+	}
+
+.ticketButton {
+	width: 100%;
+	display: table;
+	font-size: $font-size-f1;
+	text-align: center;
+	line-height: 1;
+	background-color: $blue;
+	border: 20px dotted $yellow;
+	text-transform: uppercase;
+	padding: 0;
+}
+
+.ticketClick {
+	font-family: $primary-font;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: #fff;
+	font-size: 2rem;
+	height: 100%;
+	padding: 20px;
+}
+
+.ticketButton:hover {
+	background-color: $pink;
+}
+.ticketButton,
+.ticketInfo,
+.ticketContact {
+	margin: 0 auto 20px;
+}
+
+.ticketInfo {
+	width: 100%;
+  background-color: #fff;
+	border: $borders;
+	padding: 10px 40px;
+}
+
+.ticketInfo {
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+/*
+##########################################################
+#################### APPLY SECTION #######################
+##########################################################
+*/
+#applySection {
+	.innerFlex {
+
+		flex-direction: column;
+		text-align: center;
+		justify-content: space-between;
+	}
+}
+
+.applyLink {
+	text-transform: uppercase;
+	width: 100%;
+	height: 6em;
+	background-color: #fff;
+	border: 20px solid $pink;
+	font-size: 1.8rem;
+	margin: 10px auto;
+	padding: 1.8rem;
+	line-height: 1;
+}
+
+.applyLink:hover {
+	border-color: $yellow;
+	color: $yellow;
+}
+
+/*
+##########################################################
+#################### MEDIA SECTION #######################
+##########################################################
+*/
+	#mediaSection {
+		.innerFlex {
+			flex-direction: column;
+			padding: 10px;
+			height: 20em;
+		}
+	}
+
+	.posterBox {
+		margin:  0 auto 5px 0;
+		float: left;
+		}
+/*
+##########################################################
+###################### FAQ SECTION #######################
+##########################################################
+*/
+#faqSection {
+	.col-lg-6 {
+		padding: 0;
+	}
+}
+
+iframe#map {
+	max-width: 100%;
+	height: 350px;
+	display: block;
+	margin: 0 auto;
+}
+/* ------ IFRAMES (embeded media) ------ */
+.embed-container {
+	padding-top: 15px;
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+}
+/* ------ VIMEO ------ */
+.embed-container iframe, .embed-container object, .embed-container embed {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*
+##########################################################
+################### SPONSOR SECTION ######################
+##########################################################
+*/
+#sponsorSection {
+	.innerFlex {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		a {
+			text-align: center;
+		}
+	}
+}
+.sponsorImg {
+	max-height: 200px;
+	max-width: 300px;
+}
+
+.sponsorP {
+	text-align: justify;
+	position: relative;
+}
+
+/*
+##########################################################
+######################## FOOTER ##########################
+##########################################################
+*/
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px 10px 0;
+	width: 100%;
+	margin-bottom: 70px; /* height of menu plus some extra room*/
+	border-top: $borders;
+}
+
+.footThing {
+	text-align: center;
+	width: 100%;
+	color: #000;
+	font-size: $font-size-f4;
+	line-height: 1.5;
+}
+
+.footThing a {
+	color: #000;
+}
+
+.footThing a:hover {
+	color: $pink;
+}
+
+/*
+##########################################################
+##################### APPLY PAGES ########################
+##########################################################
+*/
+section.applyPage {
+	margin: 20px;
+}
+
+span.oi {
+	color: #000;
+}
+
+a.backSite {
+	font-family: $primary-font;
+	font-size: $font-size-f4;
+	font-style: italic;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	display: block;
+}
+
+img#applyLogo {
+	width: 40%;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.applyTitle {
+	text-align: center;
+	text-decoration: underline;
+}
+
+/*
+##########################################################
+#################### ARCHIVE PAGES #######################
+##########################################################
+*/
+.archiveBody {
+	margin: 30px;
+	min-height: 100%;
+	.archive-line-up {
+		.innerFlex {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}
+}
+
+#archive-big-poster {
+		width: 30%;
+}
+/*
+###############################################################################
+############################ LARGER SCREENS ###################################
+###############################################################################
+*/
+
+@media (min-width: 769px) and (min-height: 450px) {
+	/*
+	##########################################################
+	#################### BASE STYLES #########################
+	##########################################################
+	*/
+
+	/* ------ hide mobile navigation menu ------ */
+	#menu {
+		display: none;
+	}
+
+	/* ------ accomodate left navigation bar ------ */
+	.main-section {
+		margin-left: 200px;
+	}
+
+	/* ------ more space ------ */
+	.sectionBody {
+		padding: 30px;
+	}
+
+	/*
+	##########################################################
+	#################### NAVIGATION ##########################
+	##########################################################
+	*/
+	.nav-wrap {
+		height: 50vh;
+		padding: 5px;
+	}
+
+	img.navLogo {
+		display: block;
+		width: 90%;
+		margin: 10px 5px 0 10px;
+	}
+
+	.main-nav {
+		position: fixed;
+		width: 200px;
+		height: 100%;
+		z-index: 3000;
+		background-color: #fff;
+		border-right: $borders;
+	}
+
+	.navLink {
+		font-size: $font-size-f1;
+		color: #000;
+		width: 200px;
+		margin: 0;
+		text-align: left;
+		border: none;
+		padding: 0 10px 10px 10px;
+		text-transform: uppercase;
+		line-height: 1;
+	}
+
+	.smicons.container {
+		display: inline-block;
+		padding: 0 10px;
+	}
+
+	.sm-icons {
+		color: #000;
+		float: left;
+		font-size: $font-size-f2;
+	}
+
+	.navLink:hover, .sm-icons:hover {
+		text-decoration: none;
+		color: $yellow;
+	}
+
+	.navLink.active{
+		color: $pink;
+		border: none;
+	}
+
+	/*
+	##########################################################
+	##################### HOME SECTION #######################
+	##########################################################
+	*/
+	#homeLogo {
+		width: 80%;
+		left: 50%;
+		top: 30%;
+		margin-left: -40%;
+	}
+
+	#homeSection {
+		height: 100vh;
+	}
+
+	/*
+	##########################################################
+	################### LINE-UP SECTION ######################
+	##########################################################
+	*/
+	#line-upSection  {
+		.innerFlex {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+	}
+
+	.line-upItem {
+		width: 33%;
+	}
+
+	/*
+	##########################################################
+	################### TICKET SECTION #######################
+	##########################################################
+	*/
+	#ticketsSection {
+		.innerFlex {
+			justify-content: space-around;
+		}
+	}
+
+	.ticketButton,
+	.ticketInfo,
+	.ticketContact {
+		width: 50%;
+		margin-bottom: 20px;
+	}
+
+	/*
+	##########################################################
+	#################### APPLY SECTION #######################
+	##########################################################
+	*/
+
+	.applyLink {
+		width: 50%;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/*
+	##########################################################
+	#################### MEDIA SECTION #######################
+	##########################################################
+	*/
+
+
+	/*
+	##########################################################
+	##################### FAQ SECTION ########################
+	##########################################################
+	*/
+	#faqSection {
+		.row {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			.column {
+				width: 48%;
+				padding: 0;
+			}
+		}
+	}
+
+	/*
+	##########################################################
+	################### SPONSOR SECTION ######################
+	##########################################################
+	*/
+	#sponsorSection {
+		.sectionBody {
+		min-height: 80vh;
+		.innerFlex {
+			margin: 0 auto;
+			padding: 10% 0;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-around;
+			align-items:baseline;
+				.lastSponsor {
+					align-self: flex-start;
+				}
+				a {
+					margin: 10px;
+				}
+			}
+	}	}
+		.sponsorImg {
+			max-width: 100%;
+	}
+	/*
+	##########################################################
+	######################## FOOTER ##########################
+	##########################################################
+	*/
+		.footer {
+			flex-direction: row;
+			flex-wrap: wrap;
+			height: 5em;
+			width: 100%;
+			padding: 30px;
+			margin-bottom: 5px;
+		}
+
+		.footThing {
+			padding: 5px;
+			text-align: center;
+			width: auto;
+			font-size: $font-size-f4;
+			line-height: 1;
+		}
+
+	/*
+	##########################################################
+	####################### INFO BOX #########################
+	##########################################################
+	*/
+		div.infoBox {
+			text-align: center;
+			height: 90vh;
+		}
+
+		.infoBox>h2 {
+			padding-top: 300px;
+		}
+
+/*
+##########################################################
+#################### ARCHIVE PAGES #######################
+##########################################################
+*/
+	.archiveBody {
+		.archive-line-up {
+			.innerFlex {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+		}
+	}
+
+
+}
