@@ -229,6 +229,9 @@ div.smicons.container {
   margin-left: -30%;
   /* half of width */ }
 
+#logoColor {
+  background-color: #ff0099; }
+
 /* ------ SWIPER Styles ------ */
 .swiper-container {
   width: 100%;
