@@ -108,7 +108,6 @@ a:hover {
 }
 
 /* ------ section colors ------ */
-
 #scheduleSection, #mediaSection {
 	background-color: $yellow;
 }
@@ -128,25 +127,39 @@ a:hover {
 #line-upSection {
 	background-color: $pink;
 }
+
+
+/* ------ section layout/styles ------ */
+
+#scheduleSection,
+#line-upSection,
+#ticketsSection,
+#applySection,
+#mediaSection,
+#faqSection,
+#sponsorSection {
+	border-top: $borders;
+}
+
+/* padding for homeSection otherwise leaves white border
+around background color, in other words needs to be edge to edge
+*/
 #homeSection {
 	margin-left: 0;
 	/* ------ 65px = height of mobile menu ------ */
 	height: calc(100vh - 65px);
 }
 
-/* ------ section body layout/styles ------ */
 .sectionBody {
-	border-top: $borders;
-	padding: 30px;
-	min-height: 100%;
-}
-
-.innerFlex {
 	display: flex;
 	flex-direction: column;
+	min-height: 90vh;
+	margin: 0 30px;
+	padding-bottom: 30px;
 }
 
-.headerText {
+.sectionHeader {
+	margin: 15px 30px 0 30px;
 	text-align: left;
 }
 
@@ -279,6 +292,10 @@ div.smicons.container {
 	margin-left: -30%; /* half of width */
 }
 
+#logoColor {
+	background-color: $pink;
+}
+
 /* ------ SWIPER Styles ------ */
 .swiper-container {
 	width: 100%;
@@ -401,8 +418,11 @@ span.swiper-pagination-bullet {
 ##########################################################
 */
 #ticketsSection {
-	.innerFlex {
+	.sectionBody {
+		justify-content: space-around;
+
 		p {
+
 			text-align: center;
 			}
 		}
@@ -459,11 +479,10 @@ span.swiper-pagination-bullet {
 ##########################################################
 */
 #applySection {
-	.innerFlex {
-
+	.sectionBody {
 		flex-direction: column;
 		text-align: center;
-		justify-content: space-between;
+		justify-content: space-around;
 	}
 }
 
@@ -539,8 +558,7 @@ iframe#map {
 ##########################################################
 */
 #sponsorSection {
-	.innerFlex {
-		display: flex;
+	.sectionBody {
 		flex-direction: column;
 		flex-wrap: wrap;
 		a {
@@ -556,6 +574,7 @@ iframe#map {
 .sponsorP {
 	text-align: justify;
 	position: relative;
+	padding: 0 30px 30px 30px; /* should match sectionBody padding */
 }
 
 /*
@@ -668,8 +687,14 @@ img#applyLogo {
 	}
 
 	/* ------ more space ------ */
-	.sectionBody {
-		padding: 30px;
+	#scheduleSection,
+	#line-upSection,
+	#ticketsSection,
+	#applySection,
+	#mediaSection,
+	#faqSection,
+	#sponsorSection {
+
 	}
 
 	/*
@@ -826,9 +851,7 @@ img#applyLogo {
 	*/
 	#sponsorSection {
 		.sectionBody {
-		min-height: 80vh;
-		.innerFlex {
-			margin: 0 auto;
+		min-height: 60vh;
 			padding: 10% 0;
 			flex-direction: row;
 			flex-wrap: nowrap;
@@ -840,7 +863,7 @@ img#applyLogo {
 				a {
 					margin: 10px;
 				}
-			}
+
 	}	}
 		.sponsorImg {
 			max-width: 100%;
@@ -874,11 +897,7 @@ img#applyLogo {
 	*/
 		div.infoBox {
 			text-align: center;
-			height: 90vh;
-		}
-
-		.infoBox>h2 {
-			padding-top: 300px;
+			margin: auto 0;
 		}
 
 /*

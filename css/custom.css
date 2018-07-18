@@ -94,22 +94,33 @@ a:hover {
 #line-upSection {
   background-color: #ff0099; }
 
+/* ------ section layout/styles ------ */
+#scheduleSection,
+#line-upSection,
+#ticketsSection,
+#applySection,
+#mediaSection,
+#faqSection,
+#sponsorSection {
+  border-top: 2px solid black; }
+
+/* padding for homeSection otherwise leaves white border
+around background color, in other words needs to be edge to edge
+*/
 #homeSection {
   margin-left: 0;
   /* ------ 65px = height of mobile menu ------ */
   height: calc(100vh - 65px); }
 
-/* ------ section body layout/styles ------ */
 .sectionBody {
-  border-top: 2px solid black;
-  padding: 30px;
-  min-height: 100%; }
-
-.innerFlex {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  min-height: 90vh;
+  margin: 0 30px;
+  padding-bottom: 30px; }
 
-.headerText {
+.sectionHeader {
+  margin: 15px 30px 0 30px;
   text-align: left; }
 
 /* ------ mostly for line-up columns to help align with section body padding and hr's
@@ -335,8 +346,10 @@ span.swiper-pagination-bullet {
 ################### TICKET SECTION #######################
 ##########################################################
 */
-#ticketsSection .innerFlex p {
-  text-align: center; }
+#ticketsSection .sectionBody {
+  justify-content: space-around; }
+  #ticketsSection .sectionBody p {
+    text-align: center; }
 
 .ticketButton {
   width: 100%;
@@ -381,10 +394,10 @@ span.swiper-pagination-bullet {
 #################### APPLY SECTION #######################
 ##########################################################
 */
-#applySection .innerFlex {
+#applySection .sectionBody {
   flex-direction: column;
   text-align: center;
-  justify-content: space-between; }
+  justify-content: space-around; }
 
 .applyLink {
   text-transform: uppercase;
@@ -448,11 +461,10 @@ iframe#map {
 ################### SPONSOR SECTION ######################
 ##########################################################
 */
-#sponsorSection .innerFlex {
-  display: flex;
+#sponsorSection .sectionBody {
   flex-direction: column;
   flex-wrap: wrap; }
-  #sponsorSection .innerFlex a {
+  #sponsorSection .sectionBody a {
     text-align: center; }
 
 .sponsorImg {
@@ -461,7 +473,9 @@ iframe#map {
 
 .sponsorP {
   text-align: justify;
-  position: relative; }
+  position: relative;
+  padding: 0 30px 30px 30px;
+  /* should match sectionBody padding */ }
 
 /*
 ##########################################################
@@ -555,8 +569,6 @@ img#applyLogo {
   .main-section {
     margin-left: 200px; }
   /* ------ more space ------ */
-  .sectionBody {
-    padding: 30px; }
   /*
 	##########################################################
 	#################### NAVIGATION ##########################
@@ -668,18 +680,16 @@ img#applyLogo {
 	##########################################################
 	*/
   #sponsorSection .sectionBody {
-    min-height: 80vh; }
-    #sponsorSection .sectionBody .innerFlex {
-      margin: 0 auto;
-      padding: 10% 0;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-around;
-      align-items: baseline; }
-      #sponsorSection .sectionBody .innerFlex .lastSponsor {
-        align-self: flex-start; }
-      #sponsorSection .sectionBody .innerFlex a {
-        margin: 10px; }
+    min-height: 60vh;
+    padding: 10% 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: baseline; }
+    #sponsorSection .sectionBody .lastSponsor {
+      align-self: flex-start; }
+    #sponsorSection .sectionBody a {
+      margin: 10px; }
   .sponsorImg {
     max-width: 100%; }
   /*
@@ -707,9 +717,7 @@ img#applyLogo {
 	*/
   div.infoBox {
     text-align: center;
-    height: 90vh; }
-  .infoBox > h2 {
-    padding-top: 300px; }
+    margin: auto 0; }
   /*
 ##########################################################
 #################### ARCHIVE PAGES #######################
