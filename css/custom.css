@@ -14,6 +14,9 @@
 /*optional setting */
 /* ------ global font sizes ------ */
 /* ------ global border ------ */
+/* ------ general layout styles ------ */
+/* margin for pages without navbar */
+/* margin for pages without navbar large screens */
 /* padding and borders forced inside container */
 * {
   box-sizing: border-box; }
@@ -511,7 +514,7 @@ iframe#map {
 ##########################################################
 */
 section.applyPage {
-  margin: 20px; }
+  margin: 2em; }
 
 span.oi {
   color: #000; }
@@ -541,7 +544,7 @@ img#applyLogo {
 ##########################################################
 */
 .archiveBody {
-  margin: 30px;
+  margin: 2em;
   min-height: 100%; }
   .archiveBody .archive-line-up .innerFlex {
     display: flex;
@@ -719,10 +722,19 @@ img#applyLogo {
     text-align: center;
     margin: auto 0; }
   /*
-##########################################################
-#################### ARCHIVE PAGES #######################
-##########################################################
-*/
-  .archiveBody .archive-line-up .innerFlex {
-    flex-direction: row;
-    justify-content: space-between; } }
+	##########################################################
+	##################### APPLY PAGES ########################
+	##########################################################
+	*/
+  section.applyPage {
+    margin: 2em 6em; }
+  /*
+	##########################################################
+	#################### ARCHIVE PAGES #######################
+	##########################################################
+	*/
+  .archiveBody {
+    margin: 2em 6em; }
+    .archiveBody .archive-line-up .innerFlex {
+      flex-direction: row;
+      justify-content: space-between; } }

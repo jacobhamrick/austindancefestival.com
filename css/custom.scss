@@ -31,6 +31,10 @@ $font-size-f4: .875rem;
 /* ------ global border ------ */
 $borders: 2px solid black;
 
+/* ------ general layout styles ------ */
+$full-width-page: 2em; /* margin for pages without navbar */
+$full-width-page-lg: 2em 6em; /* margin for pages without navbar large screens */
+
 /* padding and borders forced inside container */
 * { box-sizing: border-box; }
 
@@ -614,7 +618,7 @@ iframe#map {
 ##########################################################
 */
 section.applyPage {
-	margin: 20px;
+	margin: $full-width-page;
 }
 
 span.oi {
@@ -649,7 +653,7 @@ img#applyLogo {
 ##########################################################
 */
 .archiveBody {
-	margin: 30px;
+	margin: $full-width-page;
 	min-height: 100%;
 	.archive-line-up {
 		.innerFlex {
@@ -899,13 +903,22 @@ img#applyLogo {
 			text-align: center;
 			margin: auto 0;
 		}
+	/*
+	##########################################################
+	##################### APPLY PAGES ########################
+	##########################################################
+	*/
+	section.applyPage {
+		margin: $full-width-page-lg;
+	}
 
-/*
-##########################################################
-#################### ARCHIVE PAGES #######################
-##########################################################
-*/
+	/*
+	##########################################################
+	#################### ARCHIVE PAGES #######################
+	##########################################################
+	*/
 	.archiveBody {
+		margin: $full-width-page-lg;
 		.archive-line-up {
 			.innerFlex {
 				flex-direction: row;
