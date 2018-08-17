@@ -436,12 +436,41 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/logos\/adf-main.png": {
+		"ft": 32768,
+		"iS": 32660,
+		"oA": 0,
+		"oAP": "\/logos\/adf-main.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/professional-artist-application.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/professional-artist-application.html",
 		"oF": 0
+		},
+	"\/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "\/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		},
 	"\/youth-dance-application.html": {
 		"cB": 0,
