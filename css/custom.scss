@@ -38,11 +38,6 @@ $full-width-page-lg: 2em 6em; /* margin for pages without navbar large screens *
 /* padding and borders forced inside container */
 * { box-sizing: border-box; }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5186786d55f9804831188772136e55189e2df7c4
 /* This keeps sections stacked properly, swiper disappears otherwise */
 body, html {
 	height: 100%;
@@ -191,7 +186,7 @@ div.row {
 	background: #fff;
 	bottom: 0;
 	height: 65px;
-	z-index: 200;
+	z-index: 400;
 	border-top: $borders;
 	text-align: center;
 	padding: 10px;
@@ -215,14 +210,14 @@ then hide ------ */
 }
 
 .main-nav.smallScreen {
-	z-index: 100;
+	z-index: 300;
 	width: 100%;
 	height: 100%;
 	position: fixed;
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
-.nav-wrap {
+.navWrap {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -237,8 +232,8 @@ then hide ------ */
 	font-family: $primary-font;
 	font-size: $font-size-f2;
 	color: #fff;
-	text-align: center;
 	text-transform: uppercase;
+	text-align: center;
 	padding: 20px;
 	border: 3px solid #fff;
 }
@@ -247,15 +242,19 @@ then hide ------ */
 	display: none; /* ------ only visible on larger screens ------ */
 }
 
+.navDate {
+	display: none;
+}
+
 div.smicons.container {
 	text-align: center;
 	vertical-align: middle;
 }
 .smicons {
 	display: inline-block;
+	height: 60px;
 	bottom: 40px;
 	padding: 0;
-	height: 60px;
 }
 
 .sm-icons {
@@ -335,6 +334,14 @@ div.swiper-button-prev {
 	max-width: 100%;
 	min-height: 1.5rem;
 	max-height: 3rem;
+}
+
+.slideTextBox.date {
+	font-size: $font-size-f3;
+	text-align: center;
+	left: 0; /* reset */
+	z-index: 300;
+	bottom: 110px;
 }
 
 .swiper-pagination {
@@ -709,7 +716,7 @@ img#applyLogo {
 	#################### NAVIGATION ##########################
 	##########################################################
 	*/
-	.nav-wrap {
+	.navWrap {
 		height: 50vh;
 		padding: 5px;
 	}
@@ -741,6 +748,13 @@ img#applyLogo {
 		line-height: 1;
 	}
 
+	.slideTextBox.date {
+		font-family: $primary-font;
+		font-size: 3rem;
+		font-weight: 700;
+		width: 100%;
+	}
+
 	.smicons.container {
 		display: inline-block;
 		padding: 0 10px;
@@ -770,7 +784,7 @@ img#applyLogo {
 	#homeLogo {
 		width: 80%;
 		left: 50%;
-		top: 30%;
+		top: 25%;
 		margin-left: -40%;
 	}
 
@@ -778,6 +792,11 @@ img#applyLogo {
 		height: 100vh;
 	}
 
+	.navDate {
+		display:inline-block;
+		width: 100%;
+		padding: 0 10px 10px 10px;
+	}
 	/*
 	##########################################################
 	################### LINE-UP SECTION ######################
@@ -929,9 +948,4 @@ img#applyLogo {
 			}
 		}
 	}
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5186786d55f9804831188772136e55189e2df7c4
 }

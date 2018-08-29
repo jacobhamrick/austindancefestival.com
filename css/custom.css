@@ -146,7 +146,7 @@ div.row {
   background: #fff;
   bottom: 0;
   height: 65px;
-  z-index: 200;
+  z-index: 400;
   border-top: 2px solid black;
   text-align: center;
   padding: 10px; }
@@ -166,13 +166,13 @@ then hide ------ */
   display: none; }
 
 .main-nav.smallScreen {
-  z-index: 100;
+  z-index: 300;
   width: 100%;
   height: 100%;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.8); }
 
-.nav-wrap {
+.navWrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -187,8 +187,8 @@ then hide ------ */
   font-family: "Roboto", Arial, sans-serif;
   font-size: 1.5rem;
   color: #fff;
-  text-align: center;
   text-transform: uppercase;
+  text-align: center;
   padding: 20px;
   border: 3px solid #fff; }
 
@@ -196,15 +196,18 @@ then hide ------ */
   display: none;
   /* ------ only visible on larger screens ------ */ }
 
+.navDate {
+  display: none; }
+
 div.smicons.container {
   text-align: center;
   vertical-align: middle; }
 
 .smicons {
   display: inline-block;
+  height: 60px;
   bottom: 40px;
-  padding: 0;
-  height: 60px; }
+  padding: 0; }
 
 .sm-icons {
   font-size: 1.875rem;
@@ -274,6 +277,14 @@ div.swiper-button-prev {
   max-width: 100%;
   min-height: 1.5rem;
   max-height: 3rem; }
+
+.slideTextBox.date {
+  font-size: 1.125rem;
+  text-align: center;
+  left: 0;
+  /* reset */
+  z-index: 300;
+  bottom: 110px; }
 
 .swiper-pagination {
   margin-bottom: 10px; }
@@ -577,7 +588,7 @@ img#applyLogo {
 	#################### NAVIGATION ##########################
 	##########################################################
 	*/
-  .nav-wrap {
+  .navWrap {
     height: 50vh;
     padding: 5px; }
   img.navLogo {
@@ -601,6 +612,11 @@ img#applyLogo {
     padding: 0 10px 10px 10px;
     text-transform: uppercase;
     line-height: 1; }
+  .slideTextBox.date {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    width: 100%; }
   .smicons.container {
     display: inline-block;
     padding: 0 10px; }
@@ -622,10 +638,14 @@ img#applyLogo {
   #homeLogo {
     width: 80%;
     left: 50%;
-    top: 30%;
+    top: 25%;
     margin-left: -40%; }
   #homeSection {
     height: 100vh; }
+  .navDate {
+    display: inline-block;
+    width: 100%;
+    padding: 0 10px 10px 10px; }
   /*
 	##########################################################
 	################### LINE-UP SECTION ######################
