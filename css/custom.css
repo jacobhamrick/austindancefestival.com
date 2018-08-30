@@ -13,14 +13,12 @@
 /* ------ fonts ------ */
 /*optional setting */
 /* ------ global font sizes ------ */
+/* .slideTextBox.date, .lineUpProgram */
+/* p, li */
 /* ------ global border ------ */
 /* ------ general layout styles ------ */
 /* margin for pages without navbar */
 /* margin for pages without navbar large screens */
-/* padding and borders forced inside container */
-* {
-  box-sizing: border-box; }
-
 /* This keeps sections stacked properly, swiper disappears otherwise */
 body, html {
   height: 100%; }
@@ -41,12 +39,31 @@ body {
   outline: 2px solid black; }
 
 /* ------ body text styles ------ */
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+a {
   color: #000;
   font-family: "Roboto", Arial, sans-serif;
   margin-bottom: 0;
   text-transform: uppercase;
-  font-weight: bold; }
+  font-weight: 700; }
+
+p, li {
+  color: #000;
+  font-family: "Roboto", Arial, sans-serif;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  clear: both; }
 
 /* ------  an invisible line used for keeping space between hr and h1-h6
 consistent ------ */
@@ -60,13 +77,6 @@ hr {
   /* needs 0 margin because flexbox */
   margin-left: 0;
   margin-right: 0; }
-
-p, li {
-  color: #000;
-  font-family: "Roboto", Arial, sans-serif;
-  margin-bottom: 0;
-  font-size: 0.875rem;
-  clear: both; }
 
 a {
   font-family: "Roboto", Arial, sans-serif;
@@ -266,9 +276,6 @@ div.swiper-button-prev {
   background-image: url("/images/prev_white.svg"); }
 
 .slideTextBox {
-  font-family: "Roboto", Arial, sans-serif;
-  font-weight: 200;
-  font-size: 0.875rem;
   color: #fff;
   right: 20px;
   padding: 5px;
@@ -279,7 +286,7 @@ div.swiper-button-prev {
   max-height: 3rem; }
 
 .slideTextBox.date {
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   text-align: center;
   left: 0;
   /* reset */
@@ -330,7 +337,6 @@ span.swiper-pagination-bullet {
 
 .artistCo {
   font-size: 1rem;
-  font-family: "Roboto", Arial, sans-serif;
   font-weight: bold;
   text-transform: uppercase; }
 
@@ -341,7 +347,6 @@ span.swiper-pagination-bullet {
   color: #00d0ff; }
 
 .lineUpProgram {
-  font: "Roboto", Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -509,15 +514,7 @@ iframe#map {
 .footThing {
   text-align: center;
   width: 100%;
-  color: #000;
-  font-size: 0.875rem;
   line-height: 1.5; }
-
-.footThing a {
-  color: #000; }
-
-.footThing a:hover {
-  color: #ff0099; }
 
 /*
 ##########################################################
@@ -531,8 +528,6 @@ span.oi {
   color: #000; }
 
 a.backSite {
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 0.875rem;
   font-style: italic;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -613,7 +608,6 @@ img#applyLogo {
     text-transform: uppercase;
     line-height: 1; }
   .slideTextBox.date {
-    font-family: "Roboto", Arial, sans-serif;
     font-size: 3rem;
     font-weight: 700;
     width: 100%; }

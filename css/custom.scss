@@ -25,8 +25,8 @@ $secondary-font: 'Roboto', Arial, sans-serif; /*optional setting */
 /* ------ global font sizes ------ */
 $font-size-f1: 1.875rem;
 $font-size-f2: 1.5rem;
-$font-size-f3: 1.125rem;
-$font-size-f4: .875rem;
+$font-size-f3: 1.125rem; /* .slideTextBox.date, .lineUpProgram */
+$font-size-f4: .875rem; /* p, li */
 
 /* ------ global border ------ */
 $borders: 2px solid black;
@@ -35,8 +35,6 @@ $borders: 2px solid black;
 $full-width-page: 2em; /* margin for pages without navbar */
 $full-width-page-lg: 2em 6em; /* margin for pages without navbar large screens */
 
-/* padding and borders forced inside container */
-* { box-sizing: border-box; }
 
 /* This keeps sections stacked properly, swiper disappears otherwise */
 body, html {
@@ -62,12 +60,32 @@ body {
 
 /* ------ body text styles ------ */
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+a {
 	color: #000;
 	font-family: $primary-font;
 	margin-bottom: 0;
 	text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
+}
+
+p, li {
+	color: #000;
+	font-family: $secondary-font;
+	margin-bottom: 0;
+	font-size: $font-size-f4;
+	clear: both;
 }
 
 /* ------  an invisible line used for keeping space between hr and h1-h6
@@ -85,13 +103,7 @@ hr {
 	margin-right: 0;
 }
 
-p, li {
-	color: #000;
-	font-family: $secondary-font;
-	margin-bottom: 0;
-	font-size: $font-size-f4;
-	clear: both;
-}
+
 
 a {
 	font-family: $primary-font;
@@ -323,9 +335,6 @@ div.swiper-button-prev {
 }
 
 .slideTextBox {
-	font-family: $secondary-font;
-	font-weight: 200;
-	font-size: $font-size-f4;
 	color: #fff;
 	right: 20px;
 	padding: 5px;
@@ -337,7 +346,7 @@ div.swiper-button-prev {
 }
 
 .slideTextBox.date {
-	font-size: $font-size-f3;
+	font-size: $font-size-f4;
 	text-align: center;
 	left: 0; /* reset */
 	z-index: 300;
@@ -397,7 +406,6 @@ span.swiper-pagination-bullet {
 }
 .artistCo {
 	font-size: 1rem;
-  font-family: $secondary-font;
 	font-weight: bold;
 	text-transform: uppercase;
 
@@ -410,7 +418,6 @@ span.swiper-pagination-bullet {
 }
 
 .lineUpProgram {
-	font: $secondary-font;
 	font-size: $font-size-f3;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -609,18 +616,9 @@ iframe#map {
 .footThing {
 	text-align: center;
 	width: 100%;
-	color: #000;
-	font-size: $font-size-f4;
 	line-height: 1.5;
 }
 
-.footThing a {
-	color: #000;
-}
-
-.footThing a:hover {
-	color: $pink;
-}
 
 /*
 ##########################################################
@@ -636,8 +634,6 @@ span.oi {
 }
 
 a.backSite {
-	font-family: $primary-font;
-	font-size: $font-size-f4;
 	font-style: italic;
 	text-transform: uppercase;
 	margin-bottom: 20px;
@@ -749,7 +745,6 @@ img#applyLogo {
 	}
 
 	.slideTextBox.date {
-		font-family: $primary-font;
 		font-size: 3rem;
 		font-weight: 700;
 		width: 100%;
