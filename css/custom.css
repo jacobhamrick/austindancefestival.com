@@ -13,7 +13,9 @@
 /* ------ fonts ------ */
 /*optional setting */
 /* ------ global font sizes ------ */
-/* .slideTextBox.date, .lineUpProgram */
+/* .ticketButton, .navLink (large screens), .sm-icons (small screens)*/
+/* #menu, .navLink (small screens), .smi-icons (large screens) */
+/* .slideTextBox.date (mobile only), .lineUpProgram */
 /* p, li */
 /* ------ global border ------ */
 /* ------ general layout styles ------ */
@@ -52,17 +54,18 @@ h6,
 .h5,
 .h6,
 a {
-  color: #000;
   font-family: "Roboto", Arial, sans-serif;
+  color: #000;
   margin-bottom: 0;
   text-transform: uppercase;
   font-weight: 700; }
 
-p, li {
-  color: #000;
+p,
+li {
   font-family: "Roboto", Arial, sans-serif;
-  margin-bottom: 0;
   font-size: 0.875rem;
+  color: #000;
+  margin-bottom: 0;
   clear: both; }
 
 /* ------  an invisible line used for keeping space between hr and h1-h6
@@ -286,7 +289,7 @@ div.swiper-button-prev {
   max-height: 3rem; }
 
 .slideTextBox.date {
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   text-align: center;
   left: 0;
   /* reset */

@@ -23,9 +23,9 @@ $primary-font: 'Roboto', Arial, sans-serif;
 $secondary-font: 'Roboto', Arial, sans-serif; /*optional setting */
 
 /* ------ global font sizes ------ */
-$font-size-f1: 1.875rem;
-$font-size-f2: 1.5rem;
-$font-size-f3: 1.125rem; /* .slideTextBox.date, .lineUpProgram */
+$font-size-f1: 1.875rem; /* .ticketButton, .navLink (large screens), .sm-icons (small screens)*/
+$font-size-f2: 1.5rem; /* #menu, .navLink (small screens), .smi-icons (large screens) */
+$font-size-f3: 1.125rem; /* .slideTextBox.date (mobile only), .lineUpProgram */
 $font-size-f4: .875rem; /* p, li */
 
 /* ------ global border ------ */
@@ -34,7 +34,6 @@ $borders: 2px solid black;
 /* ------ general layout styles ------ */
 $full-width-page: 2em; /* margin for pages without navbar */
 $full-width-page-lg: 2em 6em; /* margin for pages without navbar large screens */
-
 
 /* This keeps sections stacked properly, swiper disappears otherwise */
 body, html {
@@ -73,18 +72,19 @@ h6,
 .h5,
 .h6,
 a {
-	color: #000;
 	font-family: $primary-font;
+	color: #000;
 	margin-bottom: 0;
 	text-transform: uppercase;
   font-weight: 700;
 }
 
-p, li {
-	color: #000;
+p,
+li {
 	font-family: $secondary-font;
-	margin-bottom: 0;
 	font-size: $font-size-f4;
+	color: #000;
+	margin-bottom: 0;
 	clear: both;
 }
 
@@ -102,8 +102,6 @@ hr {
 	margin-left: 0;
 	margin-right: 0;
 }
-
-
 
 a {
 	font-family: $primary-font;
@@ -346,7 +344,7 @@ div.swiper-button-prev {
 }
 
 .slideTextBox.date {
-	font-size: $font-size-f4;
+	font-size: $font-size-f3;
 	text-align: center;
 	left: 0; /* reset */
 	z-index: 300;
