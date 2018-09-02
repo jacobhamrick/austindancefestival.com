@@ -32,8 +32,8 @@ $font-size-f4: .875rem; /* p, li */
 $borders: 2px solid black;
 
 /* ------ general layout styles ------ */
-$full-width-page: 2em; /* margin for pages without navbar */
-$full-width-page-lg: 2em 6em; /* margin for pages without navbar large screens */
+$global-margin-sm: 1em 2em 0; /* margin for pages without navbar, small screens */
+$global-margin-lg: 1.5em 3em 0; /* margin for pages with navbar, large screens */
 
 /* This keeps sections stacked properly, swiper disappears otherwise */
 body, html {
@@ -119,6 +119,9 @@ a:hover {
 	text-decoration: underline;
 }
 
+.invertColor:hover {
+		color: $green;
+}
 /* ------ section colors ------ */
 #scheduleSection, #mediaSection {
 	background-color: $yellow;
@@ -153,6 +156,27 @@ a:hover {
 	border-top: $borders;
 }
 
+/* responsive Vimeo styles */
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.embed-responsive-16by9::before {
+	padding-top: 0; /*fixes default spacing issue*/
+}
+
 /* padding for homeSection otherwise leaves white border
 around background color, in other words needs to be edge to edge
 */
@@ -166,12 +190,10 @@ around background color, in other words needs to be edge to edge
 	display: flex;
 	flex-direction: column;
 	min-height: 90vh;
-	margin: 0 30px;
+	margin: $global-margin-sm;
 	padding-bottom: 30px;
 }
-
 .sectionHeader {
-	margin: 15px 30px 0 30px;
 	text-align: left;
 }
 
@@ -400,8 +422,13 @@ span.swiper-pagination-bullet {
 	border: $borders;
 	padding: 20px;
 	text-align: center;
-
 }
+
+.infoBox {
+	text-align: center;
+	margin: auto 0;
+}
+
 .artistCo {
 	font-size: 1rem;
 	font-weight: bold;
@@ -438,10 +465,7 @@ span.swiper-pagination-bullet {
 */
 #ticketsSection {
 	.sectionBody {
-		justify-content: space-around;
-
 		p {
-
 			text-align: center;
 			}
 		}
@@ -527,18 +551,23 @@ span.swiper-pagination-bullet {
 #################### MEDIA SECTION #######################
 ##########################################################
 */
-	#mediaSection {
-		.innerFlex {
-			flex-direction: column;
-			padding: 10px;
-			height: 20em;
-		}
-	}
+.mediaVideoDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: baseline;
+}
 
-	.posterBox {
-		margin:  0 auto 5px 0;
-		float: left;
-		}
+.vimeoVideo {
+  width: 100%;
+	margin-bottom: 1em;
+}
+
+.archiveLink {
+	margin:  0 auto 5px 0;
+	float: left;
+}
 /*
 ##########################################################
 ###################### FAQ SECTION #######################
@@ -576,24 +605,20 @@ iframe#map {
 ################### SPONSOR SECTION ######################
 ##########################################################
 */
-#sponsorSection {
-	.sectionBody {
-		flex-direction: column;
-		flex-wrap: wrap;
-		a {
-			text-align: center;
-		}
+
+.sponsorFlex {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	a {
+		text-align: center;
 	}
-}
-.sponsorImg {
-	max-height: 200px;
-	max-width: 300px;
 }
 
 .sponsorP {
 	text-align: justify;
 	position: relative;
-	padding: 0 30px 30px 30px; /* should match sectionBody padding */
 }
 
 /*
@@ -624,7 +649,7 @@ iframe#map {
 ##########################################################
 */
 section.applyPage {
-	margin: $full-width-page;
+	margin: $global-margin-sm;
 }
 
 span.oi {
@@ -657,7 +682,7 @@ img#applyLogo {
 ##########################################################
 */
 .archiveBody {
-	margin: $full-width-page;
+	margin: $global-margin-sm;
 	min-height: 100%;
 	.archive-line-up {
 		.innerFlex {
@@ -677,7 +702,7 @@ img#applyLogo {
 ###############################################################################
 */
 
-@media (min-width: 769px) and (min-height: 450px) {
+@media (min-width: 829px) and (min-height: 450px) {
 	/*
 	##########################################################
 	#################### BASE STYLES #########################
@@ -695,14 +720,12 @@ img#applyLogo {
 	}
 
 	/* ------ more space ------ */
-	#scheduleSection,
-	#line-upSection,
-	#ticketsSection,
-	#applySection,
-	#mediaSection,
-	#faqSection,
-	#sponsorSection {
+	.sectionBody {
+		margin: $global-margin-lg;
+	}
 
+	.footer {
+		margin-bottom: 15px;
 	}
 
 	/*
@@ -721,6 +744,12 @@ img#applyLogo {
 		margin: 10px 5px 0 10px;
 	}
 
+	.navDate {
+		display:inline-block;
+		width: 100%;
+		margin: 0 10px 10px 10px; /* same as navLink padding */
+	}
+
 	.main-nav {
 		position: fixed;
 		width: 200px;
@@ -731,7 +760,7 @@ img#applyLogo {
 	}
 
 	.navLink {
-		font-size: $font-size-f1;
+		font-size: $font-size-f2;
 		color: #000;
 		width: 200px;
 		margin: 0;
@@ -769,6 +798,7 @@ img#applyLogo {
 		border: none;
 	}
 
+
 	/*
 	##########################################################
 	##################### HOME SECTION #######################
@@ -785,11 +815,7 @@ img#applyLogo {
 		height: 100vh;
 	}
 
-	.navDate {
-		display:inline-block;
-		width: 100%;
-		padding: 0 10px 10px 10px;
-	}
+
 	/*
 	##########################################################
 	################### LINE-UP SECTION ######################
@@ -813,16 +839,10 @@ img#applyLogo {
 	################### TICKET SECTION #######################
 	##########################################################
 	*/
-	#ticketsSection {
-		.innerFlex {
-			justify-content: space-around;
-		}
-	}
-
 	.ticketButton,
 	.ticketInfo,
 	.ticketContact {
-		width: 50%;
+		width: 55%;
 		margin-bottom: 20px;
 	}
 
@@ -844,8 +864,13 @@ img#applyLogo {
 	#################### MEDIA SECTION #######################
 	##########################################################
 	*/
+	.mediaVideoDiv {
+		flex-direction: row;
+	}
 
-
+	.vimeoVideo {
+		width: 49%;
+	}
 	/*
 	##########################################################
 	##################### FAQ SECTION ########################
@@ -870,22 +895,27 @@ img#applyLogo {
 	*/
 	#sponsorSection {
 		.sectionBody {
+			justify-content: space-between;
+		}
+	}
+	.sponsorFlex {
 		min-height: 60vh;
-			padding: 10% 0;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			justify-content: space-around;
-			align-items:baseline;
-				.lastSponsor {
-					align-self: flex-start;
-				}
-				a {
-					margin: 10px;
-				}
+		padding: 5% 0 0 0;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-around;
+		align-items: baseline;
+		a {
+			margin: 10px;
+			}
+		}
 
-	}	}
-		.sponsorImg {
-			max-width: 100%;
+	.sponsorImg {
+		max-width: 100%;
+	}
+
+	.sponsorP {
+		bottom: 0;
 	}
 	/*
 	##########################################################
@@ -909,22 +939,14 @@ img#applyLogo {
 			line-height: 1;
 		}
 
-	/*
-	##########################################################
-	####################### INFO BOX #########################
-	##########################################################
-	*/
-		div.infoBox {
-			text-align: center;
-			margin: auto 0;
-		}
+
 	/*
 	##########################################################
 	##################### APPLY PAGES ########################
 	##########################################################
 	*/
 	section.applyPage {
-		margin: $full-width-page-lg;
+		margin: $global-margin-lg;
 	}
 
 	/*
@@ -933,7 +955,7 @@ img#applyLogo {
 	##########################################################
 	*/
 	.archiveBody {
-		margin: $full-width-page-lg;
+		margin: $global-margin-lg;
 		.archive-line-up {
 			.innerFlex {
 				flex-direction: row;
