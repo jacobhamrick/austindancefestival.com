@@ -579,27 +579,6 @@ span.swiper-pagination-bullet {
 	}
 }
 
-iframe#map {
-	max-width: 100%;
-	height: 350px;
-	display: block;
-	margin: 0 auto;
-}
-/* ------ IFRAMES (embeded media) ------ */
-.embed-container {
-	padding-top: 15px;
-	position: relative;
-	padding-bottom: 56.25%;
-	height: 0;
-}
-/* ------ VIMEO ------ */
-.embed-container iframe, .embed-container object, .embed-container embed {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-}
-
 /*
 ##########################################################
 ################### SPONSOR SECTION ######################
@@ -684,18 +663,33 @@ img#applyLogo {
 .archiveBody {
 	margin: $global-margin-sm;
 	min-height: 100%;
-	.archive-line-up {
-		.innerFlex {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-		}
+}
+
+.archiveHeader {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	.vimeoVideo {
+		flex-grow: 2;
+		margin: 0;
 	}
 }
 
-#archive-big-poster {
-		width: 30%;
+.archive-line-up {
+	.innerFlex {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 }
+
+.archivePoster {
+		flex-grow: 1;
+		img {
+		max-height: 35em;
+		}
+}
+
 /*
 ###############################################################################
 ############################ LARGER SCREENS ###################################
@@ -963,4 +957,8 @@ img#applyLogo {
 			}
 		}
 	}
+
+	.archiveHeader {
+		flex-direction: row;
+}
 }

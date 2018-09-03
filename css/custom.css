@@ -489,26 +489,6 @@ span.swiper-pagination-bullet {
 #faqSection .col-lg-6 {
   padding: 0; }
 
-iframe#map {
-  max-width: 100%;
-  height: 350px;
-  display: block;
-  margin: 0 auto; }
-
-/* ------ IFRAMES (embeded media) ------ */
-.embed-container {
-  padding-top: 15px;
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0; }
-
-/* ------ VIMEO ------ */
-.embed-container iframe, .embed-container object, .embed-container embed {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%; }
-
 /*
 ##########################################################
 ################### SPONSOR SECTION ######################
@@ -582,13 +562,24 @@ img#applyLogo {
 .archiveBody {
   margin: 1em 2em 0;
   min-height: 100%; }
-  .archiveBody .archive-line-up .innerFlex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
 
-#archive-big-poster {
-  width: 30%; }
+.archiveHeader {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap; }
+  .archiveHeader .vimeoVideo {
+    flex-grow: 2;
+    margin: 0; }
+
+.archive-line-up .innerFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.archivePoster {
+  flex-grow: 1; }
+  .archivePoster img {
+    max-height: 35em; }
 
 /*
 ###############################################################################
@@ -782,4 +773,6 @@ img#applyLogo {
     margin: 1.5em 3em 0; }
     .archiveBody .archive-line-up .innerFlex {
       flex-direction: row;
-      justify-content: space-between; } }
+      justify-content: space-between; }
+  .archiveHeader {
+    flex-direction: row; } }
