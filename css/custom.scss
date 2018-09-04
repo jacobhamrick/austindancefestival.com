@@ -707,7 +707,6 @@ img#applyLogo {
 	#menu {
 		display: none;
 	}
-	
 
 	/* ------ accomodate left navigation bar ------ */
 	.main-section {
@@ -830,6 +829,7 @@ img#applyLogo {
 
 	.line-upItem {
 		width: 33%;
+		height: 100%; /* keeps height up line-up column to match size of content */
 	}
 
 	/*

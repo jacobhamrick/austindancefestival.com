@@ -678,7 +678,9 @@ img#applyLogo {
     align-items: flex-start;
     flex-wrap: wrap; }
   .line-upItem {
-    width: 33%; }
+    width: 33%;
+    height: 100%;
+    /* keeps height up line-up column to match size of content */ }
   /*
 	##########################################################
 	################### TICKET SECTION #######################
