@@ -3,7 +3,7 @@ $(document).ready(function() {
   var menuSwitch = function() {
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
-    if (windowWidth < 754 || windowHeight < 450) {
+    if (windowWidth < 829 || windowHeight < 450) {
       $(".main-nav").addClass("smallScreen");
       $(".main-nav").css("display", "none");
       //resets light back to black on window resize
