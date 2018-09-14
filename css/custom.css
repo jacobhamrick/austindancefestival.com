@@ -710,6 +710,8 @@ img#applyLogo {
     flex-direction: row; }
   .vimeoVideo {
     width: 49%; }
+  .scheduleVid {
+    width: 100%; }
   /*
 	##########################################################
 	##################### FAQ SECTION ########################
