@@ -619,7 +619,9 @@ img#applyLogo {
     display: inline-block;
     width: 100%;
     margin: 0 10px 10px 10px;
-    /* same as navLink padding */ }
+    /* same as navLink padding */
+    font-weight: bold;
+    font-size: 1.125rem; }
   .main-nav {
     position: fixed;
     width: 200px;
@@ -647,7 +649,7 @@ img#applyLogo {
   .sm-icons {
     color: #000;
     float: left;
-    font-size: 1.5rem; }
+    font-size: 1.2em; }
   .navLink:hover, .sm-icons:hover {
     text-decoration: none;
     color: #ffcc00; }

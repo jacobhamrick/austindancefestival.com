@@ -742,9 +742,11 @@ img#applyLogo {
 	}
 
 	.navDate {
-		display:inline-block;
+		display: inline-block;
 		width: 100%;
 		margin: 0 10px 10px 10px; /* same as navLink padding */
+		font-weight: bold;
+		font-size: $font-size-f3;
 	}
 
 	.main-nav {
@@ -782,7 +784,7 @@ img#applyLogo {
 	.sm-icons {
 		color: #000;
 		float: left;
-		font-size: $font-size-f2;
+		font-size: 1.2em;
 	}
 
 	.navLink:hover, .sm-icons:hover {
