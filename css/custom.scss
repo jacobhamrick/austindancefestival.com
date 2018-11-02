@@ -17,7 +17,8 @@ $blue: #00d0ff;
 $pink: #ff0099;
 $green: #00dd73;
 $yellow: #ffcc00;
-
+/* ------ theme time ------ */
+$time: .3s;
 /* ------ fonts ------ */
 $primary-font: 'Roboto', Arial, sans-serif;
 $secondary-font: 'Roboto', Arial, sans-serif; /*optional setting */
@@ -35,6 +36,20 @@ $borders: 2px solid black;
 $global-margin-sm: 1em 2em 0; /* margin for pages without navbar, small screens */
 $global-margin-lg: 1.5em 3em 0; /* margin for pages with navbar, large screens */
 
+.shadowMe {
+	-webkit-box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
+	-moz-box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
+	box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
+}
+
+.shadowMe:hover {
+	-webkit-box-shadow: 0px 0px 0px -4px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 0px 0px -4px rgba(0,0,0,1);
+	box-shadow: 0px 0px 0px -4px rgba(0,0,0,1);
+	transform: translateX(2px) translateY(2px);
+  transition: $time;
+}
+
 /* This keeps sections stacked properly, swiper disappears otherwise */
 body, html {
 	height: 100%;
@@ -43,6 +58,7 @@ body, html {
 body {
 	position: relative;
 }
+
 
 /* ------ custom scrollbar ------ */
 ::-webkit-scrollbar {
@@ -203,6 +219,9 @@ div.row {
 	margin: 0;
 }
 
+#newsFlash {
+	display: none;
+}
 /*
 ##########################################################
 #################### NAVIGATION ##########################
@@ -534,11 +553,14 @@ span.swiper-pagination-bullet {
 	text-transform: uppercase;
 	width: 100%;
 	height: 6em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: #fff;
-	border: 20px solid $pink;
+	border: 2px solid $pink;
 	font-size: 1.8rem;
 	margin: 10px auto;
-	padding: 1.8rem;
+	text-align: center;
 	line-height: 1;
 }
 
@@ -546,6 +568,13 @@ span.swiper-pagination-bullet {
 	border-color: $yellow;
 	color: $yellow;
 }
+
+
+.applyBubble, .applyLink:hover .applyBubble {
+	display: none;
+}
+
+
 
 /*
 ##########################################################
@@ -714,6 +743,17 @@ img#applyLogo {
 		display: none;
 	}
 
+	#newsFlash {
+		display: none;
+		display: block;
+		text-transform: uppercase;
+		color: #fff;
+		background: #000;
+		position: fixed;
+		z-index: 2000;
+		margin-left: 200px;
+	}
+
 	/* ------ accomodate left navigation bar ------ */
 	.main-section {
 		margin-left: 200px;
@@ -820,6 +860,11 @@ img#applyLogo {
 		height: 100vh;
 	}
 
+	.vimeoVideo {
+		max-width: 900px;
+		margin-left:auto;
+		margin-right:auto;
+	}
 
 	/*
 	##########################################################
@@ -863,6 +908,57 @@ img#applyLogo {
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.applyLink::after {
+	  content: '';
+		z-index: -1;
+	}
+
+	.applyBubble {
+		background: $pink;
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+	  padding: $font-size-f4;
+		text-align: center;
+			p {
+			font-size: $font-size-f4;
+			line-height: 1;
+			color: #fff;
+			}
+	}
+
+	.bubblePosition {
+		bottom: 0;
+	  height: 6em;
+	  left: 105%;
+	  height: inherit;
+	}
+
+	.applyLink:hover .applyBubble {
+		position: absolute;
+		visibility: visible;
+		display: flex;
+		opacity: 1;
+		width: 45.5%;
+		align-items: center;
+	}
+
+	.applyBubble::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	color: #fff;
+	border: 20px solid transparent;
+	border-right-color: $pink;
+	border-left: 0;
+	margin-top: -20px;
+	margin-left: -20px;
+	transition: opacity $time;
 	}
 
 	/*
@@ -976,5 +1072,5 @@ img#applyLogo {
 
 	.archiveHeader {
 		flex-direction: row;
-}
+	}
 }

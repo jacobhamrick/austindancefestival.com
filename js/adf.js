@@ -2,8 +2,10 @@ $(document).ready(function() {
   //mobile to desktop navigation switch function
   var menuSwitch = function() {
     var windowWidth = $(window).width();
+    console.log(windowWidth);
     var windowHeight = $(window).height();
-    if (windowWidth < 829 || windowHeight < 450) {
+    //14px discrepancy, 829px - 14px = 815px (media query from CSS - 14px)
+    if (windowWidth < 815 || windowHeight < 450) {
       $(".main-nav").addClass("smallScreen");
       $(".main-nav").css("display", "none");
       //resets light back to black on window resize
