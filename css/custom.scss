@@ -943,6 +943,9 @@ img#applyLogo {
 		opacity: 1;
 		width: 45.5%;
 		align-items: center;
+		p {
+			margin: 0 auto;
+		}
 	}
 
 	.applyBubble::after {

@@ -767,6 +767,8 @@ img#applyLogo {
     opacity: 1;
     width: 45.5%;
     align-items: center; }
+    .applyLink:hover .applyBubble p {
+      margin: 0 auto; }
   .applyBubble::after {
     content: '';
     position: absolute;
