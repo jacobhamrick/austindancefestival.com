@@ -744,6 +744,8 @@ img#applyLogo {
     align-items: flex-start;
     flex-wrap: wrap; }
   .line-upItem {
+    display: inline-flex;
+    flex-direction: column;
     width: 33%;
     height: 100%;
     /* keeps height up line-up column to match size of content */ }
