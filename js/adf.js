@@ -38,14 +38,23 @@ $(document).ready(function() {
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev'
   });
+
   //animated scroll link
-  $('a.navLink').click(function(evn) {
-    $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top
-      }, 400); // <-- speed of scroll animation
-      $("#menuIcon").toggleClass('menuLight'); //turns mobile menu light off
-    return false;
-  });
+
+    $('a.navLink').click(function(evn) {
+      if ($(window).width() <= 829) {
+        $('html, body').animate({
+            scrollTop: $( $(this).attr('href') ).offset().top + 2
+          }, 500); // 2 = top border of section body
+          $("#menuIcon").toggleClass('menuLight'); //turns mobile menu light off
+        return false;
+      } else {
+          $('html, body').animate({
+              scrollTop: $( $(this).attr('href') ).offset().top - 24
+            }, 500); // 24 = height of newsFlash, 500 = speed of scroll animation
+            return false;
+          }
+        });
 
   var navChildren = $(".navLink");
       var aArray = [];

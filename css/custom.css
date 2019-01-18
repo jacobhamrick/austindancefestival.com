@@ -180,6 +180,7 @@ around background color, in other words needs to be edge to edge
 div.row {
   margin: 0; }
 
+/* ------ News Flash Text Crawl ------ */
 #newsFlash {
   display: none; }
 
@@ -621,15 +622,40 @@ img#applyLogo {
   /* ------ hide mobile navigation menu ------ */
   #menu {
     display: none; }
+  /* ------ News Flash Text Crawl ------ */
+  @keyframes pull-from-left {
+    from {
+      padding-left: 100%; }
+    to {
+      padding-left: 0; } }
+  @keyframes push-from-right {
+    from {
+      transform: translateX(0%); }
+    to {
+      transform: translateX(-100%); } }
   #newsFlash {
-    display: none;
     display: block;
-    text-transform: uppercase;
-    color: #fff;
-    background: #000;
     position: fixed;
+    left: 200px;
+    overflow: hidden;
     z-index: 2000;
-    margin-left: 200px; }
+    height: 24px;
+    width: calc(100% - 200px);
+    text-transform: uppercase;
+    background: #000; }
+    #newsFlash #newsContainer {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      animation: pull-from-left 40s linear infinite; }
+      #newsFlash #newsContainer p {
+        color: #fff;
+        display: inline-block;
+        white-space: nowrap;
+        animation: push-from-right 40s linear infinite; }
+      #newsFlash #newsContainer p:hover,
+      #newsFlash #newsContainer #newsContainer:hover {
+        animation-play-state: paused; }
   /* ------ accomodate left navigation bar ------ */
   .main-section {
     margin-left: 200px; }
