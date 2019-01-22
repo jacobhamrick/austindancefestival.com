@@ -45,13 +45,13 @@ $(document).ready(function() {
       if ($(window).width() <= 829) {
         $('html, body').animate({
             scrollTop: $( $(this).attr('href') ).offset().top + 2
-          }, 500); // 2 = top border of section body
+          }, 600); // 2 = top border of section body
           $("#menuIcon").toggleClass('menuLight'); //turns mobile menu light off
         return false;
       } else {
           $('html, body').animate({
               scrollTop: $( $(this).attr('href') ).offset().top - 24
-            }, 500); // 24 = height of newsFlash, 500 = speed of scroll animation
+            }, 600); // 24 = height of newsFlash, 500 = speed of scroll animation
             return false;
           }
         });
@@ -63,6 +63,7 @@ $(document).ready(function() {
           var ahref = $(aChild).attr('href');
           aArray.push(ahref);
   }
+
   $(window).scroll(function(){
     var windowPos = $(window).scrollTop() + (100);
     var windowHeight = $(window).height();
@@ -86,5 +87,6 @@ $(document).ready(function() {
           $("a.navLink").addClass("active");
       }
     }
-  });
+  }); // end window scroll function
+
 });
