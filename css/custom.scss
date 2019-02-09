@@ -462,7 +462,6 @@ span.swiper-pagination-bullet {
 		background-color: #fff;
 		color: #000;
 		border: $borders;
-		box-shadow:
 		span {
 			font-size: $font-size-f4;
 		}
@@ -989,6 +988,14 @@ img#applyLogo {
 	################## SCHEDULE SECTION ######################
 	##########################################################
 	*/
+
+	.classCard {
+		a {
+			span {
+				font-size: 1.3vw;
+			}
+		}
+	}
 	.cardSet {
 		display: flex;
 		justify-content: space-between;
