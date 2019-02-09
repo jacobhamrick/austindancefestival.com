@@ -18,7 +18,7 @@ $pink: #ff0099;
 $green: #00dd73;
 $yellow: #ffcc00;
 /* ------ theme time ------ */
-$time: .3s;
+$time: all .3s ease-in-out;
 /* ------ fonts ------ */
 $primary-font: 'Roboto', Arial, sans-serif;
 $secondary-font: 'Roboto', Arial, sans-serif; /*optional setting */
@@ -40,6 +40,7 @@ $global-margin-lg: 1.5em 3em 0; /* margin for pages with navbar, large screens *
 	-webkit-box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
 	-moz-box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
 	box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
+	transition: $time;
 }
 
 .shadowMe:hover {
@@ -47,7 +48,6 @@ $global-margin-lg: 1.5em 3em 0; /* margin for pages with navbar, large screens *
 	-moz-box-shadow: 0px 0px 0px -4px rgba(0,0,0,1);
 	box-shadow: 0px 0px 0px -4px rgba(0,0,0,1);
 	transform: translateX(2px) translateY(2px);
-  transition: $time;
 }
 
 /* This keeps sections stacked properly, swiper disappears otherwise */
@@ -135,8 +135,12 @@ a:hover {
 	text-decoration: underline;
 }
 
+.indentMe {
+	margin-left: 2.5em;
+}
+
 .invertColor:hover {
-		color: $green;
+		color: blue;
 }
 /* ------ section colors ------ */
 #scheduleSection, #mediaSection {
@@ -340,6 +344,20 @@ div.smicons.container {
 	color: $yellow;
 }
 
+/* 3 column layout flex */
+.innerFlex {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	.flexItem {
+		margin: 10px 0;
+		background-color: #fff;
+		border: $borders;
+		padding: 20px;
+		text-align: center;
+	}
+}
+
 /*
 ##########################################################
 ##################### HOME SECTION #######################
@@ -427,26 +445,78 @@ span.swiper-pagination-bullet {
   background-color: rgba(255, 0, 153, 0.5);
 }
 
+/*
+##########################################################
+################### SCHEDULE SECTION #####################
+##########################################################
+*/
+.classCard {
+	a {
+		border-radius: 0;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		flex-direction: row;
+		align-items: center;
+		padding: .5em;
+		background-color: #fff;
+		color: #000;
+		border: $borders;
+		box-shadow:
+		span {
+			font-size: $font-size-f4;
+		}
+	}
+}
+
+.cardRow {
+	.col {
+		padding: 0;
+	}
+}
+
+.card-body {
+	border: $borders;
+	// border-color: $pink;
+	border-radius: 0;
+	border-top: none;
+}
+
+
+.btn-primary:hover {
+	  color: $pink;
+		background-color: $blue;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: $blue;
+    border-color: #000;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus,
+.btn-primary.focus,
+.btn-primary:focus  {
+		box-shadow: none;
+		border-color: $pink;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    background-color: $blue;
+    border: $borders;
+}
+
+
 
 /*
 ##########################################################
 ################### LINE-UP SECTION ######################
 ##########################################################
 */
-#line-upSection {
-	.innerFlex {
-		flex-direction: column;
-		justify-content: space-between;
-	}
-}
-
-.line-upItem {
-	margin: 10px 0;
-	background-color: #fff;
-	border: $borders;
-	padding: 20px;
-	text-align: center;
-}
 
 .infoBox {
 	text-align: center;
@@ -747,6 +817,18 @@ img#applyLogo {
 		display: none;
 	}
 
+	.innerFlex {
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		.flexItem {
+			display: inline-flex;
+			flex-direction: column;
+			width: 32%;
+			height: 100%; /* keeps height up line-up column to match size of content */
+		}
+	}
+
 	/* ------ News Flash Text Crawl ------ */
 	@keyframes pull-from-left {
   from { padding-left: 100% }
@@ -904,24 +986,29 @@ img#applyLogo {
 
 	/*
 	##########################################################
+	################## SCHEDULE SECTION ######################
+	##########################################################
+	*/
+	.cardSet {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		width: calc(100% - 4.3em); /* eyeballed to match indentMe */
+		margin: 0 auto;
+	}
+
+	.cardWrapper {
+		width: 49%;
+	}
+
+
+
+	/*
+	##########################################################
 	################### LINE-UP SECTION ######################
 	##########################################################
 	*/
-	#line-upSection  {
-		.innerFlex {
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: flex-start;
-			flex-wrap: wrap;
-		}
-	}
 
-	.line-upItem {
-		display: inline-flex;
-		flex-direction: column;
-		width: 33%;
-		height: 100%; /* keeps height up line-up column to match size of content */
-	}
 
 	/*
 	##########################################################

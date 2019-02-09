@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  $('.btn.btn-primary').click(function(){
+    $(this).find('#classIcon').toggleClass('fa-plus fa-minus')
+  });
+
   //mobile to desktop navigation switch function
   var menuSwitch = function() {
     var windowWidth = $(window).width();
@@ -10,12 +14,12 @@ $(document).ready(function() {
       $(".main-nav").css("display", "none");
       //resets light back to black on window resize
       $("#menuIcon").removeClass('menuLight');
-      $(".navLink").click(function() {
+      $(".scrollLink").click(function() {
         $(".smallScreen").hide();
       });
     } else {
       $(".main-nav").removeClass("smallScreen");
-      //keeps navlinks from disappearing on window resize
+      //keeps scrollLinks from disappearing on window resize
       $(".main-nav").css("display", "block");
     };
   }
@@ -27,8 +31,8 @@ $(document).ready(function() {
   menuSwitch();
   //mobile menu activiation
   $("#menu").click(function(){
-  $(".main-nav").toggle();
-  $("#menuIcon").toggleClass('menuLight');
+    $(".main-nav").toggle();
+    $("#menuIcon").toggleClass('menuLight');
   });
   //swiper init
   var mySwiper = new Swiper ('.swiper-container', {
@@ -41,22 +45,26 @@ $(document).ready(function() {
 
   //animated scroll link
 
-    $('a.navLink').click(function(evn) {
+    $('.scrollLink').click(function(evn) {
+      evn.preventDefault();
+      const mobileOffset = 2;
+      const largeOffset = -24;
       if ($(window).width() <= 829) {
         $('html, body').animate({
-            scrollTop: $( $(this).attr('href') ).offset().top + 2
+            scrollTop: $( $(this).attr('href') ).offset().top + mobileOffset
           }, 600); // 2 = top border of section body
+          console.log(offset().top);
           $("#menuIcon").toggleClass('menuLight'); //turns mobile menu light off
         return false;
       } else {
           $('html, body').animate({
-              scrollTop: $( $(this).attr('href') ).offset().top - 24
-            }, 600); // 24 = height of newsFlash, 500 = speed of scroll animation
+              scrollTop: $( $(this).attr('href') ).offset().top + largeOffset
+            }, 300, 'linear'); // 24 = height of newsFlash
             return false;
           }
         });
 
-  var navChildren = $(".navLink");
+  var navChildren = $(".scrollLink");
       var aArray = [];
       for (var i=0; i < navChildren.length; i++) {
           var aChild = navChildren[i];
@@ -73,7 +81,7 @@ $(document).ready(function() {
         var theID = aArray[i];
         var divPos = $(theID).offset().top;
         var divHeight = $(theID).height();
-        //change active class for navLinks when scrolling thru sections
+        //change active class for scrollLinks when scrolling thru sections
         if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
             $("a[href='" + theID + "']").addClass("active");
         } else {
@@ -81,10 +89,10 @@ $(document).ready(function() {
         }
     }
     if(windowHeight == docHeight) {
-      if (!$("a.navLink").hasClass("active")) {
+      if (!$("a.scrollLink").hasClass("active")) {
           var navActiveCurrent = $(".active").attr("href");
           $("a[href='" + navActiveCurrent + "']").removeClass("active");
-          $("a.navLink").addClass("active");
+          $("a.scrollLink").addClass("active");
       }
     }
   }); // end window scroll function

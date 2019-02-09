@@ -25,14 +25,14 @@
 .shadowMe {
   -webkit-box-shadow: 6px 6px 0px -2px black;
   -moz-box-shadow: 6px 6px 0px -2px black;
-  box-shadow: 6px 6px 0px -2px black; }
+  box-shadow: 6px 6px 0px -2px black;
+  transition: all 0.3s ease-in-out; }
 
 .shadowMe:hover {
   -webkit-box-shadow: 0px 0px 0px -4px black;
   -moz-box-shadow: 0px 0px 0px -4px black;
   box-shadow: 0px 0px 0px -4px black;
-  transform: translateX(2px) translateY(2px);
-  transition: 0.3s; }
+  transform: translateX(2px) translateY(2px); }
 
 /* This keeps sections stacked properly, swiper disappears otherwise */
 body, html {
@@ -107,8 +107,11 @@ a:hover {
 .underline {
   text-decoration: underline; }
 
+.indentMe {
+  margin-left: 2.5em; }
+
 .invertColor:hover {
-  color: #00dd73; }
+  color: blue; }
 
 /* ------ section colors ------ */
 #scheduleSection, #mediaSection {
@@ -286,6 +289,18 @@ div.smicons.container {
 .menuLight {
   color: #ffcc00; }
 
+/* 3 column layout flex */
+.innerFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .innerFlex .flexItem {
+    margin: 10px 0;
+    background-color: #fff;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center; }
+
 /*
 ##########################################################
 ##################### HOME SECTION #######################
@@ -364,20 +379,59 @@ span.swiper-pagination-bullet {
 
 /*
 ##########################################################
+################### SCHEDULE SECTION #####################
+##########################################################
+*/
+.classCard a {
+  border-radius: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: .5em;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid black;
+  box-shadow: span;
+    box-shadow-font-size: 0.875rem; }
+
+.cardRow .col {
+  padding: 0; }
+
+.card-body {
+  border: 2px solid black;
+  border-radius: 0;
+  border-top: none; }
+
+.btn-primary:hover {
+  color: #ff0099;
+  background-color: #00d0ff; }
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #00d0ff;
+  border-color: #000; }
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus,
+.btn-primary.focus,
+.btn-primary:focus {
+  box-shadow: none;
+  border-color: #ff0099; }
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  background-color: #00d0ff;
+  border: 2px solid black; }
+
+/*
+##########################################################
 ################### LINE-UP SECTION ######################
 ##########################################################
 */
-#line-upSection .innerFlex {
-  flex-direction: column;
-  justify-content: space-between; }
-
-.line-upItem {
-  margin: 10px 0;
-  background-color: #fff;
-  border: 2px solid black;
-  padding: 20px;
-  text-align: center; }
-
 .infoBox {
   text-align: center;
   margin: auto 0; }
@@ -622,6 +676,16 @@ img#applyLogo {
   /* ------ hide mobile navigation menu ------ */
   #menu {
     display: none; }
+  .innerFlex {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap; }
+    .innerFlex .flexItem {
+      display: inline-flex;
+      flex-direction: column;
+      width: 32%;
+      height: 100%;
+      /* keeps height up line-up column to match size of content */ }
   /* ------ News Flash Text Crawl ------ */
   @keyframes pull-from-left {
     from {
@@ -735,20 +799,23 @@ img#applyLogo {
     margin-right: auto; }
   /*
 	##########################################################
+	################## SCHEDULE SECTION ######################
+	##########################################################
+	*/
+  .cardSet {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: calc(100% - 4.3em);
+    /* eyeballed to match indentMe */
+    margin: 0 auto; }
+  .cardWrapper {
+    width: 49%; }
+  /*
+	##########################################################
 	################### LINE-UP SECTION ######################
 	##########################################################
 	*/
-  #line-upSection .innerFlex {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap; }
-  .line-upItem {
-    display: inline-flex;
-    flex-direction: column;
-    width: 33%;
-    height: 100%;
-    /* keeps height up line-up column to match size of content */ }
   /*
 	##########################################################
 	################### TICKET SECTION #######################
@@ -810,7 +877,7 @@ img#applyLogo {
     border-left: 0;
     margin-top: -20px;
     margin-left: -20px;
-    transition: opacity 0.3s; }
+    transition: opacity all 0.3s ease-in-out; }
   /*
 	##########################################################
 	#################### MEDIA SECTION #######################
