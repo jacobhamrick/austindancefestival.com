@@ -17,6 +17,8 @@ $blue: #00d0ff;
 $pink: #ff0099;
 $green: #00dd73;
 $yellow: #ffcc00;
+
+
 /* ------ theme time ------ */
 $time: all .3s ease-in-out;
 /* ------ fonts ------ */
@@ -227,6 +229,23 @@ div.row {
 /* ------ News Flash Text Crawl ------ */
 #newsFlash {
 	display: none;
+}
+
+
+.blue {
+	color: #00d0ff;
+}
+
+.pink {
+	color: #ff0099;
+}
+
+.green {
+	color: #00dd73;
+}
+
+.yellow {
+	color: #ffcc00;
 }
 
 
@@ -539,7 +558,7 @@ span.swiper-pagination-bullet {
 	font-size: $font-size-f3;
 	font-weight: bold;
 	text-transform: uppercase;
-	color: #000;
+
 }
 
 /*coming soon div*/
@@ -583,7 +602,7 @@ span.swiper-pagination-bullet {
 	background-color: #fff;
 	font-size: 2rem;
 	height: 100%;
-	padding: 20px;
+	padding: 40px;
 }
 
 .ticketButton:hover {
@@ -853,17 +872,17 @@ img#applyLogo {
 			display: flex;
 			align-items: center;
 			height: 100%;
-			animation: pull-from-left 40s linear infinite;
+			-webkit-animation: pull-from-left 51s linear infinite;
 
 			p {
 				color: #fff;
 				display: inline-block;
 				white-space: nowrap;
-				animation: push-from-right 40s linear infinite;
+				-webkit-animation: push-from-right 51s linear infinite;
 			}
 			p:hover,
 			#newsContainer:hover {
-				animation-play-state: paused;
+				-webkit-animation-play-state: paused;
 			}
 		}
 	}
@@ -946,7 +965,7 @@ img#applyLogo {
 	.sm-icons {
 		color: #000;
 		float: left;
-		font-size: 1.2em;
+		font-size: $font-size-f2;
 	}
 
 	.navLink:hover, .sm-icons:hover {
@@ -1026,7 +1045,7 @@ img#applyLogo {
 	.ticketInfo,
 	.ticketContact {
 		width: 55%;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 	}
 
 	/*
