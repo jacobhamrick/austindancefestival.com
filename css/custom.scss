@@ -233,19 +233,23 @@ div.row {
 
 
 .blue {
-	color: #00d0ff;
+	color: $blue;
 }
 
 .pink {
-	color: #ff0099;
+	color: $pink;
 }
 
 .green {
-	color: #00dd73;
+	color: $green;
 }
 
 .yellow {
-	color: #ffcc00;
+	color: $yellow;
+}
+
+.hover-blue:hover {
+	color: $blue;
 }
 
 
