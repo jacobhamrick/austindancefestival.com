@@ -725,12 +725,12 @@ img#applyLogo {
       display: flex;
       align-items: center;
       height: 100%;
-      -webkit-animation: pull-from-left 51s linear infinite; }
+      -webkit-animation: pull-from-left 52s linear infinite; }
       #newsFlash #newsContainer p {
         color: #fff;
         display: inline-block;
         white-space: nowrap;
-        -webkit-animation: push-from-right 51s linear infinite; }
+        -webkit-animation: push-from-right 52s linear infinite; }
       #newsFlash #newsContainer p:hover,
       #newsFlash #newsContainer #newsContainer:hover {
         -webkit-animation-play-state: paused; }
