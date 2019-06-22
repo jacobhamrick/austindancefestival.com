@@ -52,6 +52,15 @@ $global-margin-lg: 1.5em 3em 0; /* margin for pages with navbar, large screens *
 	transform: translateX(2px) translateY(2px);
 }
 
+.shadowMeOnly {
+	-webkit-box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
+	-moz-box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
+	box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
+	transition: $time;
+}
+
+
+
 /* This keeps sections stacked properly, swiper disappears otherwise */
 body, html {
 	height: 100%;
@@ -165,6 +174,9 @@ a:hover {
 	background-color: $pink;
 }
 
+#staffSection {
+	background-color: #0028bc;
+}
 
 /* ------ section layout/styles ------ */
 
@@ -174,7 +186,8 @@ a:hover {
 #applySection,
 #mediaSection,
 #faqSection,
-#sponsorSection {
+#sponsorSection,
+#staffSection {
 	border-top: $borders;
 }
 
@@ -687,7 +700,7 @@ span.swiper-pagination-bullet {
 
 .vimeoVideo {
   width: 100%;
-	margin-bottom: 1em;
+	margin-bottom: 2.5em;
 }
 
 .archiveLink {
@@ -729,6 +742,39 @@ span.swiper-pagination-bullet {
 
 .sponsorImg {
 	width: 100%;
+}
+
+/*
+##########################################################
+##################### STAFF SECTION ######################
+##########################################################
+*/
+
+#staffSection {
+	p,
+	a {
+		font-size: $font-size-f4;
+		line-height: $font-size-f3;
+	}
+	p,
+	h2,
+	h6 {
+		color: #fff;
+	}
+	hr {
+		border-color: #fff;
+	}
+	a {
+		color: $yellow;
+		display: inline;
+		transition: $time;
+		margin-bottom: 0;
+		width: 0;
+	}
+	a:hover {
+		color: $pink;
+		transition: $time;
+	}
 }
 
 /*

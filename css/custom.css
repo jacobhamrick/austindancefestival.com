@@ -34,6 +34,12 @@
   box-shadow: 0px 0px 0px -4px black;
   transform: translateX(2px) translateY(2px); }
 
+.shadowMeOnly {
+  -webkit-box-shadow: 6px 6px 0px -2px black;
+  -moz-box-shadow: 6px 6px 0px -2px black;
+  box-shadow: 6px 6px 0px -2px black;
+  transition: all 0.3s ease-in-out; }
+
 /* This keeps sections stacked properly, swiper disappears otherwise */
 body, html {
   height: 100%; }
@@ -129,6 +135,9 @@ a:hover {
 #line-upSection {
   background-color: #ff0099; }
 
+#staffSection {
+  background-color: #0028bc; }
+
 /* ------ section layout/styles ------ */
 #scheduleSection,
 #line-upSection,
@@ -136,7 +145,8 @@ a:hover {
 #applySection,
 #mediaSection,
 #faqSection,
-#sponsorSection {
+#sponsorSection,
+#staffSection {
   border-top: 2px solid black; }
 
 /* responsive Vimeo styles */
@@ -566,7 +576,7 @@ span.swiper-pagination-bullet {
 
 .vimeoVideo {
   width: 100%;
-  margin-bottom: 1em; }
+  margin-bottom: 2.5em; }
 
 .archiveLink {
   margin: 0 auto 5px 0;
@@ -600,6 +610,35 @@ span.swiper-pagination-bullet {
 
 .sponsorImg {
   width: 100%; }
+
+/*
+##########################################################
+##################### STAFF SECTION ######################
+##########################################################
+*/
+#staffSection p,
+#staffSection a {
+  font-size: 0.875rem;
+  line-height: 1.125rem; }
+
+#staffSection p,
+#staffSection h2,
+#staffSection h6 {
+  color: #fff; }
+
+#staffSection hr {
+  border-color: #fff; }
+
+#staffSection a {
+  color: #ffcc00;
+  display: inline;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 0;
+  width: 0; }
+
+#staffSection a:hover {
+  color: #ff0099;
+  transition: all 0.3s ease-in-out; }
 
 /*
 ##########################################################

@@ -53,7 +53,6 @@ $(document).ready(function() {
         $('html, body').animate({
             scrollTop: $( $(this).attr('href') ).offset().top + mobileOffset
           }, 600); // 2 = top border of section body
-          console.log(offset().top);
           $("#menuIcon").toggleClass('menuLight'); //turns mobile menu light off
         return false;
       } else {
