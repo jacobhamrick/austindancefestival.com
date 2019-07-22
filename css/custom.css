@@ -1,27 +1,72 @@
-/* ---------------------------- MOBILE FIRST -------------------------------- */
-/*
-###############################################################################
-############################# SMALL SCREENS ###################################
-###############################################################################
-*/
-/*
-##########################################################
-#################### BASE STYLES #########################
-##########################################################
-*/
-/* ------ theme colors ------ */
-/* ------ theme time ------ */
-/* ------ fonts ------ */
+/* --------------------------------- INDEX ---------------------------------- */
+/* ----------------------------- BASE STYLES -------------------------------- */
+body, html {
+  height: 100%;
+  /* keeps sections stacked, swiper disappears otherwise */ }
+
+body {
+  position: relative; }
+
+.invertColor:hover {
+  color: blue; }
+
 /*optional setting */
-/* ------ global font sizes ------ */
 /* .ticketButton, .navLink (large screens), .sm-icons (small screens)*/
 /* #menu, .navLink (small screens), .smi-icons (large screens) */
 /* .slideTextBox.date (mobile only), .lineUpProgram */
 /* p, li */
-/* ------ global border ------ */
-/* ------ general layout styles ------ */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Roboto", Arial, sans-serif;
+  color: #000;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 700; }
+
+p, li, a {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 0.875rem;
+  color: #000;
+  margin-bottom: 0; }
+
+.underline {
+  text-decoration: underline; }
+
+a {
+  font-family: "Roboto", Arial, sans-serif;
+  color: #ff0099;
+  cursor: pointer;
+  font-weight: bold; }
+
+a:hover {
+  color: #ffcc00;
+  text-decoration: none; }
+
+.fa-circle {
+  font-size: 14px; }
+
+hr {
+  border-top: 2px solid black;
+  /* needs 0 margin because flexbox */
+  margin-left: 0;
+  margin-right: 0; }
+
+.indentMe {
+  margin-left: 2.5em; }
+
 /* margin for pages without navbar, small screens */
 /* margin for pages with navbar, large screens */
+::-webkit-scrollbar {
+  display: block;
+  -webkit-appearance: none;
+  width: 0.875rem;
+  /* harmoniously matches font-size */
+  border-left: 2px solid black; }
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: 2px solid black; }
+
 .shadowMe {
   -webkit-box-shadow: 6px 6px 0px -2px black;
   -moz-box-shadow: 6px 6px 0px -2px black;
@@ -34,58 +79,12 @@
   box-shadow: 0px 0px 0px -4px black;
   transform: translateX(2px) translateY(2px); }
 
+/* For elements that are not buttons but need shadows */
 .shadowMeOnly {
   -webkit-box-shadow: 6px 6px 0px -2px black;
   -moz-box-shadow: 6px 6px 0px -2px black;
   box-shadow: 6px 6px 0px -2px black;
   transition: all 0.3s ease-in-out; }
-
-/* This keeps sections stacked properly, swiper disappears otherwise */
-body, html {
-  height: 100%; }
-
-body {
-  position: relative; }
-
-/* ------ custom scrollbar ------ */
-::-webkit-scrollbar {
-  display: block;
-  -webkit-appearance: none;
-  width: 0.875rem;
-  /* harmoniously matches font-size */
-  border-left: 2px solid black; }
-
-::-webkit-scrollbar-thumb {
-  background-color: black;
-  outline: 2px solid black; }
-
-/* ------ body text styles ------ */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-a {
-  font-family: "Roboto", Arial, sans-serif;
-  color: #000;
-  margin-bottom: 0;
-  text-transform: uppercase;
-  font-weight: 700; }
-
-p,
-li {
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 0.875rem;
-  color: #000;
-  margin-bottom: 0;
-  clear: both; }
 
 /* ------  an invisible line used for keeping space between hr and h1-h6
 consistent ------ */
@@ -93,31 +92,8 @@ consistent ------ */
   border-top: none;
   margin-top: 0; }
 
-/* ------ horizontal line ------ */
-hr {
-  border-top: 2px solid black;
-  /* needs 0 margin because flexbox */
-  margin-left: 0;
-  margin-right: 0; }
-
-a {
-  font-family: "Roboto", Arial, sans-serif;
-  color: #ff0099;
-  cursor: pointer;
-  font-weight: bold; }
-
-a:hover {
-  color: #ffcc00;
-  text-decoration: none; }
-
-.underline {
-  text-decoration: underline; }
-
-.indentMe {
-  margin-left: 2.5em; }
-
-.invertColor:hover {
-  color: blue; }
+.vimeoVideo {
+  width: 100%; }
 
 /* ------ section colors ------ */
 #scheduleSection, #mediaSection {
@@ -194,7 +170,7 @@ div.row {
   margin: 0; }
 
 /* ------ News Flash Text Crawl ------ */
-#newsFlash {
+#marquee {
   display: none; }
 
 .blue {
@@ -212,12 +188,13 @@ div.row {
 .hover-blue:hover {
   color: #00d0ff; }
 
+/* ----------------------------- SMALL SCREENS ------------------------------ */
 /*
 ##########################################################
 #################### NAVIGATION ##########################
 ##########################################################
 */
-#menu {
+#menuButton {
   font-family: "Roboto", Arial, sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
@@ -240,37 +217,44 @@ div.row {
 #menuText:hover {
   color: #00d0ff; }
 
-/* ------ prevents glitchy nav, keeps invisible during load instead of load, see
-then hide ------ */
-.main-nav,
-.main-nav.smallScreen {
-  display: none; }
+#menuIcon {
+  color: #000;
+  font-size: 18px; }
 
-.main-nav.smallScreen {
-  z-index: 300;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.8); }
+.menuLight {
+  color: #ffcc00; }
 
-.navWrap {
+nav,
+nav.smallScreen {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
-  padding: 30px 30px 65px 30px;
-  /* ------ bottom padding should match mobile menu ------*/
+  align-items: stretch;
   width: 100%;
-  height: 100%; }
+  height: calc(100% - 65px);
+  top: 0;
+  bottom: 65px;
+  padding: 1rem;
+  z-index: 300;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8); }
+
+nav {
+  display: none; }
 
 .navLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100px;
+  width: 45%;
+  margin: .5rem;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 1.5rem;
   color: #fff;
   text-transform: uppercase;
   text-align: center;
-  padding: 20px;
   border: 3px solid #fff; }
 
 .navLogo {
@@ -280,21 +264,17 @@ then hide ------ */
 .navDate {
   display: none; }
 
-div.smicons.container {
-  text-align: center;
-  vertical-align: middle; }
+div.sm-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
 
-.smicons {
-  display: inline-block;
-  height: 60px;
-  bottom: 40px;
-  padding: 0; }
-
-.sm-icons {
+.sm-icon {
   font-size: 1.875rem;
+  width: auto;
   color: #fff;
   display: inline-block;
-  padding-right: 10px; }
+  padding: 10px; }
 
 .navLink:hover,
 .sm-icons:hover,
@@ -304,15 +284,6 @@ div.smicons.container {
 .navLink.active {
   color: #ffcc00;
   border-color: #ffcc00; }
-
-/* ------ menuIcon initial styles (black) ------ */
-.fa-circle {
-  color: #000;
-  padding-top: 5px;
-  /* ------ eyballed to match size of menu text ------ */ }
-
-.menuLight {
-  color: #ffcc00; }
 
 /* 3 column layout flex */
 .innerFlex {
@@ -332,12 +303,11 @@ div.smicons.container {
 ##########################################################
 */
 #homeLogo {
-  width: 60%;
+  width: 100%;
   position: relative;
-  left: 50%;
-  top: 44%;
-  margin-left: -30%;
-  /* half of width */ }
+  top: 33%;
+  margin: auto;
+  padding: 4rem; }
 
 #logoColor {
   background-color: #ff0099; }
@@ -364,7 +334,7 @@ div.swiper-button-prev {
   padding: 5px;
   bottom: 80px;
   position: absolute;
-  max-width: 100%;
+  width: 100%;
   min-height: 1.5rem;
   max-height: 3rem; }
 
@@ -451,6 +421,9 @@ span.swiper-pagination-bullet {
 .show > .btn-primary.dropdown-toggle {
   background-color: #00d0ff;
   border: 2px solid black; }
+
+.scheduleVid {
+  margin-bottom: 0; }
 
 /*
 ##########################################################
@@ -567,6 +540,9 @@ span.swiper-pagination-bullet {
 #################### MEDIA SECTION #######################
 ##########################################################
 */
+#mediaSection h4 {
+  margin: 0 auto 1rem auto; }
+
 .mediaVideoDiv {
   display: flex;
   flex-direction: column;
@@ -574,9 +550,8 @@ span.swiper-pagination-bullet {
   flex-wrap: wrap;
   align-items: baseline; }
 
-.vimeoVideo {
-  width: 100%;
-  margin-bottom: 2.5em; }
+.artistVid {
+  margin-bottom: 2.5rem; }
 
 .archiveLink {
   margin: 0 auto 5px 0;
@@ -727,7 +702,7 @@ img#applyLogo {
 	##########################################################
 	*/
   /* ------ hide mobile navigation menu ------ */
-  #menu {
+  #menuButton {
     display: none; }
   .innerFlex {
     flex-direction: row;
@@ -750,7 +725,7 @@ img#applyLogo {
       transform: translateX(0%); }
     to {
       transform: translateX(-100%); } }
-  #newsFlash {
+  #marquee {
     display: block;
     position: fixed;
     left: 200px;
@@ -760,25 +735,25 @@ img#applyLogo {
     width: calc(100% - 200px);
     text-transform: uppercase;
     background: #000; }
-    #newsFlash #newsContainer {
+    #marquee #newsContainer {
       display: flex;
       align-items: center;
       height: 100%;
       -webkit-animation: pull-from-left 52s linear infinite; }
-      #newsFlash #newsContainer p {
+      #marquee #newsContainer p {
         color: #fff;
         display: inline-block;
         white-space: nowrap;
         -webkit-animation: push-from-right 52s linear infinite; }
-      #newsFlash #newsContainer p:hover,
-      #newsFlash #newsContainer #newsContainer:hover {
+      #marquee #newsContainer p:hover,
+      #marquee #newsContainer #newsContainer:hover {
         -webkit-animation-play-state: paused; }
   /* ------ accomodate left navigation bar ------ */
   .main-section {
     margin-left: 200px; }
   /* ------ more space ------ */
   .sectionBody {
-    margin: 1.5em 3em 0; }
+    margin: 1.5rem 3rem 0; }
   .footer {
     margin-bottom: 15px; }
   /*
@@ -800,7 +775,7 @@ img#applyLogo {
     /* same as navLink padding */
     font-weight: bold;
     font-size: 1.125rem; }
-  .main-nav {
+  nav {
     position: fixed;
     width: 200px;
     height: 100%;
@@ -810,11 +785,12 @@ img#applyLogo {
   .navLink {
     font-size: 1.875rem;
     color: #000;
-    width: 200px;
+    width: 100%;
+    height: 50px;
     margin: 0;
     text-align: left;
     border: none;
-    padding: 0 10px 10px 10px;
+    padding: 0 0 10px 10px;
     text-transform: uppercase;
     line-height: 1; }
   .slideTextBox.date {
@@ -824,7 +800,7 @@ img#applyLogo {
   .smicons.container {
     display: inline-block;
     padding: 0 10px; }
-  .sm-icons {
+  .sm-icon {
     color: #000;
     float: left;
     font-size: 1.5rem; }
@@ -840,10 +816,8 @@ img#applyLogo {
 	##########################################################
 	*/
   #homeLogo {
-    max-width: 900px;
-    left: 42%;
-    top: 25%;
-    margin-left: -20%; }
+    top: 16%;
+    margin: 0 auto; }
   #homeSection {
     height: 100vh; }
   .vimeoVideo {
@@ -985,9 +959,11 @@ img#applyLogo {
     flex-direction: row;
     flex-wrap: wrap;
     height: 5em;
-    width: 100%;
+    left: 200px;
     padding: 30px;
-    margin-bottom: 5px; }
+    width: auto;
+    margin-bottom: 5px;
+    margin-left: 200px; }
   .footThing {
     padding: 5px;
     text-align: center;
@@ -1000,14 +976,14 @@ img#applyLogo {
 	##########################################################
 	*/
   section.applyPage {
-    margin: 1.5em 3em 0; }
+    margin: 1.5rem 3rem 0; }
   /*
 	##########################################################
 	#################### ARCHIVE PAGES #######################
 	##########################################################
 	*/
   .archiveBody {
-    margin: 1.5em 3em 0; }
+    margin: 1.5rem 3rem 0; }
     .archiveBody .archive-line-up .innerFlex {
       flex-direction: row;
       justify-content: space-between; }

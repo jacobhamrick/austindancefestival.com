@@ -1,43 +1,120 @@
-/* ---------------------------- MOBILE FIRST -------------------------------- */
+// BUILT MOBILE FIRST
 
-/*
-###############################################################################
-############################# SMALL SCREENS ###################################
-###############################################################################
-*/
+/* --------------------------------- INDEX ---------------------------------- */
 
-/*
-##########################################################
-#################### BASE STYLES #########################
-##########################################################
-*/
 
-/* ------ theme colors ------ */
+/* ----------------------------- BASE STYLES -------------------------------- */
+
+// --------------------- BODY
+body, html {
+	height: 100%; /* keeps sections stacked, swiper disappears otherwise */
+}
+
+body {
+	position: relative;
+}
+
+// --------------------- THEME COLORS
 $blue: #00d0ff;
 $pink: #ff0099;
 $green: #00dd73;
 $yellow: #ffcc00;
 
+.invertColor:hover {
+		color: blue;
+}
 
-/* ------ theme time ------ */
-$time: all .3s ease-in-out;
-/* ------ fonts ------ */
+
+// --------------------- TYPOGRAPHY
+// GENERAL STYLES
 $primary-font: 'Roboto', Arial, sans-serif;
 $secondary-font: 'Roboto', Arial, sans-serif; /*optional setting */
-
-/* ------ global font sizes ------ */
 $font-size-f1: 1.875rem; /* .ticketButton, .navLink (large screens), .sm-icons (small screens)*/
 $font-size-f2: 1.5rem; /* #menu, .navLink (small screens), .smi-icons (large screens) */
 $font-size-f3: 1.125rem; /* .slideTextBox.date (mobile only), .lineUpProgram */
 $font-size-f4: .875rem; /* p, li */
 
-/* ------ global border ------ */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $primary-font;
+	color: #000;
+	margin-bottom: 0;
+	text-transform: uppercase;
+  font-weight: 700;
+}
+
+p, li, a {
+	font-family: $secondary-font;
+	font-size: $font-size-f4;
+	color: #000;
+	margin-bottom: 0;
+}
+
+// FONT DECORATIONS
+.underline {
+	text-decoration: underline;
+}
+
+// LINK STYLES
+a {
+	font-family: $primary-font;
+	color: $pink;
+	cursor: pointer;
+  font-weight: bold;
+}
+
+a:hover {
+	color: $yellow;
+	text-decoration: none;
+}
+
+// ICONS
+// CIRCLE ICON IN BODY
+.fa-circle {
+		font-size: 14px;
+}
+
+// --------------------- BORDERS AND LINES
+
+// BORDERS
 $borders: 2px solid black;
 
-/* ------ general layout styles ------ */
-$global-margin-sm: 1em 2em 0; /* margin for pages without navbar, small screens */
-$global-margin-lg: 1.5em 3em 0; /* margin for pages with navbar, large screens */
+// HORIZONTAL LINES
+hr {
+	border-top: $borders;
+	/* needs 0 margin because flexbox */
+	margin-left: 0;
+	margin-right: 0;
+}
 
+
+
+// MISC
+.indentMe {
+	margin-left: 2.5em;
+}
+
+// --------------------- ANIMATION TIME
+$time: all .3s ease-in-out;
+
+// -------------------- PAGE MARGINS
+$global-margin-sm: 1em 2em 0; /* margin for pages without navbar, small screens */
+$global-margin-lg: 1.5rem 3rem 0; /* margin for pages with navbar, large screens */
+
+// -------------------- SCROLLBAR
+::-webkit-scrollbar {
+	display: block;
+  -webkit-appearance: none;
+  width: $font-size-f4; /* harmoniously matches font-size */
+	border-left: $borders;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: $borders;
+}
+
+// -------------------- SHADOWS
 .shadowMe {
 	-webkit-box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
 	-moz-box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
@@ -52,6 +129,7 @@ $global-margin-lg: 1.5em 3em 0; /* margin for pages with navbar, large screens *
 	transform: translateX(2px) translateY(2px);
 }
 
+/* For elements that are not buttons but need shadows */
 .shadowMeOnly {
 	-webkit-box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
 	-moz-box-shadow: 6px 6px 0px -2px rgba(0,0,0,1);
@@ -60,61 +138,6 @@ $global-margin-lg: 1.5em 3em 0; /* margin for pages with navbar, large screens *
 }
 
 
-
-/* This keeps sections stacked properly, swiper disappears otherwise */
-body, html {
-	height: 100%;
-}
-
-body {
-	position: relative;
-}
-
-
-/* ------ custom scrollbar ------ */
-::-webkit-scrollbar {
-	display: block;
-  -webkit-appearance: none;
-  width: $font-size-f4; /* harmoniously matches font-size */
-	border-left: $borders;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: black;
-  outline: $borders;
-}
-
-/* ------ body text styles ------ */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-a {
-	font-family: $primary-font;
-	color: #000;
-	margin-bottom: 0;
-	text-transform: uppercase;
-  font-weight: 700;
-}
-
-p,
-li {
-	font-family: $secondary-font;
-	font-size: $font-size-f4;
-	color: #000;
-	margin-bottom: 0;
-	clear: both;
-}
-
 /* ------  an invisible line used for keeping space between hr and h1-h6
 consistent ------ */
 .text-spacer {
@@ -122,37 +145,11 @@ consistent ------ */
 	margin-top: 0;
 }
 
-/* ------ horizontal line ------ */
-hr {
-	border-top: $borders;
-	/* needs 0 margin because flexbox */
-	margin-left: 0;
-	margin-right: 0;
+.vimeoVideo {
+  width: 100%;
 }
 
-a {
-	font-family: $primary-font;
-	color: $pink;
-	cursor: pointer;
-  font-weight: bold;
-}
 
-a:hover {
-	color: $yellow;
-	text-decoration: none;
-}
-
-.underline {
-	text-decoration: underline;
-}
-
-.indentMe {
-	margin-left: 2.5em;
-}
-
-.invertColor:hover {
-		color: blue;
-}
 /* ------ section colors ------ */
 #scheduleSection, #mediaSection {
 	background-color: $yellow;
@@ -240,7 +237,7 @@ div.row {
 
 
 /* ------ News Flash Text Crawl ------ */
-#newsFlash {
+#marquee {
 	display: none;
 }
 
@@ -265,13 +262,14 @@ div.row {
 	color: $blue;
 }
 
+/* ----------------------------- SMALL SCREENS ------------------------------ */
 
 /*
 ##########################################################
 #################### NAVIGATION ##########################
 ##########################################################
 */
-#menu {
+#menuButton{
 	font-family: $primary-font;
 	font-size: $font-size-f2;
 	font-weight: bold;
@@ -297,39 +295,54 @@ div.row {
 	color: $blue;
 }
 
-/* ------ prevents glitchy nav, keeps invisible during load instead of load, see
-then hide ------ */
-.main-nav,
-.main-nav.smallScreen {
-	display: none;
+
+// CIRCLE ICON
+// MENUICON
+#menuIcon {
+	color: #000;
+	font-size: 18px;
 }
 
-.main-nav.smallScreen {
-	z-index: 300;
+// MENUICON TURNS YELLOW WHEN ACTIVATED
+.menuLight {
+	color: $yellow;
+}
+
+nav,
+nav.smallScreen {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
 	width: 100%;
-	height: 100%;
+	height: calc(100% - 65px);
+	top: 0;
+	bottom: 65px;
+	padding: 1rem;
+	z-index: 300;
 	position: fixed;
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
-.navWrap {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-	padding: 30px 30px 65px 30px; /* ------ bottom padding should match mobile menu ------*/
-	width: 100%;
-	height: 100%;
+// hide nav on load
+nav {
+	display: none;
 }
 
 .navLink {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 100px;
+	width: 45%;
+
+	margin: .5rem;
 	font-family: $primary-font;
 	font-size: $font-size-f2;
 	color: #fff;
 	text-transform: uppercase;
 	text-align: center;
-	padding: 20px;
 	border: 3px solid #fff;
 }
 
@@ -341,22 +354,18 @@ then hide ------ */
 	display: none;
 }
 
-div.smicons.container {
-	text-align: center;
-	vertical-align: middle;
-}
-.smicons {
-	display: inline-block;
-	height: 60px;
-	bottom: 40px;
-	padding: 0;
+div.sm-icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
-.sm-icons {
+.sm-icon {
 	font-size: $font-size-f1;
+	width: auto;
 	color: #fff;
 	display: inline-block;
-	padding-right: 10px;
+	padding: 10px;
 }
 
 .navLink:hover,
@@ -370,15 +379,7 @@ div.smicons.container {
 	border-color: $yellow;
 }
 
-/* ------ menuIcon initial styles (black) ------ */
-.fa-circle {
-	color: #000;
-	padding-top: 5px; /* ------ eyballed to match size of menu text ------ */
-}
 
-.menuLight {
-	color: $yellow;
-}
 
 /* 3 column layout flex */
 .innerFlex {
@@ -400,11 +401,11 @@ div.smicons.container {
 ##########################################################
 */
 #homeLogo {
-	width: 60%;
+	width: 100%;
 	position: relative;
-	left: 50%;
-	top: 44%;
-	margin-left: -30%; /* half of width */
+	top: 33%;
+	margin: auto;
+	padding: 4rem;
 }
 
 #logoColor {
@@ -431,13 +432,15 @@ div.swiper-button-prev {
 	background-image: url("/images/prev_white.svg");
 }
 
+
+
 .slideTextBox {
 	color: #fff;
 	right: 20px;
 	padding: 5px;
 	bottom: 80px;
 	position: absolute;
-	max-width: 100%;
+	width: 100%;
 	min-height: 1.5rem;
 	max-height: 3rem;
 }
@@ -545,7 +548,9 @@ span.swiper-pagination-bullet {
     border: $borders;
 }
 
-
+.scheduleVid {
+	margin-bottom: 0;
+}
 
 /*
 ##########################################################
@@ -690,6 +695,12 @@ span.swiper-pagination-bullet {
 #################### MEDIA SECTION #######################
 ##########################################################
 */
+
+#mediaSection {
+	h4 {
+		margin: 0 auto 1rem auto;
+	}
+}
 .mediaVideoDiv {
 	display: flex;
 	flex-direction: column;
@@ -698,9 +709,9 @@ span.swiper-pagination-bullet {
 	align-items: baseline;
 }
 
-.vimeoVideo {
-  width: 100%;
-	margin-bottom: 2.5em;
+
+.artistVid {
+	margin-bottom: 2.5rem;
 }
 
 .archiveLink {
@@ -881,7 +892,7 @@ img#applyLogo {
 	*/
 
 	/* ------ hide mobile navigation menu ------ */
-	#menu {
+	#menuButton{
 		display: none;
 	}
 
@@ -908,7 +919,7 @@ img#applyLogo {
   to { transform: translateX(-100%) }
 }
 
-	#newsFlash {
+	#marquee {
 		display: block;
 		position: fixed;
 		left: 200px;
@@ -980,7 +991,7 @@ img#applyLogo {
 		font-size: $font-size-f3;
 	}
 
-	.main-nav {
+	nav {
 		position: fixed;
 		width: 200px;
 		height: 100%;
@@ -992,11 +1003,12 @@ img#applyLogo {
 	.navLink {
 		font-size: $font-size-f1;
 		color: #000;
-		width: 200px;
+		width: 100%;
+		height: 50px;
 		margin: 0;
 		text-align: left;
 		border: none;
-		padding: 0 10px 10px 10px;
+		padding: 0 0 10px 10px;
 		text-transform: uppercase;
 		line-height: 1;
 	}
@@ -1012,7 +1024,7 @@ img#applyLogo {
 		padding: 0 10px;
 	}
 
-	.sm-icons {
+	.sm-icon {
 		color: #000;
 		float: left;
 		font-size: $font-size-f2;
@@ -1035,11 +1047,8 @@ img#applyLogo {
 	##########################################################
 	*/
 	#homeLogo {
-
-		max-width: 900px;
-		left: 42%;
-		top: 25%;
-		margin-left: -20%;
+		top: 16%;
+		margin: 0 auto;
 	}
 
 	#homeSection {
@@ -1236,9 +1245,11 @@ img#applyLogo {
 			flex-direction: row;
 			flex-wrap: wrap;
 			height: 5em;
-			width: 100%;
+			left: 200px;
 			padding: 30px;
+			width: auto;
 			margin-bottom: 5px;
+			margin-left: 200px;
 		}
 
 		.footThing {
