@@ -615,6 +615,19 @@ span.swiper-pagination-bullet {
   color: #ff0099;
   transition: all 0.3s ease-in-out; }
 
+.staff-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px dotted #fff; }
+
+.staff-profile {
+  padding-bottom: 1em; }
+
+.staff-photo {
+  width: 150px;
+  height: 150px;
+  margin: 0 0 1em 0; }
+
 /*
 ##########################################################
 ######################## FOOTER ##########################
@@ -950,6 +963,32 @@ img#applyLogo {
     max-width: 100%; }
   .sponsorP {
     bottom: 0; }
+  /*
+	##########################################################
+	##################### STAFF SECTION ######################
+	##########################################################
+	*/
+  .staff-container {
+    flex-direction: row;
+    border-bottom: none;
+    width: auto;
+    max-width: 500px;
+    padding: 1em;
+    transition: all 0.3s ease-in-out; }
+  #staffSection .staff-container:hover {
+    transition: all 0.3s ease-in-out;
+    background: #fff; }
+    #staffSection .staff-container:hover div.staff-profile h6, #staffSection .staff-container:hover div.staff-profile p, #staffSection .staff-container:hover div.staff-profile h2 {
+      color: #000; }
+    #staffSection .staff-container:hover div.staff-profile a {
+      color: #ff0099; }
+    #staffSection .staff-container:hover div.staff-profile a:hover {
+      color: #00dd73; }
+  .staff-profile {
+    padding-left: 1em; }
+  .staff-photo {
+    width: 150px;
+    margin: 0; }
   /*
 	##########################################################
 	######################## FOOTER ##########################

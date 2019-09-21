@@ -788,6 +788,22 @@ span.swiper-pagination-bullet {
 	}
 }
 
+.staff-container {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 2px dotted #fff;
+}
+
+.staff-profile {
+	padding-bottom: 1em;
+
+}
+.staff-photo {
+	width: 150px;
+	height: 150px;
+	margin: 0 0 1em 0;
+}
+
 /*
 ##########################################################
 ######################## FOOTER ##########################
@@ -1236,6 +1252,50 @@ img#applyLogo {
 	.sponsorP {
 		bottom: 0;
 	}
+
+	/*
+	##########################################################
+	##################### STAFF SECTION ######################
+	##########################################################
+	*/
+
+	.staff-container {
+		flex-direction: row;
+		border-bottom: none;
+		width: auto;
+		max-width: 500px;
+		padding: 1em;
+		transition: $time;
+
+	}
+	 #staffSection {
+		.staff-container:hover {
+			transition: $time;
+			background: #fff;
+			div.staff-profile {
+				h6, p, h2 {
+					color: #000;
+				}
+				a {
+					color: $pink;
+				}
+				a:hover {
+					color: $green;
+				}
+			}
+		}
+	}
+
+	.staff-profile {
+		padding-left: 1em;
+
+	}
+	.staff-photo {
+		width: 150px;
+
+		margin: 0;
+	}
+
 	/*
 	##########################################################
 	######################## FOOTER ##########################
