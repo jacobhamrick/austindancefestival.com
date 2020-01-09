@@ -430,6 +430,13 @@ span.swiper-pagination-bullet {
 ################### LINE-UP SECTION ######################
 ##########################################################
 */
+#line-upSection div.flexItem {
+  background-color: #fff;
+  padding: 16px;
+  border: 2px solid black; }
+  #line-upSection div.flexItem h6 {
+    font-size: 0.875rem; }
+
 .infoBox {
   text-align: center;
   margin: auto 0; }
@@ -831,7 +838,7 @@ img#applyLogo {
   #homeLogo {
     top: 3%;
     margin: 0 auto;
-    padding: 8rem; }
+    padding: 12rem; }
   #homeSection {
     height: 100vh; }
   .vimeoVideo {
