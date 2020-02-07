@@ -334,7 +334,7 @@ nav {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	height: 100px;
+	height: 70px;
 	width: 45%;
 	margin: .5rem;
 	font-family: $primary-font;
@@ -402,7 +402,7 @@ div.sm-icons {
 #homeLogo {
 	width: 100%;
 	position: relative;
-	top: 33%;
+	top: 25%;
 	margin: auto;
 	padding: 4rem;
 }
@@ -415,12 +415,16 @@ div.sm-icons {
 .swiper-container {
 	width: 100%;
 	height: 100%;
+	.swiper-button-next, .swiper-button-prev {
+		top: 43%;
+	}
 }
 
 .swiper-slide {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+
 }
 
 div.swiper-button-next {
@@ -430,6 +434,8 @@ div.swiper-button-next {
 div.swiper-button-prev {
 	background-image: url("/images/prev_white.svg");
 }
+
+
 
 
 
@@ -449,7 +455,7 @@ div.swiper-button-prev {
 	text-align: center;
 	left: 0; /* reset */
 	z-index: 300;
-	bottom: 110px;
+	bottom: 170px;
 }
 
 .swiper-pagination {
@@ -517,6 +523,15 @@ span.swiper-pagination-bullet {
 	// border-color: $pink;
 	border-radius: 0;
 	border-top: none;
+}
+
+#colette {
+	font-size: 10px;
+}
+
+.classPhoto {
+	width: 100%;
+	height: auto;
 }
 
 
@@ -1085,6 +1100,11 @@ img#applyLogo {
 		margin-left:auto;
 		margin-right:auto;
 	}
+	.swiper-container {
+		.swiper-button-next, .swiper-button-prev {
+			top: 50%;
+		}
+	}
 
 	/*
 	##########################################################
@@ -1108,10 +1128,12 @@ img#applyLogo {
 	}
 
 	.cardWrapper {
-		width: 49%;
+		width: 66%;
 	}
 
-
+	#colette {
+		font-size: 1.3vw;
+	}
 
 	/*
 	##########################################################
