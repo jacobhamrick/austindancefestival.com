@@ -871,7 +871,8 @@ img#applyLogo {
     /* eyeballed to match indentMe */
     margin: 0 auto; }
   .cardWrapper {
-    width: 66%; }
+    width: 66%;
+    margin: 0 auto; }
   #colette {
     font-size: 1.3vw; }
   /*
