@@ -890,6 +890,8 @@ img#applyLogo {
   .ticketContact {
     width: 55%;
     margin-bottom: 40px; }
+  .ticketInfo p {
+    font-size: 16px; }
   /*
 	##########################################################
 	#################### APPLY SECTION #######################
