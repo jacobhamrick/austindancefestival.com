@@ -341,7 +341,7 @@ div.swiper-button-prev {
   max-height: 3rem; }
 
 .slideTextBox.date {
-  font-size: 1.125rem;
+  font-size: 16px;
   text-align: center;
   left: 0;
   /* reset */
@@ -823,7 +823,7 @@ img#applyLogo {
     text-transform: uppercase;
     line-height: 1; }
   .slideTextBox.date {
-    font-size: 3rem;
+    font-size: 1.66rem;
     font-weight: 700;
     width: 100%; }
   .smicons.container {

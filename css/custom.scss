@@ -451,7 +451,8 @@ div.swiper-button-prev {
 }
 
 .slideTextBox.date {
-	font-size: $font-size-f3;
+	// font-size: $font-size-f3;
+	font-size: 16px;
 	text-align: center;
 	left: 0; /* reset */
 	z-index: 300;
@@ -1053,7 +1054,8 @@ img#applyLogo {
 	}
 
 	.slideTextBox.date {
-		font-size: 3rem;
+		// font-size: 3rem; when it's the date
+		font-size: 1.66rem;
 		font-weight: 700;
 		width: 100%;
 	}
