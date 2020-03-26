@@ -379,6 +379,15 @@ span.swiper-pagination-bullet {
 ################### SCHEDULE SECTION #####################
 ##########################################################
 */
+.special-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 2px solid black;
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: #fff; }
+
 .classCard a {
   border-radius: 0;
   display: flex;
