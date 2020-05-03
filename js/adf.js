@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
   // expandable content icon switch
   $('.btn.btn-primary').click(function(){
     $(this).find('#classIcon').toggleClass('fa-plus fa-minus')
@@ -23,14 +24,14 @@ $(document).ready(function() {
   }
 
   // check window size and rerun function
-  $(window).resize(function(){
+  $(window).resize(function() {
     menuSwitch();
   });
 
   // fire when ready
   menuSwitch();
   // mobile menu activiation
-  $("#menuButton").click(function(){
+  $("#menuButton").click(function() {
     $("nav").toggle();
     $("#menuIcon").toggleClass('menuLight');
   });
@@ -61,23 +62,13 @@ $(document).ready(function() {
         }, 300, 'linear'); // 24 = height of newsFlash
         return false;
     }
-
   });
 
-  const navChildren = $(".scrollLink");
-  const aArray = [];
-
-  for (let i=0; i < navChildren.length; i++) {
-    let aChild = navChildren[i];
-    let ahref = $(aChild).attr('href');
-    aArray.push(ahref);
-  }
-
-  $(window).scroll(function(){
+  $(window).scroll(function() {
     let windowPos = $(window).scrollTop() + (100);
     let windowHeight = $(window).height();
     let docHeight = $(document).height();
-    console.log(`windowPos: ${windowPos}, windowHeight: ${windowHeight}, docHeight: ${docHeight}`)
+    // console.log(`windowPos: ${windowPos}, windowHeight: ${windowHeight}, docHeight: ${docHeight}`)
     for (let i=0; i < aArray.length; i++) {
         const theID = aArray[i];
         let divPos = $(theID).offset().top;
@@ -97,5 +88,51 @@ $(document).ready(function() {
       }
     }
   }); // end window scroll function
+
+  const navChildren = $(".scrollLink");
+  const aArray = [];
+
+  for (let i=0; i < navChildren.length; i++) {
+    let aChild = navChildren[i];
+    let ahref = $(aChild).attr('href');
+    aArray.push(ahref);
+  }
+
+  let triggerList = $(".scrollTrigger").toArray();
+  $.each(triggerList, function(index, value) {
+      $(this).attr("id", "trigger-" + (index) );
+  });
+
+  let revealList = $(".sectionBody").toArray();
+  $.each(revealList, function(index, value) {
+    $(this).attr('id', "reveal-" + (index) );
+  });
+
+  var controller = new ScrollMagic.Controller();
+
+  const newSMScene = function(triggerElementId, revealElementId) {
+    new ScrollMagic.Scene({
+			triggerElement: triggerElementId,
+			triggerHook: 0.9,
+			offset: 50, // move trigger to center of element
+			reverse: false // only do once
+		})
+		.setClassToggle(revealElementId, "visible") // add class toggle
+		// .addIndicators() //
+		.addTo(controller);
+
+  };
+
+  $.each(triggerList, function(index, value) {
+    let triggerId = "#" + $(this).attr("id");
+    let revealId = "#" + revealList[index].id;
+
+    newSMScene(triggerId, revealId);
+  });
+
+
+
+
+
 
 });
