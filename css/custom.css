@@ -507,7 +507,7 @@ span.swiper-pagination-bullet {
   display: table-cell;
   vertical-align: middle;
   background-color: #fff;
-  font-size: 2rem;
+  font-size: 1rem;
   height: 100%;
   padding: 40px; }
 
@@ -544,6 +544,7 @@ span.swiper-pagination-bullet {
   width: 100%;
   height: 110px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #fff;
@@ -616,29 +617,43 @@ span.swiper-pagination-bullet {
 ##################### STAFF SECTION ######################
 ##########################################################
 */
-#staffSection p,
-#staffSection a {
-  font-size: 0.875rem;
-  line-height: 1.125rem; }
-
-#staffSection p,
-#staffSection h2,
-#staffSection h6 {
-  color: #fff; }
-
-#staffSection hr {
-  border-color: #fff; }
-
-#staffSection a {
-  color: #ffcc00;
-  display: inline;
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 0;
-  width: 0; }
-
-#staffSection a:hover {
-  color: #ff0099;
-  transition: all 0.3s ease-in-out; }
+#staffSection {
+  /* FOOTER  */ }
+  #staffSection p,
+  #staffSection a {
+    font-size: 0.875rem;
+    line-height: 1.125rem; }
+  #staffSection p,
+  #staffSection h2,
+  #staffSection h6 {
+    color: #fff; }
+  #staffSection hr {
+    border-color: #fff; }
+  #staffSection a {
+    color: #ffcc00;
+    display: inline;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 0;
+    width: 0; }
+  #staffSection a:hover {
+    color: #ff0099;
+    transition: all 0.3s ease-in-out; }
+  #staffSection .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background: #fff;
+    width: 100%;
+    margin-bottom: 64px;
+    /* height of menu plus some extra room*/
+    border-top: 2px solid black; }
+    #staffSection .footer .footThing {
+      text-align: center;
+      width: 100%;
+      line-height: 1.5; }
+      #staffSection .footer .footThing a {
+        color: #ff0099; }
 
 .staff-container {
   display: flex;
@@ -652,26 +667,6 @@ span.swiper-pagination-bullet {
   width: 150px;
   height: 150px;
   margin: 0 0 1em 0; }
-
-/*
-##########################################################
-######################## FOOTER ##########################
-##########################################################
-*/
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px 10px 0;
-  width: 100%;
-  margin-bottom: 70px;
-  /* height of menu plus some extra room*/
-  border-top: 2px solid black; }
-
-.footThing {
-  text-align: center;
-  width: 100%;
-  line-height: 1.5; }
 
 /*
 ##########################################################
@@ -910,7 +905,8 @@ img#applyLogo {
     width: 50%;
     text-align: center;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    flex-direction: column; }
     .applyLink img {
       max-height: 138px; }
   .applyLink::after {
@@ -1010,40 +1006,37 @@ img#applyLogo {
     max-width: 500px;
     padding: 1em;
     transition: all 0.3s ease-in-out; }
-  #staffSection .staff-container:hover {
-    transition: all 0.3s ease-in-out;
-    background: #fff; }
-    #staffSection .staff-container:hover div.staff-profile h6, #staffSection .staff-container:hover div.staff-profile p, #staffSection .staff-container:hover div.staff-profile h2 {
-      color: #000; }
-    #staffSection .staff-container:hover div.staff-profile a {
-      color: #ff0099; }
-    #staffSection .staff-container:hover div.staff-profile a:hover {
-      color: #00dd73; }
+  #staffSection {
+    /* FOOTER	*/ }
+    #staffSection .staff-container:hover {
+      transition: all 0.3s ease-in-out;
+      background: #fff; }
+      #staffSection .staff-container:hover div.staff-profile h6, #staffSection .staff-container:hover div.staff-profile p, #staffSection .staff-container:hover div.staff-profile h2 {
+        color: #000; }
+      #staffSection .staff-container:hover div.staff-profile a {
+        color: #ff0099; }
+      #staffSection .staff-container:hover div.staff-profile a:hover {
+        color: #00dd73; }
+    #staffSection .footer {
+      flex-direction: row;
+      flex-wrap: wrap;
+      height: 5em;
+      left: 200px;
+      bottom: 0;
+      padding: 30px;
+      margin: 0;
+      width: 100%; }
+      #staffSection .footer .footThing {
+        padding: 5px;
+        text-align: center;
+        width: auto;
+        font-size: 0.875rem;
+        line-height: 1; }
   .staff-profile {
     padding-left: 1em; }
   .staff-photo {
     width: 150px;
     margin: 0; }
-  /*
-	##########################################################
-	######################## FOOTER ##########################
-	##########################################################
-	*/
-  .footer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 5em;
-    left: 200px;
-    padding: 30px;
-    width: auto;
-    margin-bottom: 5px;
-    margin-left: 200px; }
-  .footThing {
-    padding: 5px;
-    text-align: center;
-    width: auto;
-    font-size: 0.875rem;
-    line-height: 1; }
   /*
 	##########################################################
 	##################### APPLY PAGES ########################
@@ -1062,4 +1055,21 @@ img#applyLogo {
       flex-direction: row;
       justify-content: space-between; }
   .archiveHeader {
-    flex-direction: row; } }
+    flex-direction: row; }
+  .scrollTrigger {
+    height: 0; }
+  /* scroll magic animation */
+  .sectionBody {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+  .sectionBody.visible {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; } }
