@@ -7,6 +7,9 @@ body, html {
 body {
   position: relative; }
 
+.pink {
+  color: #ff0099; }
+
 .invertColor:hover {
   color: blue; }
 
@@ -333,12 +336,11 @@ div.swiper-button-prev {
 .slideTextBox {
   color: #fff;
   right: 20px;
-  padding: 5px;
+  padding: 10px;
   bottom: 80px;
   position: absolute;
-  width: 100%;
   min-height: 1.5rem;
-  max-height: 3rem; }
+  height: auto; }
 
 .slideTextBox.date {
   font-size: 16px;
@@ -426,7 +428,7 @@ span.swiper-pagination-bullet {
   background-color: #00d0ff;
   border-color: #000; }
 
-.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary.active:not(:disabled):not(.disabled):focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus,
 .btn-primary.focus,
@@ -434,7 +436,7 @@ span.swiper-pagination-bullet {
   box-shadow: none;
   border-color: #ff0099; }
 
-.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary.active:not(:disabled):not(.disabled),
 .btn-primary:not(:disabled):not(.disabled):active,
 .show > .btn-primary.dropdown-toggle {
   background-color: #00d0ff;
@@ -456,7 +458,6 @@ span.swiper-pagination-bullet {
     font-size: 0.875rem; }
 
 .infoBox {
-  text-align: center;
   margin: auto 0; }
 
 .artistCo {
@@ -506,6 +507,7 @@ span.swiper-pagination-bullet {
   font-family: "Roboto", Arial, sans-serif;
   display: table-cell;
   vertical-align: middle;
+  text-align: center;
   background-color: #fff;
   font-size: 1rem;
   height: 100%;
