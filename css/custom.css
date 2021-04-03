@@ -99,7 +99,7 @@ consistent ------ */
   width: 100%; }
 
 /* ------ section colors ------ */
-#scheduleSection, #mediaSection {
+#aboutSection, #mediaSection {
   background-color: #ffcc00; }
 
 #applySection {
@@ -118,7 +118,7 @@ consistent ------ */
   background-color: #0028bc; }
 
 /* ------ section layout/styles ------ */
-#scheduleSection,
+#aboutSection,
 #line-upSection,
 #ticketsSection,
 #applySection,
@@ -378,7 +378,7 @@ span.swiper-pagination-bullet {
 
 /*
 ##########################################################
-################### SCHEDULE SECTION #####################
+###################### ABOUT SECTION #####################
 ##########################################################
 */
 .special-box {
@@ -864,7 +864,7 @@ img#applyLogo {
     top: 50%; }
   /*
 	##########################################################
-	################## SCHEDULE SECTION ######################
+	##################### ABOUT SECTION ######################
 	##########################################################
 	*/
   .classCard a span {
