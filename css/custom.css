@@ -1,34 +1,42 @@
+@charset "UTF-8";
 /* --------------------------------- INDEX ---------------------------------- */
 /* ----------------------------- BASE STYLES -------------------------------- */
-body, html {
+body,
+html {
   height: 100%;
   /* keeps sections stacked, swiper disappears otherwise */ }
 
 body {
   position: relative; }
 
-.pink {
-  color: #ff0099; }
-
-.invertColor:hover {
-  color: blue; }
-
 /*optional setting */
 /* .ticketButton, .navLink (large screens), .sm-icons (small screens)*/
 /* #menu, .navLink (small screens), .smi-icons (large screens) */
 /* .slideTextBox.date (mobile only), .lineUpProgram */
 /* p, li */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: "Roboto", Arial, sans-serif;
   color: #000;
   margin-bottom: 0;
   text-transform: uppercase;
   font-weight: 700; }
 
-p, li, a {
+p,
+li,
+a {
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #000;
   margin-bottom: 0; }
 
@@ -62,13 +70,13 @@ hr {
 ::-webkit-scrollbar {
   display: block;
   -webkit-appearance: none;
-  width: 0.875rem;
+  width: 1rem;
   /* harmoniously matches font-size */
   border-left: 2px solid black; }
 
 ::-webkit-scrollbar-thumb {
   background-color: black;
-  outline: 2px solid black; }
+  outline: 0px solid black; }
 
 .shadowMe {
   -webkit-box-shadow: 6px 6px 0px -2px black;
@@ -99,7 +107,8 @@ consistent ------ */
   width: 100%; }
 
 /* ------ section colors ------ */
-#aboutSection, #mediaSection {
+#aboutSection,
+#mediaSection {
   background-color: #ffcc00; }
 
 #applySection {
@@ -108,18 +117,17 @@ consistent ------ */
 #ticketsSection {
   background-color: #00dd73; }
 
-#faqSection, #sponsorSection {
+#faqSection,
+#sponsorSection,
+#scheduleSection {
   background-color: #fff; }
-
-#line-upSection {
-  background-color: #ff0099; }
 
 #staffSection {
   background-color: #0028bc; }
 
 /* ------ section layout/styles ------ */
 #aboutSection,
-#line-upSection,
+#scheduleSection,
 #ticketsSection,
 #applySection,
 #mediaSection,
@@ -188,6 +196,12 @@ div.row {
 .yellow {
   color: #ffcc00; }
 
+.purple {
+  color: #480160; }
+
+.invertColor:hover {
+  color: #0028bc; }
+
 .hover-blue:hover {
   color: #00d0ff; }
 
@@ -252,7 +266,7 @@ nav {
   justify-content: space-around;
   height: 70px;
   width: 45%;
-  margin: .5rem;
+  margin: 0.5rem;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 1.5rem;
   color: #fff;
@@ -319,7 +333,8 @@ div.sm-icons {
 .swiper-container {
   width: 100%;
   height: 100%; }
-  .swiper-container .swiper-button-next, .swiper-container .swiper-button-prev {
+  .swiper-container .swiper-button-next,
+  .swiper-container .swiper-button-prev {
     top: 43%; }
 
 .swiper-slide {
@@ -397,12 +412,12 @@ span.swiper-pagination-bullet {
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  padding: .5em;
+  padding: 0.5em;
   background-color: #fff;
   color: #000;
   border: 2px solid black; }
   .classCard a span {
-    font-size: 0.875rem; }
+    font-size: 1rem; }
 
 .cardRow .col {
   padding: 0; }
@@ -447,14 +462,14 @@ span.swiper-pagination-bullet {
 
 /*
 ##########################################################
-################### LINE-UP SECTION ######################
+################### SCHEDULE SECTION #####################
 ##########################################################
 */
-#line-upSection div.flexItem {
+#scheduleSection div.flexItem {
   background-color: #fff;
   padding: 16px;
   border: 2px solid black; }
-  #line-upSection div.flexItem h6 {
+  #scheduleSection div.flexItem h6 {
     font-size: 0.875rem; }
 
 .infoBox {
@@ -560,7 +575,8 @@ span.swiper-pagination-bullet {
   border-color: #ffcc00;
   color: #ffcc00; }
 
-.applyBubble, .applyLink:hover .applyBubble {
+.applyBubble,
+.applyLink:hover .applyBubble {
   display: none; }
 
 /*
@@ -623,7 +639,7 @@ span.swiper-pagination-bullet {
   /* FOOTER  */ }
   #staffSection p,
   #staffSection a {
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.125rem; }
   #staffSection p,
   #staffSection h2,
@@ -724,6 +740,108 @@ img#applyLogo {
   flex-grow: 1; }
   .archivePoster img {
     max-height: 35em; }
+
+/* 2021 SEASON STYLES */
+.masterclass-page {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #ff0099;
+  border: #ffcc00 2vw solid; }
+  .masterclass-page .backSite {
+    color: black;
+    margin-left: 10px;
+    position: fixed; }
+  .masterclass-page .backSite:hover {
+    color: #ffcc00; }
+
+.masterclass-info {
+  position: absolute;
+  border: #00d0ff 1vw solid;
+  height: calc(100% - (20px * 2));
+  width: calc(100% - (20px * 2));
+  bottom: 20px;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow-y: scroll;
+  padding: 2vw; }
+  .masterclass-info h5 {
+    text-align: center;
+    margin-bottom: 15px; }
+  .masterclass-info p,
+  .masterclass-info a {
+    font-size: 18px; }
+  .masterclass-info .masterclass-col {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2vw; }
+    .masterclass-info .masterclass-col .masterclass-row:first-child {
+      border: none; }
+  .masterclass-info img {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  .masterclass-info .masterclass-photo-credit {
+    text-align: center; }
+
+.masterclass-text {
+  border: none;
+  position: relative;
+  overflow-y: hidden;
+  height: 100%;
+  margin-top: 10px; }
+
+.masterclass-text::-webkit-scrollbar-thumb {
+  width: 10px;
+  outline: 0px ​solid black; }
+
+@media (min-width: 829px) and (min-height: 450px) {
+  .masterclass-info {
+    width: 90vw;
+    padding: 1vw;
+    height: 90%;
+    position: absolute;
+    overflow: hidden;
+    top: 5%; }
+    .masterclass-info .masterclass-col {
+      flex-direction: row;
+      align-items: flex-start;
+      height: 89%;
+      width: 100%;
+      justify-content: center; }
+      .masterclass-info .masterclass-col .masterclass-row {
+        width: 100%;
+        height: 100%; }
+        .masterclass-info .masterclass-col .masterclass-row img {
+          width: auto;
+          margin: 0 auto;
+          display: block;
+          height: 90%; }
+      .masterclass-info .masterclass-col .masterclass-row:first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        vertical-align: center;
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+        border-bottom: 2px solid black; }
+      .masterclass-info .masterclass-col .masterclass-text {
+        border: 2px solid black;
+        overflow-y: scroll;
+        margin-top: 0;
+        padding: 10px;
+        width: 100%; }
+        .masterclass-info .masterclass-col .masterclass-text img {
+          width: 100%;
+          height: auto; } }
 
 /*
 ###############################################################################
@@ -839,7 +957,8 @@ img#applyLogo {
     color: #000;
     float: left;
     font-size: 1.5rem; }
-  .navLink:hover, .sm-icons:hover {
+  .navLink:hover,
+  .sm-icons:hover {
     text-decoration: none;
     color: #ffcc00; }
   .navLink.active {
@@ -860,7 +979,8 @@ img#applyLogo {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto; }
-  .swiper-container .swiper-button-next, .swiper-container .swiper-button-prev {
+  .swiper-container .swiper-button-next,
+  .swiper-container .swiper-button-prev {
     top: 50%; }
   /*
 	##########################################################
@@ -883,7 +1003,7 @@ img#applyLogo {
     font-size: 1.3vw; }
   /*
 	##########################################################
-	################### LINE-UP SECTION ######################
+	################### SCHEDULE SECTION #####################
 	##########################################################
 	*/
   /*
@@ -912,17 +1032,17 @@ img#applyLogo {
     .applyLink img {
       max-height: 138px; }
   .applyLink::after {
-    content: '';
+    content: "";
     z-index: -1; }
   .applyBubble {
     background: #ff0099;
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    padding: 0.875rem;
+    padding: 1rem;
     text-align: center; }
     .applyBubble p {
-      font-size: 0.875rem;
+      font-size: 1rem;
       line-height: 1;
       color: #fff; }
   .bubblePosition {
@@ -940,7 +1060,7 @@ img#applyLogo {
     .applyLink:hover .applyBubble p {
       margin: 0 auto; }
   .applyBubble::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 50%;
@@ -1013,7 +1133,9 @@ img#applyLogo {
     #staffSection .staff-container:hover {
       transition: all 0.3s ease-in-out;
       background: #fff; }
-      #staffSection .staff-container:hover div.staff-profile h6, #staffSection .staff-container:hover div.staff-profile p, #staffSection .staff-container:hover div.staff-profile h2 {
+      #staffSection .staff-container:hover div.staff-profile h6,
+      #staffSection .staff-container:hover div.staff-profile p,
+      #staffSection .staff-container:hover div.staff-profile h2 {
         color: #000; }
       #staffSection .staff-container:hover div.staff-profile a {
         color: #ff0099; }
@@ -1032,7 +1154,7 @@ img#applyLogo {
         padding: 5px;
         text-align: center;
         width: auto;
-        font-size: 0.875rem;
+        font-size: 1rem;
         line-height: 1; }
   .staff-profile {
     padding-left: 1em; }
