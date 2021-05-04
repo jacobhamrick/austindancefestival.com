@@ -87,12 +87,27 @@ a:hover {
 // BORDERS
 $borders: 2px solid black;
 
-// HORIZONTAL LINES
+.borderMe {
+  border: $borders;
+}
+
+// LINES
 hr {
   border-top: $borders;
   /* needs 0 margin because flexbox */
   margin-left: 0;
   margin-right: 0;
+}
+
+.vl {
+  border-left: 2px dotted black;
+  width: 2px;
+  height: 50px;
+  position: relative;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+
 }
 
 // MISC
@@ -169,9 +184,12 @@ consistent ------ */
 }
 
 #faqSection,
-#sponsorSection,
-#scheduleSection {
+#sponsorSection {
   background-color: #fff;
+}
+
+#scheduleSection {
+  background-color: #e6e6e6;
 }
 
 #staffSection {
@@ -586,7 +604,6 @@ span.swiper-pagination-bullet {
 
 #scheduleSection {
   div.flexItem {
-    background-color: #fff;
     padding: 16px;
     border: $borders;
     h6 {
@@ -624,6 +641,13 @@ span.swiper-pagination-bullet {
   top: 50%;
   min-height: 300px;
   width: 100%;
+}
+
+.scheduleDiv {
+  padding: 1rem;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #fff;
 }
 
 /*
@@ -1276,6 +1300,10 @@ img#applyLogo {
 	################### SCHEDULE SECTION #####################
 	##########################################################
 	*/
+
+  .scheduleDiv {
+    width: 75%;
+  }
 
   /*
 	##########################################################

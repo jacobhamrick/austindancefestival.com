@@ -56,11 +56,23 @@ a:hover {
 .fa-circle {
   font-size: 14px; }
 
+.borderMe {
+  border: 2px solid black; }
+
 hr {
   border-top: 2px solid black;
   /* needs 0 margin because flexbox */
   margin-left: 0;
   margin-right: 0; }
+
+.vl {
+  border-left: 2px dotted black;
+  width: 2px;
+  height: 50px;
+  position: relative;
+  left: 50%;
+  margin-left: -3px;
+  top: 0; }
 
 .indentMe {
   margin-left: 2.5em; }
@@ -118,9 +130,11 @@ consistent ------ */
   background-color: #00dd73; }
 
 #faqSection,
-#sponsorSection,
-#scheduleSection {
+#sponsorSection {
   background-color: #fff; }
+
+#scheduleSection {
+  background-color: #e6e6e6; }
 
 #staffSection {
   background-color: #0028bc; }
@@ -466,7 +480,6 @@ span.swiper-pagination-bullet {
 ##########################################################
 */
 #scheduleSection div.flexItem {
-  background-color: #fff;
   padding: 16px;
   border: 2px solid black; }
   #scheduleSection div.flexItem h6 {
@@ -498,6 +511,12 @@ span.swiper-pagination-bullet {
   top: 50%;
   min-height: 300px;
   width: 100%; }
+
+.scheduleDiv {
+  padding: 1rem;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #fff; }
 
 /*
 ##########################################################
@@ -1006,6 +1025,8 @@ img#applyLogo {
 	################### SCHEDULE SECTION #####################
 	##########################################################
 	*/
+  .scheduleDiv {
+    width: 75%; }
   /*
 	##########################################################
 	################### TICKET SECTION #######################
