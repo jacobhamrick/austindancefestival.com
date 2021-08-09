@@ -645,7 +645,7 @@ span.swiper-pagination-bullet {
 
 .scheduleDiv {
   padding: 1rem;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   width: 100%;
   background-color: #fff;
 }
@@ -773,6 +773,10 @@ span.swiper-pagination-bullet {
 .archiveLink {
   margin: 0 auto 5px 0;
   float: left;
+}
+
+.vimeoVideo.pressVid {
+  margin-left: 0;
 }
 /*
 ##########################################################
