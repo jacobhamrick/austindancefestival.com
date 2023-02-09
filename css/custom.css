@@ -6,6 +6,9 @@ html {
   height: 100%;
   /* keeps sections stacked, swiper disappears otherwise */ }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   position: relative; }
 
@@ -55,6 +58,9 @@ a:hover {
 
 .fa-circle {
   font-size: 14px; }
+
+i.fa-xs {
+  margin: 0 0.5vw; }
 
 .borderMe {
   border: 2px solid black; }
@@ -118,8 +124,11 @@ consistent ------ */
 .vimeoVideo {
   width: 100%; }
 
+.scheduleVideo {
+  width: 100%;
+  margin: 2vh auto 0 auto; }
+
 /* ------ section colors ------ */
-#aboutSection,
 #mediaSection {
   background-color: #ffcc00; }
 
@@ -130,14 +139,22 @@ consistent ------ */
   background-color: #00dd73; }
 
 #faqSection,
+#scheduleSection,
+#aboutSection,
 #sponsorSection {
   background-color: #fff; }
 
-#scheduleSection {
-  background-color: #e6e6e6; }
-
 #staffSection {
   background-color: #0028bc; }
+
+.dl-blue {
+  color: #1ab4d7; }
+
+.dl-green {
+  color: #00954d; }
+
+.dl-purple {
+  color: #71009f; }
 
 /* ------ section layout/styles ------ */
 #aboutSection,
@@ -182,7 +199,7 @@ around background color, in other words needs to be edge to edge
 .sectionBody {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+  min-height: 48vh;
   margin: 1em 2em 0;
   padding-bottom: 30px; }
 
@@ -488,6 +505,45 @@ span.swiper-pagination-bullet {
 .infoBox {
   margin: auto 0; }
 
+.scheduleButtonDiv {
+  height: 100%;
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  margin-top: 3rem; }
+  .scheduleButtonDiv .scheduleButton:nth-child(1) {
+    background-color: #c6f4ff; }
+  .scheduleButtonDiv .scheduleButton:nth-child(2) {
+    background-color: #ffc6e8; }
+  .scheduleButtonDiv .scheduleButton:nth-child(3) {
+    background-color: #8fddb7; }
+  .scheduleButtonDiv .scheduleButton:nth-child(4) {
+    background-color: #ffe374; }
+  .scheduleButtonDiv .scheduleButton:nth-child(5) {
+    background-color: #cfa1df; }
+  .scheduleButtonDiv .scheduleButton {
+    width: 100%;
+    font-size: 1.875rem;
+    background-color: #fff;
+    border: 2px solid #000;
+    transition: all 0.3s ease-in-out;
+    padding: 2px 0;
+    border-radius: 40px;
+    margin: auto;
+    margin-bottom: 4rem;
+    height: 100px;
+    max-width: 760px; }
+    .scheduleButtonDiv .scheduleButton .scheduleLink {
+      font-family: "Roboto", Arial, sans-serif;
+      font-size: 1rem;
+      height: 100%;
+      padding: 0;
+      transition: all 0.3s ease-in-out; }
+      .scheduleButtonDiv .scheduleButton .scheduleLink p {
+        font-size: 17px;
+        line-height: 96px;
+        font-weight: 300; }
+
 .artistCo {
   font-size: 1rem;
   font-weight: bold;
@@ -523,47 +579,43 @@ span.swiper-pagination-bullet {
 ################### TICKET SECTION #######################
 ##########################################################
 */
-#ticketsSection .sectionBody p {
-  text-align: center; }
+#ticketButton1 {
+  background-color: #ffc6e8; }
+
+#ticketButton2 {
+  background-color: #ffe374; }
 
 .ticketButton {
+  display: flex;
   width: 100%;
-  display: table;
   font-size: 1.875rem;
-  text-align: center;
-  line-height: 1;
-  background-color: #00d0ff;
-  border: 20px dotted #ffcc00;
-  text-transform: uppercase;
-  padding: 0; }
-
-.ticketClick {
-  font-family: "Roboto", Arial, sans-serif;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  background-color: #fff;
-  font-size: 1rem;
-  height: 100%;
-  padding: 40px; }
-
-.ticketButton:hover {
-  background-color: #ff0099; }
-
-.ticketButton,
-.ticketInfo,
-.ticketContact {
-  margin: 0 auto 20px; }
-
-.ticketInfo {
-  width: 100%;
-  background-color: #fff;
-  border: 2px solid black;
-  padding: 10px 40px; }
-
-.ticketInfo ul {
-  padding: 0;
-  margin: 0; }
+  border: 2px solid #000;
+  transition: all 0.3s ease-in-out;
+  padding: 2px 0;
+  border-radius: 40px;
+  margin: auto;
+  margin-bottom: 4rem;
+  height: 140px;
+  max-width: 760px; }
+  .ticketButton .ticketClick {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1rem;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+    display: flex;
+    align-items: center; }
+    .ticketButton .ticketClick p {
+      font-size: 18px;
+      line-height: 23px;
+      font-weight: 300;
+      padding: 0 2.9rem; }
+  .ticketButton #ticketButton1:hover {
+    color: #ff0099;
+    transition: all 0.3s ease-in-out; }
+  .ticketButton #ticketButton2:hover {
+    color: #1ab4d7;
+    transition: all 0.3s ease-in-out; }
 
 /*
 ##########################################################
@@ -576,7 +628,6 @@ span.swiper-pagination-bullet {
   justify-content: space-around; }
 
 .applyLink {
-  text-transform: uppercase;
   width: 100%;
   height: 110px;
   display: flex;
@@ -584,11 +635,14 @@ span.swiper-pagination-bullet {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  border: 2px solid #ff0099;
-  font-size: 1.8rem;
+  border: 2px solid #000;
   margin: 10px auto;
   text-align: center;
-  line-height: 1; }
+  border-radius: 40px; }
+  .applyLink p {
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 300; }
 
 .applyLink:hover {
   border-color: #ffcc00;
@@ -621,7 +675,7 @@ span.swiper-pagination-bullet {
   float: left; }
 
 .vimeoVideo.pressVid {
-  margin-left: 0; }
+  margin: 0 auto; }
 
 /*
 ##########################################################
@@ -642,7 +696,7 @@ span.swiper-pagination-bullet {
   flex-wrap: nowrap;
   align-items: center; }
   .sponsorFlex a {
-    max-width: 18em;
+    max-width: 20em;
     margin-bottom: 2em; }
 
 .sponsorP {
@@ -906,7 +960,7 @@ img#applyLogo {
     left: 200px;
     overflow: hidden;
     z-index: 2000;
-    height: 24px;
+    height: 48px;
     width: calc(100% - 200px);
     text-transform: uppercase;
     background: #000; }
@@ -915,6 +969,9 @@ img#applyLogo {
       align-items: center;
       height: 100%;
       -webkit-animation: pull-from-left 52s linear infinite; }
+      #marquee #newsContainer p,
+      #marquee #newsContainer a {
+        font-size: 30px; }
       #marquee #newsContainer p {
         color: #fff;
         display: inline-block;
@@ -928,9 +985,13 @@ img#applyLogo {
     margin-left: 200px; }
   /* ------ more space ------ */
   .sectionBody {
-    margin: 1.5rem 3rem 0; }
+    margin: 1.5rem 3rem 0;
+    min-height: 90vh; }
   .footer {
     margin-bottom: 15px; }
+  .sectionHeader {
+    font-size: 74px;
+    line-height: 4rem; }
   /*
 	##########################################################
 	#################### NAVIGATION ##########################
@@ -1030,29 +1091,39 @@ img#applyLogo {
 	*/
   .scheduleDiv {
     width: 75%; }
+  .scheduleButtonDiv .scheduleButton .scheduleLink p {
+    font-size: 38px;
+    line-height: 96px;
+    font-weight: 900; }
   /*
 	##########################################################
 	################### TICKET SECTION #######################
 	##########################################################
 	*/
-  .ticketButton,
-  .ticketInfo,
-  .ticketContact {
-    width: 55%;
-    margin-bottom: 40px; }
-  .ticketInfo p {
-    font-size: 16px; }
+  .ticketButton {
+    height: 160px; }
+    .ticketButton .ticketClick p,
+    .ticketButton .ticketClick2 p {
+      font-size: 38px;
+      line-height: 38px;
+      font-weight: 900;
+      padding: 0 4rem; }
   /*
 	##########################################################
 	#################### APPLY SECTION #######################
 	##########################################################
 	*/
   .applyLink {
-    width: 50%;
+    max-width: 740px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    flex-direction: column; }
+    flex-direction: column;
+    height: 160px; }
+    .applyLink p {
+      font-size: 38px;
+      line-height: 38px;
+      font-weight: 900; }
     .applyLink img {
       max-height: 138px; }
   .applyLink::after {
@@ -1065,10 +1136,6 @@ img#applyLogo {
     position: absolute;
     padding: 1rem;
     text-align: center; }
-    .applyBubble p {
-      font-size: 1rem;
-      line-height: 1;
-      color: #fff; }
   .bubblePosition {
     bottom: 0;
     height: 6em;

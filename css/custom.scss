@@ -10,12 +10,17 @@ html {
   height: 100%; /* keeps sections stacked, swiper disappears otherwise */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
 }
 
 // --------------------- THEME COLORS
 $blue: #00d0ff;
+$dl-blue: #1ab4d7;
 $pink: #ff0099;
 $green: #00dd73;
 $yellow: #ffcc00;
@@ -82,6 +87,10 @@ a:hover {
   font-size: 14px;
 }
 
+i.fa-xs {
+  margin: 0 0.5vw;
+}
+
 // --------------------- BORDERS AND LINES
 
 // BORDERS
@@ -107,7 +116,6 @@ hr {
   left: 50%;
   margin-left: -3px;
   top: 0;
-
 }
 
 // MISC
@@ -169,8 +177,12 @@ consistent ------ */
   width: 100%;
 }
 
+.scheduleVideo {
+  width: 100%;
+  margin: 2vh auto 0 auto;
+}
+
 /* ------ section colors ------ */
-#aboutSection,
 #mediaSection {
   background-color: $yellow;
 }
@@ -184,18 +196,27 @@ consistent ------ */
 }
 
 #faqSection,
+#scheduleSection,
+#aboutSection,
 #sponsorSection {
   background-color: #fff;
-}
-
-#scheduleSection {
-  background-color: #e6e6e6;
 }
 
 #staffSection {
   background-color: #0028bc;
 }
 
+.dl-blue {
+  color: $dl-blue;
+}
+
+.dl-green {
+  color: #00954d;
+}
+
+.dl-purple {
+  color: #71009f;
+}
 /* ------ section layout/styles ------ */
 
 #aboutSection,
@@ -242,7 +263,7 @@ around background color, in other words needs to be edge to edge
 .sectionBody {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+  min-height: 48vh;
   margin: $global-margin-sm;
   padding-bottom: 30px;
 }
@@ -615,6 +636,59 @@ span.swiper-pagination-bullet {
   // text-align: center;
   margin: auto 0;
 }
+.scheduleButtonDiv {
+  height: 100%;
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  margin-top: 3rem;
+
+  .scheduleButton:nth-child(1) {
+    background-color: #c6f4ff;
+  }
+
+  .scheduleButton:nth-child(2) {
+    background-color: #ffc6e8;
+  }
+
+  .scheduleButton:nth-child(3) {
+    background-color: #8fddb7;
+  }
+
+  .scheduleButton:nth-child(4) {
+    background-color: #ffe374;
+  }
+
+  .scheduleButton:nth-child(5) {
+    background-color: #cfa1df;
+  }
+  .scheduleButton {
+    width: 100%;
+    font-size: $font-size-f1;
+    background-color: #fff;
+    border: 2px solid #000;
+    transition: $time;
+    padding: 2px 0;
+    border-radius: 40px;
+    margin: auto;
+    margin-bottom: 4rem;
+    height: 100px;
+    max-width: 760px;
+    .scheduleLink {
+      font-family: $primary-font;
+      font-size: 1rem;
+      height: 100%;
+      padding: 0;
+      transition: $time;
+
+      p {
+        font-size: 17px;
+        line-height: 96px;
+        font-weight: 300;
+      }
+    }
+  }
+}
 
 .artistCo {
   font-size: 1rem;
@@ -655,59 +729,67 @@ span.swiper-pagination-bullet {
 ################### TICKET SECTION #######################
 ##########################################################
 */
-#ticketsSection {
-  .sectionBody {
-    p {
-      text-align: center;
-    }
-  }
+
+#ticketButton1 {
+  background-color: #ffc6e8;
+}
+#ticketButton2 {
+  background-color: #ffe374;
 }
 
 .ticketButton {
+  display: flex;
   width: 100%;
-  display: table;
   font-size: $font-size-f1;
-  text-align: center;
-  line-height: 1;
-  background-color: $blue;
-  border: 20px dotted $yellow;
-  text-transform: uppercase;
-  padding: 0;
-}
+  border: 2px solid #000;
+  transition: $time;
+  padding: 2px 0;
+  border-radius: 40px;
+  margin: auto;
+  margin-bottom: 4rem;
+  height: 140px;
+  max-width: 760px;
 
-.ticketClick {
-  font-family: $primary-font;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  background-color: #fff;
-  font-size: 1rem;
-  height: 100%;
-  padding: 40px;
-}
+  .ticketClick {
+    font-family: $primary-font;
+    font-size: 1rem;
+    height: 100%;
+    transition: $time;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
-.ticketButton:hover {
-  background-color: $pink;
-}
-.ticketButton,
-.ticketInfo,
-.ticketContact {
-  margin: 0 auto 20px;
-}
+    p {
+      font-size: 18px;
+      line-height: 23px;
+      font-weight: 300;
+      padding: 0 2.9rem;
+    }
+  }
 
-.ticketInfo {
-  width: 100%;
-  background-color: #fff;
-  border: $borders;
-  padding: 10px 40px;
-}
+  #ticketButton1:hover {
+    color: $pink;
+    transition: $time;
+  }
 
-.ticketInfo {
-  ul {
-    padding: 0;
-    margin: 0;
+  #ticketButton2:hover {
+    color: $dl-blue;
+    transition: $time;
   }
 }
+// .ticketInfo {
+//   width: 100%;
+//   background-color: #fff;
+//   border: $borders;
+//   padding: 10px 40px;
+// }
+//
+// .ticketInfo {
+//   ul {
+//     padding: 0;
+//     margin: 0;
+//   }
+// }
 
 /*
 ##########################################################
@@ -723,7 +805,6 @@ span.swiper-pagination-bullet {
 }
 
 .applyLink {
-  text-transform: uppercase;
   width: 100%;
   height: 110px;
   display: flex;
@@ -731,11 +812,15 @@ span.swiper-pagination-bullet {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  border: 2px solid $pink;
-  font-size: 1.8rem;
+  border: 2px solid #000;
   margin: 10px auto;
   text-align: center;
-  line-height: 1;
+  border-radius: 40px;
+  p {
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 300;
+  }
 }
 .applyLink:hover {
   border-color: $yellow;
@@ -776,7 +861,7 @@ span.swiper-pagination-bullet {
 }
 
 .vimeoVideo.pressVid {
-  margin-left: 0;
+  margin: 0 auto;
 }
 /*
 ##########################################################
@@ -801,7 +886,7 @@ span.swiper-pagination-bullet {
   flex-wrap: nowrap;
   align-items: center;
   a {
-    max-width: 18em;
+    max-width: 20em;
     margin-bottom: 2em;
   }
 }
@@ -1129,7 +1214,7 @@ img#applyLogo {
     left: 200px;
     overflow: hidden;
     z-index: 2000;
-    height: 24px;
+    height: 48px;
     width: calc(100% - 200px);
     text-transform: uppercase;
     background: #000;
@@ -1138,6 +1223,11 @@ img#applyLogo {
       align-items: center;
       height: 100%;
       -webkit-animation: pull-from-left 52s linear infinite;
+
+      p,
+      a {
+        font-size: 30px;
+      }
 
       p {
         color: #fff;
@@ -1160,12 +1250,17 @@ img#applyLogo {
   /* ------ more space ------ */
   .sectionBody {
     margin: $global-margin-lg;
+    min-height: 90vh;
   }
 
   .footer {
     margin-bottom: 15px;
   }
 
+  .sectionHeader {
+    font-size: 74px;
+    line-height: 4rem;
+  }
   /*
 	##########################################################
 	#################### NAVIGATION ##########################
@@ -1308,22 +1403,33 @@ img#applyLogo {
   .scheduleDiv {
     width: 75%;
   }
+  .scheduleButtonDiv {
+    .scheduleButton {
+      .scheduleLink {
+        p {
+          font-size: 38px;
+          line-height: 96px;
+          font-weight: 900;
+        }
+      }
+    }
+  }
 
   /*
 	##########################################################
 	################### TICKET SECTION #######################
 	##########################################################
 	*/
-  .ticketButton,
-  .ticketInfo,
-  .ticketContact {
-    width: 55%;
-    margin-bottom: 40px;
-  }
-
-  .ticketInfo {
-    p {
-      font-size: 16px;
+  .ticketButton {
+    height: 160px;
+    .ticketClick,
+    .ticketClick2 {
+      p {
+        font-size: 38px;
+        line-height: 38px;
+        font-weight: 900;
+        padding: 0 4rem;
+      }
     }
   }
   /*
@@ -1333,11 +1439,17 @@ img#applyLogo {
 	*/
 
   .applyLink {
-    width: 50%;
+    max-width: 740px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     flex-direction: column;
+    height: 160px;
+    p {
+      font-size: 38px;
+      line-height: 38px;
+      font-weight: 900;
+    }
     img {
       max-height: 138px;
     }
@@ -1355,11 +1467,6 @@ img#applyLogo {
     position: absolute;
     padding: $font-size-f4;
     text-align: center;
-    p {
-      font-size: $font-size-f4;
-      line-height: 1;
-      color: #fff;
-    }
   }
 
   .bubblePosition {
